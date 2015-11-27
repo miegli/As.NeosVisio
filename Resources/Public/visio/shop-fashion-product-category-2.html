@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html>  
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Visio - Responsive Website Template</title>
+
+<!-- BOOTSTRAP -->
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
+
+<!-- ANIMATE -->
+<link rel="stylesheet" href="assets/animate/animate.min.css" type="text/css">
+
+<!-- WEB FONTS -->
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+<!-- ICON FONTS -->
+<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" type="text/css"> 
+<link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css" type="text/css"> 
+
+<!-- GLOBAL STYLE -->
+<link id="stylesheetGlobal" type="text/css" href="css/global-style-spray-gray.min.css" rel="stylesheet" media="screen">
+		<!-- CUSTOM STYLE -- Remove if not necessary -->
+<link type="text/css" href="css/custom-style.css" rel="stylesheet">
+
+
+
+<!-- ASSETS -->
+<link rel="stylesheet" href="assets/owl-carousel/css/owl.carousel.css" type="text/css">
+<link rel="stylesheet" href="assets/owl-carousel/css/owl.theme.css" type="text/css">
+<link rel="stylesheet" href="assets/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen"> 
+
+<!-- FAVICON -->
+<link href="images/favicon.png" rel="icon" type="image/png">
+<!-- Revolution Slider -->
+<link rel="stylesheet" type="text/css" href="assets/revolution-slider/css/settings.css" media="screen" />
+
+</head>
+<body>
+
+
+<!-- SIGN IN/UP MODAL -->
+<div class="modal fade" id="mdlUserAccount" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <ul class="nav nav-pills style-2 nav-justified" role="tablist">
+                <li role="presentation" class="active"><a href="#tab-1" aria-controls="tab-1" role="tab" data-toggle="pill">Sign in</a></li>
+                <li role="presentation"><a href="#tab-2" aria-controls="tab-2" role="tab" data-toggle="pill">Create account</a></li>
+            </ul>
+            <div class="modal-body">
+                <div class="tab-content">
+                    <!-- Sign in - Tab 1 -->
+                    <div role="tabpanel" class="tab-pane active" id="tab-1">
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-xs-offset-1 col-xs-10">                                    
+                                    <div class="text-center">
+                                        <h4>Login with your site account</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <form data-toggle="validator" role="form" class="mt-20">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label sr-only" for="inputEmail">Email</label>
+                                    <input type="email" class="form-control input-lg" id="inputEmail" placeholder="Email" required>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label class="control-label sr-only" for="inputPassword">Password</label>
+                                    <input type="password" class="form-control input-lg" id="inputPassword" placeholder="Password" required>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="chkRememberMe">
+                                    <label for="chkRememberMe">Remember me</label>
+                                </div>
+
+                                <button type="submit" class="btn btn-lg btn-block btn-base-1 mt-20">Sign in</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Sign up - Tab 2 -->
+                    <div role="tabpanel" class="tab-pane" id="tab-2">
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-xs-offset-1 col-xs-10">                                    
+                                    <div class="text-center">
+                                        <h4>Sign up. It's free and super easy</h4>
+                                        <small>No credit card are needed</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <form data-toggle="validator" role="form" class="mt-20">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label sr-only" for="inputRegisterEmail">Email</label>
+                                    <input type="email" class="form-control input-lg" id="inputRegisterEmail" placeholder="Email" required>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label class="control-label sr-only" for="inputRegisterPassword">Password</label>
+                                    <input type="password" class="form-control input-lg" id="inputRegisterPassword" placeholder="Password" required data-minlength="8">
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label class="control-label sr-only" for="inputRegisterPasswordConfirm">Confirm Password</label>
+                                    <input type="password" class="form-control input-lg" id="inputRegisterPasswordConfirm" placeholder="Confirm Password" required data-match="#inputRegisterPassword">
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <button type="submit" class="btn btn-lg btn-block btn-base-1 mt-20">Sign up</button>
+                                <small>By clicking "Sign up" you agree to our terms and conditions</small>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Forgot password - Tab 3 -->
+                    <div role="tabpanel" class="tab-pane" id="tab-3">
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-xs-offset-1 col-xs-10">                                    
+                                    <div class="text-center">
+                                        <h4>Enter your email and we will help you to recover <br> your password</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <form data-toggle="validator" role="form" class="mt-20">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label sr-only" for="inputForgotEmail">Email</label>
+                                    <input type="email" class="form-control input-lg" id="inputForgotEmail" placeholder="Email" required>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <button type="submit" class="btn btn-lg btn-block btn-base-1 mb-20">Recover password</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row form-user-links-aux style-1 mt-20">
+            <div class="col-xs-6">
+                <a href="#tab-3" aria-controls="tab-3" role="tab" data-toggle="pill">Forgot your password?</a>
+            </div>
+            <div class="col-xs-6 text-right">
+                <span class="c-text-1">Need an account? </span> 
+                <a href="#tab-2" aria-controls="tab-2" role="tab" data-toggle="pill">Get started</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MAIN WRAPPER -->
+<div class="body-wrap">
+
+    <div id="st-container" class="st-container">
+    <nav class="st-menu st-effect-1" id="menu-1">
+        <h3 class="st-menu-title">Menu</h3>
+        <div class="nav">
+            <ul>
+                <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="#"><i class="fa fa-angellist"></i>About us</a></li>
+                <li><a href="#"><i class="fa fa-camera"></i>Blog</a></li>
+                <li><a href="#"><i class="fa fa-calendar"></i>Work</a></li>
+                <li><a href="#"><i class="fa fa-shopping-cart"></i>Online shop</a></li>
+                <li><a href="#"><i class="fa fa-dropbox"></i>Features</a></li>
+            </ul>
+        </div>
+
+        <h3 class="st-menu-title">Quick links</h3>
+        <div class="nav">
+            <ul>
+                <li><a href="#">Silken <span>Truth</span></a></li>
+                <li><a href="#">The <span>Cold Ice</span></a></li>
+                <li><a href="#">Soaring of <span>Stars</span></a></li>
+            </ul>
+        </div>
+
+        <h3 class="st-menu-title">Socia media</h3>
+        <div class="social-media style-1 v2">
+            <a href="#" class="facebook">
+                <i class="fa fa-facebook "></i>
+            </a>
+            <a href="#" class="google-plus">
+                <i class="fa fa-google-plus "></i>
+            </a>
+            <a href="#" class="pinterest">
+                <i class="fa fa-pinterest "></i>
+            </a>
+            <a href="#" class="twitter">
+                <i class="fa fa-twitter "></i>
+            </a>
+        </div>       
+    </nav>
+    <div class="st-pusher">
+        <div class="st-content">
+            <div class="st-content-inner">
+                <!-- HEADER -->
+                <div class="header" id="header">
+	<!-- GLOBAL SEARCH -->
+	<section id="sctGlobalSearch" class="global-search-wrapper slider-opt-height">
+		<div class="container relative">
+			<form class="form-horizontal form-global-search" role="form">
+				<div class="form-group col-xs-10">
+					<input type="text" class="search-input" placeholder="Type here ...">
+				</div>
+				<div class="col-xs-2">
+		  			<button type="submit" class="btn btn-6 btn-6b btn-base-5 btn-nobg">
+		  				<span class="hidden-xs hidden-sm">Search</span>
+		  				<i class="hidden-lg hidden-md fa fa-search"></i>
+		  			</button>
+		  		</div>
+			</form>
+		</div>
+		<button type="button" class="global-search-close-btn css-animate" data-target="#sctGlobalSearch" title="Close search bar">
+			<i class="icon ion-close-round"></i>
+		</button>
+	</section>
+
+	<!-- NAVBAR -->
+	<nav class="navbar navbar-main navbar-shadow" role="navigation" id="slide-nav">		
+		<div class="container relative">
+		    <div class="navbar-header">
+		    	<!-- LOGO -->
+		      	<a class="navbar-logo" href="shop-fashion-homepage-1.html">
+		      		<img id="logoOne" src="images/logo/logo-2-a.png" class="hide">
+		      		<img id="logoTwo" src="images/logo/logo-2-b.png">
+		      	</a>
+
+		    	<!-- NAVBAR TOGGLE -->
+		      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+			    </button>
+
+			    <!-- NAVBAR SEARCH - for mobile resolutions -->
+		      	<button type="button" class="navbar-icon-btn css-animate" data-target="#sctGlobalSearch">
+					<i class="fa fa-search"></i>
+			    </button>
+
+			    			    <!-- SLIDEBAR TOGGLE -->
+			    <button type="button" class="navbar-icon-btn btn-st-trigger" data-effect="st-effect-1">
+					<i class="fa fa-dedent"></i>
+			    </button>
+						   	</div>
+
+		   	<div id="slidemenu">
+		      	<ul class="nav navbar-nav" data-hover="dropdown" data-animations="fadeInUp fadeInDown fadeInRight fadeInLeft">
+                   	 <!-- Navbar links -->
+<li class="">
+    <a href="shop-fashion-homepage-1.html">
+       <span>Home</span>
+    </a>
+</li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+       <span>Pages</span>
+    </a>
+    <ul class="dropdown-menu">
+        <li><a tabindex="-1" href="shop-fashion-about-1.html">About us</a></li>
+        <li class="dropdown dropdown-submenu">
+            <a tabindex="-1" href="#">Welcome page</a>
+            <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="shop-fashion-welcome-1.html">Welcome page: White</a></li>
+                <li><a tabindex="-1" href="shop-fashion-welcome-2.html">Welcome page: Dark</a></li>
+            </ul>
+        </li>
+        <li><a tabindex="-1" href="shop-fashion-blank-1.html">Blank page</a></li>
+        <li class="dropdown dropdown-submenu">
+            <a tabindex="-1" href="#">Submenu child 1</a>
+            <ul class="dropdown-menu">
+                <li class="dropdown dropdown-submenu">
+                	<a tabindex="-1" href="#">Submenu child 2</a>
+                	<ul class="dropdown-menu">
+                		<li><a tabindex="-1" href="#">Submenu child 3</a></li>
+                		<li><a tabindex="-1" href="#">Submenu child 3</a></li>
+                		<li><a tabindex="-1" href="#">Submenu child 3</a></li>
+                	</ul>
+                </li>
+                <li><a tabindex="-1" href="#">Submenu child 2</a></li>
+                <li><a tabindex="-1" href="#">Submenu child 2</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<li class="dropdown">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+       <span>Shop</span>
+    </a>
+
+	<ul class="dropdown-menu">
+        <li class="dropdown dropdown-submenu">
+            <a tabindex="-1">Categories</a>
+            <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="shop-fashion-categories-mosaic-1.html">Mosaic</a></li> 
+                <li><a tabindex="-1" href="shop-fashion-categories-products-1.html">Categories + Products</a></li>
+            </ul>
+        </li>
+    	<li class="dropdown dropdown-submenu">
+            <a tabindex="-1">Products</a>
+            <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="shop-fashion-product-category-1.html">Style 1: Left sidebar + Image slider</a></li> 
+                <li><a tabindex="-1" href="shop-fashion-product-category-2.html">Style 2: Full width + Image slider</a></li>
+
+                <li><a tabindex="-1" href="shop-fashion-product-category-3.html">Style 3: Left sidebar + Item carousel</a></li>
+                <li><a tabindex="-1" href="shop-fashion-product-category-4.html">Style 4: Full width + Item carousel</a></li>
+                
+                <li><a tabindex="-1" href="shop-fashion-product-category-5.html">Style 5: Left sidebar + Text header</a></li>
+                <li><a tabindex="-1" href="shop-fashion-product-category-6.html">Style 6: Full width + Text header</a></li>
+            </ul>
+        </li>
+        <li class="dropdown dropdown-submenu">
+            <a tabindex="-1">Single product</a>
+            <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="shop-fashion-single-product-1.html">Left sidebar</a></li>
+                <li><a tabindex="-1" href="shop-fashion-single-product-2.html">Right sidebar</a></li>
+                <li><a tabindex="-1" href="shop-fashion-single-product-3.html">Full width</a></li>
+            </ul>
+        </li>
+        <li><a tabindex="-1" href="shop-fashion-checkout-1.html">Checkout</a></li>
+        <li><a tabindex="-1" href="shop-fashion-cart-1.html">Cart</a></li>
+    </ul>	
+</li>
+
+<li class="dropdown mega-dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+       <span>Products</span>
+    </a>
+    <ul class="dropdown-menu mega-dropdown-menu row" style="padding: 25px 10px !important;">
+        <li class="col-sm-2">
+            <h3 class="meganav-section-title pb-10">Women</h3>
+            <ul class="">
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Jeans</a></li>
+                <li><a href="#">Shirts</a></li>
+                <li><a href="#">T-Shirts</a></li>
+                <li><a href="#">Jackets</a></li>
+                <li><a href="#">Trousers</a></li>  
+                <li><a href="#">Leggins</a></li>
+                <li><a href="#">Bags</a></li>
+                <li><a href="#">Accessories</a></li>      
+            </ul>
+        </li>
+
+        <li class="col-sm-2">
+            <h3 class="meganav-section-title pb-10">Men</h3>
+            <ul class="">
+                <li><a href="#">Trousers</a></li>
+                <li><a href="#">Jeans</a></li>
+                <li><a href="#">Shorts</a></li>
+                <li><a href="#">T-Shirts</a></li>
+                <li><a href="#">Polo shirts</a></li>
+                <li><a href="#">Sweatshirts</a></li>  
+                <li><a href="#">Knitwear</a></li>
+                <li><a href="#">Shoes</a></li>
+                <li><a href="#">Accessories</a></li>      
+            </ul>
+        </li>
+
+        <li class="col-sm-2">
+            <h3 class="meganav-section-title pb-10">Accessories</h3>
+            <ul class="">
+                <li><a href="#">Scarves</a></li>
+                <li><a href="#">Tights &amp; socks</a></li>
+                <li><a href="#">Hats</a></li>
+                <li><a href="#">Gloves</a></li>
+                <li><a href="#">Umbrellas</a></li>
+                <li><a href="#">Nightwear</a></li>  
+                <li><a href="#">Sunglasses</a></li>
+                <li><a href="#">Hair accessories</a></li>
+                <li><a href="#">Gadgets</a></li>      
+            </ul>
+        </li>
+
+        <li class="col-sm-6">
+            <img src="images/prv/shop/fashion/banner-img-1.jpg" class="img-responsive">
+        </li>
+    </ul>   
+</li>
+
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+       <span>Demos</span>
+       <i class="badge bg-base-1 ttip" data-original-title="Check out the new demos we created for you and let's get started!" data-placement="bottom">!</i>
+    </a>
+    <ul class="dropdown-menu dropdown-demos-menu">
+        <li class="">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="demo-item">
+                        <h3 class="demo-title">
+                            <a href="index.html">Visio - Multi-Page</a>
+                        </h3>
+
+                        <div class="demo-image">
+                            <a href="index.html" class=" caption-image style-2">
+                                <img src="images/prv/demos/visio-default-screenshot.jpg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="demo-item">
+                        <h3 class="demo-title">
+                            <a href="one-page.html">Visio - One-Page</a>
+                        </h3>
+
+                        <div class="demo-image">
+                            <a href="one-page.html" class=" caption-image style-2">
+                                <img src="images/prv/demos/visio-default-one-page-screenshot.jpg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row-space"></div>
+
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="demo-item">
+                        <h3 class="demo-title">
+                            <a href="dark-homepage-1.html">Visio - Dark</a>
+                        </h3>
+
+                        <div class="demo-image">
+                            <a href="dark-homepage-1.html" class=" caption-image style-2">
+                                <img src="images/prv/demos/visio-dark-screenshot.jpg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="demo-item">
+                        <h3 class="demo-title">
+                            <a href="shop-fashion-homepage-1.html">Visio - Fashion Shop</a>
+                        </h3>
+
+                        <div class="demo-image">
+                            <a href="shop-fashion-homepage-1.html" class=" caption-image style-2">
+                                <img src="images/prv/demos/visio-shop-fashion-screenshot.jpg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>         
+        </li>
+    </ul>
+</li>
+<li>
+    <a href="index.html">
+       <span>Main</span>
+    </a>
+</li>           	
+		      	</ul>
+		      	<ul class="nav navbar-nav navbar-right">
+		      				      		<!-- Slidebar button -->
+					<li class="dropdown-icon hidden-xs hidden-sm">
+						<a  href="#" class="btn-st-trigger ttip" data-effect="st-effect-1">
+							<span><i class="icon ion-navicon-round"></i></span>
+						</a>
+					</li>
+					
+					<!-- Sign in/up button -->
+					<li class="dropdown-icon hidden-xs hidden-sm">
+						<a href="#" data-toggle="modal" data-target="#mdlUserAccount">
+							<span><i class="icon ion-log-in"></i></span>
+						</a>
+					</li>
+
+					<!-- Search button -->
+                    <li class="dropdown-icon hidden-xs hidden-sm">
+                    	<a href="#" data-toggle="dropdown">
+                    		<span>
+                    			<i class="icon ion-search"></i>
+                    		</span>
+                    	</a>
+                    	<ul class="dropdown-menu dropdown-menu-search">
+                    		<li>
+								<form class="form-horizontal">
+			                        <div class="input-group">
+			                            <input type="text" class="form-control" placeholder="Search...">
+			                            <span class="input-group-btn">
+			                                <button class="btn btn-base-1" type="button">Search</button>
+			                            </span>
+			                        </div>
+			                    </form>
+			                </li>
+			           	</ul>
+					</li>
+
+					<!-- Favorite products button -->
+					<li class="dropdown-icon hidden-xs hidden-sm">
+						<a href="#" data-toggle="dropdown">
+							<span><i class="icon ion-heart"></i></span>
+							<span class="badge bg-base-1">17</span>
+						</a>
+
+						<ul class="dropdown-menu dropdown-menu-search">
+                    		<li>
+								<form class="form-horizontal">
+			                        <div class="input-group">
+			                            <input type="text" class="form-control" placeholder="Search...">
+			                            <span class="input-group-btn">
+			                                <button class="btn btn-base-1" type="button">Search</button>
+			                            </span>
+			                        </div>
+			                    </form>
+			                </li>
+			           	</ul>
+					</li>
+
+					<!-- Cart button -->
+					<li class="dropdown-icon hidden-xs hidden-sm">
+						<a href="#" data-toggle="dropdown">
+							<span><i class="icon ion-bag"></i></span>
+							<span class="badge bg-base-1">5</span>
+						</a>
+
+						<ul class="dropdown-menu dropdown-cart-wrapper">
+                    		<li>
+								<div class="dropdown-cart">
+                                    <table class="table table-dropdown-cart">
+                                        <tbody>
+                                            <tr>
+                                                <td width="60">
+                                                	<div class="cart-item-img">
+                                                		<img src="images/prv/shop/fashion/img-thumb-1.jpg" class="img-center">
+                                                	</div>
+                                                </td>
+                                                <td class="cart-item-content">
+                                                	<div>
+	                                                	<a href="#" class="cart-item-title">Long Sleeve Spliced</a>
+	                                                	<div>
+	                                                		<span class="label-quantity">Quantity: 2 × </span>
+	                                                		<span class="label-value">$25</span>
+	                                                	</div>
+	                                                </div>
+                                                </td>
+                                                <td class="cart-item-price">
+                                                	<span class="">$50</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="60">
+                                                	<div class="cart-item-img">
+                                                		<img src="images/prv/shop/fashion/img-thumb-2.jpg" class="img-center">
+                                                	</div>
+                                                </td>
+                                                <td>
+                                                	<div class="cart-item-content">
+	                                                	<a href="#" class="cart-item-title">Round Neck Long Sleeve</a>
+	                                                	<div>
+	                                                		<span class="label-quantity">Quantity: 1 × </span>
+	                                                		<span class="label-value">$32</span>
+	                                                	</div>
+	                                                </div>
+                                                </td>
+                                                <td class="cart-item-price">
+                                                	<span class="">$32</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="60">
+                                                	<div class="cart-item-img">
+                                                		<img src="images/prv/shop/fashion/img-thumb-3.jpg" class="img-center">
+                                                	</div>
+                                                </td>
+                                                <td>
+                                                	<div class="cart-item-content">
+	                                                	<a href="#" class="cart-item-title">Scoop Neck Long Sleeve</a>
+	                                                	<div>
+	                                                		<span class="label-quantity">Quantity: 3 × </span>
+	                                                		<span class="label-value">$15</span>
+	                                                	</div>
+	                                                </div>
+                                                </td>
+                                                <td class="cart-item-price">
+                                                	<span class="">$45</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="dropdown-cart-footer">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <a href="shop-fashion-cart-1.html" class="btn btn-block btn btn-base-1">
+                                                    <span>Edit cart</span>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <a href="shop-fashion-checkout-1.html" class="btn btn-block btn btn-base-4 pull-right">
+                                                    <span>Checkout</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="label-subtotal">Subtotal: <strong>$127</strong></div>
+                                    </div>
+                                </div>
+			                </li>
+			           	</ul>
+					</li>
+				</ul>				
+		   	</div>
+		</div>
+	</nav>
+</div>
+                <!-- Revolution slider -->
+                                <div class="tp-banner-container slider-wrapper">
+                    <div id="pageBannerSlider" class="tp-banner">
+                        <ul>
+                            <!-- SLIDE 1 -->
+                            <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
+                                <!-- MAIN IMAGE -->
+                                <img src="images/prv/shop/fashion/page-banner-bg-1.jpg" alt="Slide background 1" data-bgfit="normal" data-bgposition="center center" data-bgrepeat="no-repeat">
+
+                                <!-- LAYER NR. 1 -->
+                                <div class="caption lft title title-xs c-black strong-600" 
+                                    data-x="550" 
+                                    data-y="80" 
+                                    data-speed="700" 
+                                    data-start="1800" 
+                                    data-easing="easeOutBack">new accessories collection
+                                </div>
+
+                                <!-- LAYER NR. 2 -->
+                                <div class="caption sft title title-md c-black strong-400" 
+                                    data-x="550" 
+                                    data-y="115" 
+                                    data-speed="700" 
+                                    data-start="1700" 
+                                    data-easing="easeOutBack">Save up to 50% off
+                                </div>    
+                            </li>
+                            
+                            <!-- SLIDE 2 -->
+                            <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
+                                <!-- MAIN IMAGE -->
+                                <img src="images/prv/shop/fashion/page-banner-bg-2.jpg" alt="Slide background 2" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+
+                                <!-- LAYER NR. 1 -->
+                                <div class="caption lft title title-md c-white text-caps strong-400" 
+                                    data-x="center" 
+                                    data-y="80" 
+                                    data-speed="700" 
+                                    data-start="1800" 
+                                    data-easing="easeOutBack">Season sale
+                                </div>
+
+                                <!-- LAYER NR. 2 -->
+                                <div class="caption sft title title-xs c-white strong-600" 
+                                    data-x="center" 
+                                    data-y="150" 
+                                    data-speed="700" 
+                                    data-start="1700" 
+                                    data-easing="easeOutBack">Free worldwide shipping
+                                </div>    
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- SHOP ELEMENTS CONTAINER -->
+                <section class="slice sct-color-1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- Filters and actions -->
+                                <div class="float-wrapper pb-15 mb-15 bb">
+                                    <!-- List-Grid view option -->
+                                    <div class="btn-group hidden-xs">
+                                        <a href="#" id="list" class="btn btn-b-base-4 btn-sm">
+                                            <span class="glyphicon glyphicon-th-list"></span>
+                                            List
+                                        </a> 
+                                        <a href="#" id="grid" class="btn btn-b-base-4 btn-sm">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                            Grid
+                                        </a>
+                                    </div>
+
+                                    <!-- Sorting options -->
+                                    <div class="btn-group  pull-right">
+                                        <button type="button" class="btn btn-sm btn-b-base-1">Sort by</button>
+                                        <button type="button" class="btn btn-sm btn-b-base-1 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="caret"></span>
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Popularity</a></li>
+                                            <li><a href="#">Newness</a></li>
+                                            <li><a href="#">Price: low to high</a></li>
+                                            <li><a href="#">Price: high to low</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Product list -->
+                                <div id="products" class="row list-group">
+                                    <div class="col-md-3 col-sm-6 grid-list-item">
+                                        <div class="block product style-2">
+                                            <figure>
+                                                <img src="images/prv/shop/fashion/img-1.jpg" class="img-responsive img-center" alt="">
+                                                <span class="product-ribbon right style-1 bg-base-1 text-caps">New</span>
+                                            </figure>
+                                            <div class="block-content text-center">
+                                                <h2 class="product-title">
+                                                    <a href="">Long Sleeve Spliced</a>
+                                                </h2>
+                                                <span class="star-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </span> 
+                                                
+                                                <div class="price-wrapper">
+                                                    <span class="price">$25.33</span>
+                                                    <span class="clearfix"></span>
+                                                </div>
+
+                                                <p class="mt-10 hidden-grid">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                                </p>
+
+                                                <a href="#" class="btn btn-b-base-4 mt-20">
+                                                    <span>Add to cart</span>
+                                                </a>            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-3 col-sm-6 grid-list-item">
+                                        <div class="block product style-2">
+                                            <figure>
+                                                <img src="images/prv/shop/fashion/img-2.jpg" class="img-responsive img-center" alt="">
+                                                <span class="product-ribbon right style-1 bg-gold text-caps">Top</span>
+                                            </figure>
+                                            <div class="block-content text-center">
+                                                <h2 class="product-title">
+                                                    <a href="">Pink Wrap Crop Top</a>
+                                                </h2>
+                                                <span class="star-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </span> 
+                                                
+                                                <div class="price-wrapper">
+                                                    <span class="price">$25.33</span>
+                                                    <span class="clearfix"></span>
+                                                </div>
+
+                                                <p class="mt-10 hidden-grid">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                                </p>
+
+                                                <a href="#" class="btn btn-b-base-4 mt-20">
+                                                    <span>Add to cart</span>
+                                                </a>            
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-6 grid-list-item">
+                                        <div class="block product style-2">
+                                            <figure>
+                                                <img src="images/prv/shop/fashion/img-3.jpg" class="img-responsive img-center" alt="">
+                                                <span class="product-ribbon right style-1 bg-red text-caps">Sale</span>
+                                            </figure>
+                                            <div class="block-content text-center">
+                                                <h2 class="product-title">
+                                                    <a href="">Off Shoulder Lace-Up Sweater</a>
+                                                </h2>
+                                                <span class="star-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </span> 
+                                                
+                                                <div class="price-wrapper">
+                                                    <span class="price discount">$30.80</span>
+                                                    <span class="price">$25.33</span>
+                                                    <span class="clearfix"></span>
+                                                </div>
+
+                                                <p class="mt-10 hidden-grid">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                                </p>
+
+                                                <a href="#" class="btn btn-b-base-4 mt-20">
+                                                    <span>Add to cart</span>
+                                                </a>            
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-6 grid-list-item">
+                                        <div class="block product style-2">
+                                            <figure>
+                                                <img src="images/prv/shop/fashion/img-4.jpg" class="img-responsive img-center" alt="">
+                                                <span class="product-ribbon right style-1 bg-red text-caps">Sale</span>
+                                            </figure>
+                                            <div class="block-content text-center">
+                                                <h2 class="product-title">
+                                                    <a href="">Asymmetric Two-Piece Dress</a>
+                                                </h2>
+                                                <span class="star-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </span> 
+                                                
+                                                <div class="price-wrapper">
+                                                    <span class="price discount">$30.80</span>
+                                                    <span class="price">$25.33</span>
+                                                    <span class="clearfix"></span>
+                                                </div>
+
+                                                <p class="mt-10 hidden-grid">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                                </p>
+
+                                                <a href="#" class="btn btn-b-base-4 mt-20">
+                                                    <span>Add to cart</span>
+                                                </a>            
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-6 grid-list-item">
+                                        <div class="block product style-2">
+                                            <figure>
+                                                <img src="images/prv/shop/fashion/img-5.jpg" class="img-responsive img-center" alt="">
+                                            </figure>
+                                            <div class="block-content text-center">
+                                                <h2 class="product-title">
+                                                    <a href="">Grey Button-Front Tee</a>
+                                                </h2>
+                                                <span class="star-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </span> 
+                                                
+                                                <div class="price-wrapper">
+                                                    <span class="price">$25.33</span>
+                                                    <span class="clearfix"></span>
+                                                </div>
+
+                                                <p class="mt-10 hidden-grid">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                                </p>
+
+                                                <a href="#" class="btn btn-b-base-4 mt-20">
+                                                    <span>Add to cart</span>
+                                                </a>            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-3 col-sm-6 grid-list-item">
+                                        <div class="block product style-2">
+                                            <figure>
+                                                <img src="images/prv/shop/fashion/img-6.jpg" class="img-responsive img-center" alt="">
+                                            </figure>
+                                            <div class="block-content text-center">
+                                                <h2 class="product-title">
+                                                    <a href="">Cut Out Crochet Top</a>
+                                                </h2>
+                                                <span class="star-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </span> 
+                                                
+                                                <div class="price-wrapper">
+                                                    <span class="price">$25.33</span>
+                                                    <span class="clearfix"></span>
+                                                </div>
+
+                                                <p class="mt-10 hidden-grid">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                                </p>
+
+                                                <a href="#" class="btn btn-b-base-4 mt-20">
+                                                    <span>Add to cart</span>
+                                                </a>            
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-6 grid-list-item">
+                                        <div class="block product style-2">
+                                            <figure>
+                                                <img src="images/prv/shop/fashion/img-7.jpg" class="img-responsive img-center" alt="">
+                                            </figure>
+                                            <div class="block-content text-center">
+                                                <h2 class="product-title">
+                                                    <a href="">Rose Top</a>
+                                                </h2>
+                                                <span class="star-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </span> 
+                                                
+                                                <div class="price-wrapper">
+                                                    <span class="price">$25.33</span>
+                                                    <span class="clearfix"></span>
+                                                </div>
+
+                                                <p class="mt-10 hidden-grid">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                                </p>
+
+                                                <a href="#" class="btn btn-b-base-4 mt-20">
+                                                    <span>Add to cart</span>
+                                                </a>            
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-6 grid-list-item">
+                                        <div class="block product style-2">
+                                            <figure>
+                                                <img src="images/prv/shop/fashion/img-8.jpg" class="img-responsive img-center" alt="">
+                                            </figure>
+                                            <div class="block-content text-center">
+                                                <h2 class="product-title">
+                                                    <a href="">Polka Dot Bodycon Dress</a>
+                                                </h2>
+                                                <span class="star-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </span> 
+                                                
+                                                <div class="price-wrapper">
+                                                    <span class="price">$25.33</span>
+                                                    <span class="clearfix"></span>
+                                                </div>
+
+                                                <p class="mt-10 hidden-grid">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                                </p>
+
+                                                <a href="#" class="btn btn-b-base-4 mt-20">
+                                                    <span>Add to cart</span>
+                                                </a>            
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-6 grid-list-item">
+                                        <div class="block product style-2">
+                                            <figure>
+                                                <img src="images/prv/shop/fashion/img-9.jpg" class="img-responsive img-center" alt="">
+                                            </figure>
+                                            <div class="block-content text-center">
+                                                <h2 class="product-title">
+                                                    <a href="">Open-Front Duster Coat</a>
+                                                </h2>
+                                                <span class="star-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </span> 
+                                                
+                                                <div class="price-wrapper">
+                                                    <span class="price">$25.33</span>
+                                                    <span class="clearfix"></span>
+                                                </div>
+
+                                                <p class="mt-10 hidden-grid">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                                </p>
+
+                                                <a href="#" class="btn btn-b-base-4 mt-20">
+                                                    <span>Add to cart</span>
+                                                </a>            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-3 col-sm-6 grid-list-item">
+                                        <div class="block product style-2">
+                                            <figure>
+                                                <img src="images/prv/shop/fashion/img-10.jpg" class="img-responsive img-center" alt="">
+                                            </figure>
+                                            <div class="block-content text-center">
+                                                <h2 class="product-title">
+                                                    <a href="">Washed Boyfriend Jeans</a>
+                                                </h2>
+                                                <span class="star-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </span> 
+                                                
+                                                <div class="price-wrapper">
+                                                    <span class="price">$25.33</span>
+                                                    <span class="clearfix"></span>
+                                                </div>
+
+                                                <p class="mt-10 hidden-grid">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                                </p>
+
+                                                <a href="#" class="btn btn-b-base-4 mt-20">
+                                                    <span>Add to cart</span>
+                                                </a>            
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-6 grid-list-item">
+                                        <div class="block product style-2">
+                                            <figure>
+                                                <img src="images/prv/shop/fashion/img-11.jpg" class="img-responsive img-center" alt="">
+                                            </figure>
+                                            <div class="block-content text-center">
+                                                <h2 class="product-title">
+                                                    <a href="">Long Sleeve Spliced</a>
+                                                </h2>
+                                                <span class="star-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </span> 
+                                                
+                                                <div class="price-wrapper">
+                                                    <span class="price">$25.33</span>
+                                                    <span class="clearfix"></span>
+                                                </div>
+
+                                                <p class="mt-10 hidden-grid">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                                </p>
+
+                                                <a href="#" class="btn btn-b-base-4 mt-20">
+                                                    <span>Add to cart</span>
+                                                </a>            
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-6 grid-list-item">
+                                        <div class="block product style-2">
+                                            <figure>
+                                                <img src="images/prv/shop/fashion/img-12.jpg" class="img-responsive img-center" alt="">
+                                            </figure>
+                                            <div class="block-content text-center">
+                                                <h2 class="product-title">
+                                                    <a href="">Pink Wrap Crop Top</a>
+                                                </h2>
+                                                <span class="star-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </span> 
+                                                
+                                                <div class="price-wrapper">
+                                                    <span class="price">$25.33</span>
+                                                    <span class="clearfix"></span>
+                                                </div>
+
+                                                <p class="mt-10 hidden-grid">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                                </p>
+
+                                                <a href="#" class="btn btn-b-base-4 mt-20">
+                                                    <span>Add to cart</span>
+                                                </a>            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- PAGINATION -->
+                                <div class="pt-15 bt text-center">
+                                    <ul class="pagination style-2">
+                                        <li class="disabled"><a href="#">«</a></li>
+                                        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#">»</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CALL TO ACTION -->
+                <section class="bg-base-1">
+                    <div class="cta-wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12 text-center">
+                                    <h2 class="heading-lg">
+                                        <strong>New collection.</strong> Sale up to 50% on all items!
+                                    </h2>
+
+                                    <div class="mt-20">
+                                        <a href="#" class="btn btn-lg btn-base-4">
+                                            See all items
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OTHER PRODUCTS - LIST -->
+                <section class="slice sct-color-1">
+                    <div class="container">
+                                                <div class="row">
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h2 class="text-caps"><strong>Featured</strong> products</h2>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul class="featured">
+                                            <li>
+                                                <div class="featured-item">
+                                                    <div class="featured-item-img img-small">
+                                                        <img src="images/prv/shop/fashion/img-thumb-1.jpg" alt="" class="pull-left">
+                                                    </div>
+                                                    <div class="feature-item-info">
+                                                        <h3 class="item-title">
+                                                            <a href="#">Long Sleeve Spliced</a>
+                                                        </h3>
+                                                        <div class="rating">
+                                                            <span class="star voted" rel="1"></span>
+                                                            <span class="star voted" rel="2"></span>
+                                                            <span class="star voted" rel="3"></span>
+                                                            <span class="star" rel="4"></span>
+                                                            <span class="star" rel="5"></span>
+                                                        </div>
+                                                        <div class="price-wr">
+                                                            <span class="price discount">$30.99</span>
+                                                            <span class="price">$23.89</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="featured-item">
+                                                    <div class="featured-item-img img-small">
+                                                        <img src="images/prv/shop/fashion/img-thumb-2.jpg" alt="" class="pull-left">
+                                                    </div>
+                                                    <div class="feature-item-info">
+                                                        <h3 class="title">
+                                                            <a href="#">Pink Wrap Crop Top</a>
+                                                        </h3>
+                                                        <div class="rating">
+                                                            <span class="star voted" rel="1"></span>
+                                                            <span class="star voted" rel="2"></span>
+                                                            <span class="star voted" rel="3"></span>
+                                                            <span class="star" rel="4"></span>
+                                                            <span class="star" rel="5"></span>
+                                                        </div>
+                                                        <div class="price-wr">
+                                                            <span class="price discount">$40.99</span>
+                                                            <span class="price">$33.89</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="featured-item">
+                                                    <div class="featured-item-img img-small">
+                                                        <img src="images/prv/shop/fashion/img-thumb-3.jpg" alt="" class="pull-left">
+                                                    </div>
+                                                    <div class="feature-item-info">
+                                                        <h3 class="title">
+                                                            <a href="#">Off Shoulder Lace-Up Sweater</a>
+                                                        </h3>
+                                                        <div class="rating">
+                                                            <span class="star voted" rel="1"></span>
+                                                            <span class="star voted" rel="2"></span>
+                                                            <span class="star voted" rel="3"></span>
+                                                            <span class="star" rel="4"></span>
+                                                            <span class="star" rel="5"></span>
+                                                        </div>
+                                                        <div class="price-wr">
+                                                            <span class="price discount">$50.99</span>
+                                                            <span class="price">$43.89</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h2 class="text-caps"><strong>Popular</strong> products</h2>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul class="featured">
+                                            <li>
+                                                <div class="featured-item">
+                                                    <div class="featured-item-img img-small">
+                                                        <img src="images/prv/shop/fashion/img-thumb-4.jpg" alt="" class="pull-left">
+                                                    </div>
+                                                    <div class="feature-item-info">
+                                                        <h3 class="item-title">
+                                                            <a href="#">Asymmetric Two-Piece Dress</a>
+                                                        </h3>
+                                                        <div class="rating">
+                                                            <span class="star voted" rel="1"></span>
+                                                            <span class="star voted" rel="2"></span>
+                                                            <span class="star voted" rel="3"></span>
+                                                            <span class="star" rel="4"></span>
+                                                            <span class="star" rel="5"></span>
+                                                        </div>
+                                                        <div class="price-wr">
+                                                            <span class="price discount">$300.99</span>
+                                                            <span class="price">$233.89</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="featured-item">
+                                                    <div class="featured-item-img img-small">
+                                                        <img src="images/prv/shop/fashion/img-thumb-5.jpg" alt="" class="pull-left">
+                                                    </div>
+                                                    <div class="feature-item-info">
+                                                        <h3 class="title">
+                                                            <a href="#">Grey Button-Front Tee</a>
+                                                        </h3>
+                                                        <div class="rating">
+                                                            <span class="star voted" rel="1"></span>
+                                                            <span class="star voted" rel="2"></span>
+                                                            <span class="star voted" rel="3"></span>
+                                                            <span class="star" rel="4"></span>
+                                                            <span class="star" rel="5"></span>
+                                                        </div>
+                                                        <div class="price-wr">
+                                                            <span class="price discount">$300.99</span>
+                                                            <span class="price">$233.89</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="featured-item">
+                                                    <div class="featured-item-img img-small">
+                                                        <img src="images/prv/shop/fashion/img-thumb-6.jpg" alt="" class="pull-left">
+                                                    </div>
+                                                    <div class="feature-item-info">
+                                                        <h3 class="title">
+                                                            <a href="#">Cut Out Crochet Top</a>
+                                                        </h3>
+                                                        <div class="rating">
+                                                            <span class="star voted" rel="1"></span>
+                                                            <span class="star voted" rel="2"></span>
+                                                            <span class="star voted" rel="3"></span>
+                                                            <span class="star" rel="4"></span>
+                                                            <span class="star" rel="5"></span>
+                                                        </div>
+                                                        <div class="price-wr">
+                                                            <span class="price discount">$300.99</span>
+                                                            <span class="price">$233.89</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h2 class="text-caps"><strong>New</strong> arrivals</h2>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul class="featured">
+                                            <li>
+                                                <div class="featured-item">
+                                                    <div class="featured-item-img img-small">
+                                                        <img src="images/prv/shop/fashion/img-thumb-1.jpg" alt="" class="pull-left">
+                                                    </div>
+                                                    <div class="feature-item-info">
+                                                        <h3 class="item-title">
+                                                            <a href="#">Rose Top</a>
+                                                        </h3>
+                                                        <div class="rating">
+                                                            <span class="star voted" rel="1"></span>
+                                                            <span class="star voted" rel="2"></span>
+                                                            <span class="star voted" rel="3"></span>
+                                                            <span class="star" rel="4"></span>
+                                                            <span class="star" rel="5"></span>
+                                                        </div>
+                                                        <div class="price-wr">
+                                                            <span class="price">$48.89</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="featured-item">
+                                                    <div class="featured-item-img img-small">
+                                                        <img src="images/prv/shop/fashion/img-thumb-3.jpg" alt="" class="pull-left">
+                                                    </div>
+                                                    <div class="feature-item-info">
+                                                        <h3 class="title">
+                                                            <a href="#">Polka Dot Bodycon Dress</a>
+                                                        </h3>
+                                                        <div class="rating">
+                                                            <span class="star voted" rel="1"></span>
+                                                            <span class="star voted" rel="2"></span>
+                                                            <span class="star voted" rel="3"></span>
+                                                            <span class="star" rel="4"></span>
+                                                            <span class="star" rel="5"></span>
+                                                        </div>
+                                                        <div class="price-wr">
+                                                            <span class="price">$33.89</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="featured-item">
+                                                    <div class="featured-item-img img-small">
+                                                        <img src="images/prv/shop/fashion/img-thumb-2.jpg" alt="" class="pull-left">
+                                                    </div>
+                                                    <div class="feature-item-info">
+                                                        <h3 class="title">
+                                                            <a href="#">Open-Front Duster Coat</a>
+                                                        </h3>
+                                                        <div class="rating">
+                                                            <span class="star voted" rel="1"></span>
+                                                            <span class="star voted" rel="2"></span>
+                                                            <span class="star voted" rel="3"></span>
+                                                            <span class="star" rel="4"></span>
+                                                            <span class="star" rel="5"></span>
+                                                        </div>
+                                                        <div class="price-wr">
+                                                            <span class="price">$23.89</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                    </div>
+                </section>
+
+                <!-- FOOTER -->
+                <footer class="footer style-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="col">
+                    <img src="images/logo/logo-1-a.png">
+
+                    <p class="no-margin">
+                    Easy to work with, easy to customize and unlimited ideas that can be implemented in your project are just a few attributes that recommend Visio to be one of the most complete template.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-2">
+                <div class="col">
+                   <h4>Help and Support</h4>
+                   <ul>
+                        <li><a href="" title="Help center">Help center</a></li>
+                        <li><a href="" title="Discussions">Discussions</a></li>
+                        <li><a href="" title="Contact support">Contact support</a></li>
+                        <li><a href="" title="Blog">Blog</a></li>
+                        <li><a href="" title="Jobs">FAQ</a></li>
+                    </ul>
+                 </div>
+            </div>
+            
+            <div class="col-md-2">
+                <div class="col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="" title="About">About</a></li>
+                        <li><a href="" title="License informations">License informations</a></li>
+                        <li><a href="" title="Terms">Terms</a></li>
+                        <li><a href="" title="Jobs">Careers</a></li>
+                        <li><a href="" title="Jobs">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-md-2">
+                <div class="col">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="" title="About">About</a></li>
+                        <li><a href="" title="License informations">License informations</a></li>
+                        <li><a href="" title="Terms">Terms</a></li>
+                        <li><a href="" title="Jobs">Jobs</a></li>
+                        <li><a href="" title="Jobs">Jobs</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="col">
+                    <h4>Stay updated</h4>
+                    <p>Sign up if you would like to receive the newest updates and other free goods.</p>
+                    <form class="form-horizontal form-dark">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Your email address">
+                            <span class="input-group-btn">
+                                <button class="btn btn-base-1" type="button">Go</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="copyright style-1">
+    <div class="container">   
+            <div class="div-table v-middle">
+                <div class="cell">
+                    All rights reserved. Copyright &copy; 2015 <span class="company-rights">Devisio</span>
+                </div>
+                <div class="cell">
+                    <div class="social-media style-2 v4 text-right">
+                        <a href="#" class="facebook">
+                            <i class="fa fa-facebook "></i>
+                        </a>
+                        <a href="#" class="google-plus">
+                            <i class="fa fa-google-plus "></i>
+                        </a>
+                        <a href="#" class="pinterest">
+                            <i class="fa fa-pinterest "></i>
+                        </a>
+                        <a href="#" class="twitter">
+                            <i class="fa fa-twitter "></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>            </div>
+        </div>
+    </div><!-- END: st-pusher -->
+</div><!-- END: body-wrap -->
+
+<!-- SCRIPTS -->
+
+<!-- Required JSs -->
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+
+<!-- Essential JSs -->
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap/js/tooltip.js"></script>
+<script src="js/bootstrap-extensions/bootstrap-dropdownhover.js"></script>
+<script src="js/bootstrap-extensions/bootstrap.slide-menu.js"></script>
+<script src="js/bootstrap-extensions/bootstrap-validator.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/jquery.mousewheel-3.0.6.pack.js"></script>
+<script src="js/jquery.easing.js"></script>
+<script src="js/classie.js"></script>
+
+<!-- Assets - Required -->
+<script src="assets/parallax/parallax.min.js"></script>
+<script src="assets/page-scroller/jquery.ui.totop.min.js"></script>
+<script src="assets/waypoints/waypoints.min.js"></script>
+
+<!-- Assets - Optional (keep what you need) -->
+<!-- Sidebar transitions -->
+<script src="js/sidebar-transitions/sidebar-transitions.js"></script>
+<!-- Smooth scroll -->
+<script src="js/jquery.smoothscroll.js"></script>
+<!-- Media gallery view -->
+<script src="assets/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Animated counter -->
+<script src="assets/milestone-counter/jquery.countTo.js"></script>
+<!-- Animated pie charts -->
+<script src="assets/easy-pie-chart/js/jquery.easypiechart.js"></script>
+<!-- Owl carousel - Touch enabled carousel -->
+<script src="assets/owl-carousel/js/owl.carousel.min.js"></script>
+
+<!-- Cross-browser responsivity scripts -->
+<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+<![endif]-->
+
+<!-- Google Analitycs JS -->
+<script type="text/javascript" src="js/dvs.ga.js"></script>
+
+
+
+
+<!-- Revolutions slider -->
+<script type="text/javascript" src="assets/revolution-slider/js/jquery.themepunch.plugins.min.js"></script>
+<script type="text/javascript" src="assets/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery('.tp-banner').revolution({
+            delay:9000,
+            startwidth:1170,
+            startheight:260,
+            hideThumbs:10,
+
+            onHoverStop:"on",
+
+            thumbWidth:100,
+            thumbHeight:50,
+            thumbAmount:3,
+
+            navigationType:"bullet",
+            navigationArrows:"none",
+            navigationStyle:"round",
+
+            hideTimerBar: "on",
+
+            fullScreen:"off",
+            fullScreenOffsetContainer:".navbar-main",
+        });
+    });
+</script>
+
+<!-- App JS -->
+<script src="js/dvs.app.js"></script>
+
+</body>
+</html> 

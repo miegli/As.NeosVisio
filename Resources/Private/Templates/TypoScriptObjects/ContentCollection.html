@@ -1,0 +1,16 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+<section id="{element.properties.uriPathSegment}" data-target="{element.properties.uriPathSegment}" class="sct-color-2">
+    <div class="row">
+          <div class="col-xs-12">
+            <div class="one-page-slice">
+                <div class="container">
+                    <div class="row">
+                        <ts:render path="renderer" context="{node: columnContent}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

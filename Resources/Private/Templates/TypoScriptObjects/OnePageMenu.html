@@ -1,0 +1,16 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<f:render section="itemList" arguments="{items: items}" />
+
+<f:section name="itemList">
+
+
+            <ul class="navbar-nav">
+                <f:for each="{items}" as="item">
+                    <li>
+                        <a href="#{item.node.properties.uriPathSegment}">{item.label}</a>
+                    </li>
+                </f:for>
+            </ul>
+
+
+</f:section>

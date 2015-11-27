@@ -1,0 +1,9 @@
+prototype(TYPO3.TypoScript:Template) {
+
+    layout = ${q(node).property('subpageLayout') != null && q(node).property('subpageLayout') != '' ? q(node).property('subpageLayout') : q(node).closest('[subpageLayout!=""]').property('subpageLayout')}
+    templatePath = ${'resource://AS.NeosVisio/Private/Templates/Page/Template' +  this.layout +'.html'}
+}
+
+prototype(AS.Visio:Template) < prototype(TYPO3.TypoScript:Template) {
+
+}

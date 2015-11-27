@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace m=TYPO3\Media\ViewHelpers}
+<html>
+<head>
+
+    <meta charset="utf-8">
+
+    <f:section name="stylesheets">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, follow">
+        <title>Visio - Responsive Website Template</title>
+
+
+        <!-- Page related styles -->
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'visio/assets/layerslider/css/layerslider.css', package: 'AS.NeosVisio')}"
+              type="text/css">
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'visio/assets/cubeportfolio/css/cubeportfolio.min.css', package: 'AS.NeosVisio')}">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, follow">
+        <title>Visio - Responsive Website Template</title>
+
+        <!-- BOOTSTRAP -->
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'visio/assets/bootstrap/css/bootstrap.min.css', package: 'AS.NeosVisio')}"
+              type="text/css">
+
+        <!-- ANIMATE -->
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'visio/assets/animate/animate.min.css', package: 'AS.NeosVisio')}"
+              type="text/css">
+
+        <!-- WEB FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+        <!-- ICON FONTS -->
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'visio/fonts/font-awesome/css/font-awesome.min.css', package: 'AS.NeosVisio')}"
+              type="text/css">
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'visio/fonts/ionicons/css/ionicons.min.css', package: 'AS.NeosVisio')}"
+              type="text/css">
+
+        <!-- GLOBAL STYLE -->
+        <link id="stylesheetGlobal" type="text/css"
+              href="{f:uri.resource(path: 'visio/css/global-style-blue.min.css', package: 'AS.NeosVisio')}"
+              rel="stylesheet" media="screen">
+        <!-- CUSTOM STYLE -- Remove if not necessary -->
+        <link type="text/css" href="{f:uri.resource(path: 'visio/css/custom-style.css', package: 'AS.NeosVisio')}"
+              rel="stylesheet">
+
+
+        <!-- ASSETS -->
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'visio/assets/owl-carousel/css/owl.carousel.css', package: 'AS.NeosVisio')}"
+              type="text/css">
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'visio/assets/owl-carousel/css/owl.theme.css', package: 'AS.NeosVisio')}"
+              type="text/css">
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'visio/assets/fancybox/jquery.fancybox.css', package: 'AS.NeosVisio')}"
+              type="text/css" media="screen">
+
+        <!-- FAVICON -->
+        <link href="{f:uri.resource(path: 'visio/images/favicon.png', package: 'AS.NeosVisio')}" rel="icon"
+              type="image/png">
+
+
+        <!-- FAVICON -->
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'css/custom.css', package: 'AS.NeosVisio')}">
+
+    </f:section>
+    <f:section name="headScripts">
+        <!-- Put your scripts inclusions for the head here, they will be included in your website by TypoScript -->
+    </f:section>
+
+</head>
+<body>
+<f:section name="body">
+
+    <!-- MAIN WRAPPER -->
+    <div class="body-wrap body-wrap body-boxed">
+        <div id="st-container" class="st-container">
+            <nav class="st-menu st-effect-1" id="menu-1">
+                <h3 class="st-menu-title">Menu</h3>
+
+                <div class="nav">
+                    <ul>
+                        {parts.mainMenu -> f:format.raw()}
+                    </ul>
+                </div>
+
+                <h3 class="st-menu-title">Quick links</h3>
+
+                <div class="nav">
+                    <ul>
+                        <li><a href="#">Silken <span>Truth</span></a></li>
+                        <li><a href="#">The <span>Cold Ice</span></a></li>
+                        <li><a href="#">Soaring of <span>Stars</span></a></li>
+                    </ul>
+                </div>
+
+                <h3 class="st-menu-title">Socia media</h3>
+
+                <div class="social-media style-1 v2">
+                    <a href="#" class="facebook">
+                        <i class="fa fa-facebook "></i>
+                    </a>
+                    <a href="#" class="google-plus">
+                        <i class="fa fa-google-plus "></i>
+                    </a>
+                    <a href="#" class="pinterest">
+                        <i class="fa fa-pinterest "></i>
+                    </a>
+                    <a href="#" class="twitter">
+                        <i class="fa fa-twitter "></i>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- SLIDER -->
+            <div class="st-pusher">
+                <div class="st-content">
+                    <div class="st-content-inner">
+
+                        <!-- MAIN NAV -->
+                        <div class="header" id="header">
+                            <!-- NAVBAR -->
+                            <nav class="navbar navbar-main navbar-one-page navbar-shadow" role="navigation"
+                                 id="slide-nav">
+                                <div class="container relative image-header" <f:if condition="{content.node.0.properties.image}"><f:then> style="background-image:url('{m:uri.image(asset: content.node.0.properties.image,allowCropping:false, height:480)}');"</f:then><f:else></f:else></f:if>>
+                                    <div>
+                                        <!-- LOGO -->
+                                        <a class="navbar-logo" href="/">
+                                            <img id="logoOne"
+                                                 src="{f:uri.resource(path: 'images/logo.png', package: 'AS.NeosVisio')}"
+                                                 class="hide">
+                                            <img id="logoTwo"
+                                                 src="{f:uri.resource(path: 'images/logo.png', package: 'AS.NeosVisio')}"
+                                                  >
+                                        </a>
+
+                                        <!-- NAVBAR TOGGLE -->
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                                data-target="#navbar-collapse">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+
+
+
+                                    </div>
+
+                                    <div id="slidemenu" class="hidden-lg">
+                                        <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
+                                            {parts.mainMenu -> f:format.raw()}
+                                        </ul>
+                                    </div>
+
+                                    <section id="subNavigation" class="hidden-xs hidden-sm hidden-md">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <!-- Navbar links -->
+                                            {parts.onePageMenu -> f:format.raw()}
+                                        </ul>
+                                    </section>
+
+
+                                </div>
+
+                            </nav>
+
+
+                        </div>
+
+                        <!-- FULL PAGE - GLOBAL SEARCH -->
+                        <section id="sctGlobalSearch" class="global-search-full-page">
+                            <div class="close-search click-trigger" data-trigger-button="#btnGlobalSearch"
+                                 title="Close Search"></div>
+                            <form class="form-horizontal form-global-search float-wrapper" role="form">
+                                <div class="form-group col-sm-9">
+                                    <input type="text" class="search-input" placeholder="Type here ...">
+                                </div>
+                                <div class="col-sm-3">
+                                    <button type="submit" class="btn btn-6 btn-6b btn-base-4 btn-nobg">Search</button>
+                                </div>
+                            </form>
+                        </section>
+
+
+                        <section id="leftNavigation" class="hidden-xs hidden-sm">
+                            <ul>
+                                {parts.mainMenu -> f:format.raw()}
+                            </ul>
+                        </section>
+
+
+
+
+
+                        <div class="main-content-wrapper">
+                            {content.main -> f:format.raw()}
+                            <div class="slice-wrapper">
+                                {content.itemRenderer -> f:format.raw()}
+                            </div>
+                        </div>
+
+                        <!-- FOOTER -->
+                        <footer class="footer style-2">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+
+                                            <p>© Alimentana - Zentralstrasse 10 - CH-6030 Ebikon - Telefon +41 41 445 06 06 - Fax +41 41 445 06 66 - info@alimentana.ch</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:section>
+<f:section name="bodyScripts">
+
+    <!-- SCRIPTS -->
+
+    <!-- Required JSs -->
+
+
+    <script src="{f:uri.resource(path: 'visio/js/jquery.js', package: 'AS.NeosVisio')}"></script>
+    <script src="{f:uri.resource(path: 'visio/js/jquery-ui.min.js', package: 'AS.NeosVisio')}"></script>
+
+    <!-- Essential JSs -->
+    <script src="{f:uri.resource(path: 'visio/assets/bootstrap/js/bootstrap.min.js', package: 'AS.NeosVisio')}"></script>
+    <script src="{f:uri.resource(path: 'visio/assets/bootstrap/js/tooltip.js', package: 'AS.NeosVisio')}"></script>
+    <script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap-dropdownhover.js', package: 'AS.NeosVisio')}"></script>
+    <script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap.slide-menu.js', package: 'AS.NeosVisio')}"></script>
+    <script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap-validator.js', package: 'AS.NeosVisio')}"></script>
+    <script src="{f:uri.resource(path: 'visio/js/modernizr.custom.js', package: 'AS.NeosVisio')}"></script>
+    <script src="{f:uri.resource(path: 'visio/js/jquery.mousewheel-3.0.6.pack.js', package: 'AS.NeosVisio')}"></script>
+    <script src="{f:uri.resource(path: 'visio/js/jquery.easing.js', package: 'AS.NeosVisio')}"></script>
+    <script src="{f:uri.resource(path: 'visio/js/classie.js', package: 'AS.NeosVisio')}"></script>
+
+    <!-- Assets - Required -->
+    <script src="{f:uri.resource(path: 'visio/assets/parallax/parallax.min.js', package: 'AS.NeosVisio')}"></script>
+    <script src="{f:uri.resource(path: 'visio/assets/page-scroller/jquery.ui.totop.min.js', package: 'AS.NeosVisio')}"></script>
+    <script src="{f:uri.resource(path: 'visio/assets/waypoints/waypoints.min.js', package: 'AS.NeosVisio')}"></script>
+
+    <!-- Assets - Optional (keep what you need) -->
+    <!-- Sidebar transitions -->
+    <script src="{f:uri.resource(path: 'visio/js/sidebar-transitions/sidebar-transitions.js', package: 'AS.NeosVisio')}"></script>
+    <!-- Smooth scroll -->
+    <script src="{f:uri.resource(path: 'visio/js/jquery.smoothscroll.js', package: 'AS.NeosVisio')}"></script>
+    <!-- Media gallery view -->
+    <script src="{f:uri.resource(path: 'visio/assets/fancybox/jquery.fancybox.pack.js', package: 'AS.NeosVisio')}"></script>
+    <!-- Animated counter -->
+    <script src="{f:uri.resource(path: 'visio/assets/milestone-counter/jquery.countTo.js', package: 'AS.NeosVisio')}"></script>
+    <!-- Animated pie charts -->
+    <script src="{f:uri.resource(path: 'visio/assets/easy-pie-chart/js/jquery.easypiechart.js', package: 'AS.NeosVisio')}"></script>
+    <!-- Owl carousel - Touch enabled carousel -->
+    <script src="{f:uri.resource(path: 'visio/assets/owl-carousel/js/owl.carousel.min.js', package: 'AS.NeosVisio')}"></script>
+
+    <!-- Cross-browser responsivity scripts -->
+    <!--[if lt IE 9]>
+    <script src="{f:uri.resource(path: 'visio/js/html5shiv.js', package: 'AS.NeosVisio')}"></script>
+    <script src="{f:uri.resource(path: 'visio/js/respond.min.js', package: 'AS.NeosVisio')}"></script>
+    <![endif]-->
+
+    <!-- Google Analitycs JS -->
+    <script type="text/javascript"
+            src="{f:uri.resource(path: 'visio/js/dvs.ga.js', package: 'AS.NeosVisio')}"></script>
+
+
+    <!-- Cube Portfolio -->
+    <script src="{f:uri.resource(path: 'visio/assets/cubeportfolio/js/jquery.cubeportfolio.min.js', package: 'AS.NeosVisio')}"></script>
+    <script src="{f:uri.resource(path: 'visio/assets/cubeportfolio/js/jquery.cubeportfolio-one-page-1.js', package: 'AS.NeosVisio')}"></script>
+
+    <!-- Google Maps -->
+
+    <!-- Layer slider -->
+    <script src="{f:uri.resource(path: 'visio/assets/layerslider/js/greensock.js', package: 'AS.NeosVisio')}"
+            type="text/javascript"></script>
+    <script src="{f:uri.resource(path: 'visio/assets/layerslider/js/layerslider.transitions.js', package: 'AS.NeosVisio')}"
+            type="text/javascript"></script>
+    <script src="{f:uri.resource(path: 'visio/assets/layerslider/js/layerslider.kreaturamedia.jquery.js', package: 'AS.NeosVisio')}"
+            type="text/javascript"></script>
+
+    <!-- Initializing scripts -->
+    <script>
+        // Layer Slider
+        jQuery("#layerslider").layerSlider({
+            pauseOnHover: true,
+            autoPlayVideos: false,
+            skinsPath: '/_Resources/Static/Packages/AS.NeosVisio/visio/assets/layerslider/skins/',
+            responsive: false,
+            responsiveUnder: 1280,
+            layersContainer: 1280,
+            skin: 'borderlessdark3d',
+            hoverPrevNext: true,
+        });
+    </script>
+
+    <!-- JS FOR ONE PAGE LAYOUT ONLY -->
+    <script src="{f:uri.resource(path: 'visio/js/jquery.sticky-kit.min.js', package: 'AS.NeosVisio')}"></script>
+    <script src="{f:uri.resource(path: 'visio/js/dvs.one-page.app.js', package: 'AS.NeosVisio')}"></script>
+
+    <!-- App JS -->
+    <script src="{f:uri.resource(path: 'visio/js/dvs.app.js', package: 'AS.NeosVisio')}"></script>
+    <script src="{f:uri.resource(path: 'js/app.js', package: 'AS.NeosVisio')}"></script>
+
+</f:section>
+</body>
+</html>

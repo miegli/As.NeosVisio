@@ -1,0 +1,6 @@
+prototype(AS.Visio:Page) < prototype(TYPO3.Neos:Page) {
+    body.templatePath = ${'resource://AS.NeosVisio/Private/Templates/Page/Template' + q(node).property('subpageLayout')+'.html'}
+    # Your further page configuration here
+}
+
+

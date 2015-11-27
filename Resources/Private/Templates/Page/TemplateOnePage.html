@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <f:section name="stylesheets">
+        <!-- Bootstrap Core CSS -->
+    </f:section>
+    <f:section name="headScripts">
+        <!-- Put your scripts inclusions for the head here, they will be included in your website by TypoScript -->
+    </f:section>
+</head>
+<body>
+
+<f:section name="body">
+    <f:debug>OnePage</f:debug>
+    <f:debug>{node.properties.layout}</f:debug>
+    <f:debug>{node.nodetype.name}</f:debug>
+    <f:debug>{layout}</f:debug>
+</f:section>
+
+<f:section name="bodyScripts">
+
+    <!-- JavaScripts placed at the end of the document so the pages load faster -->
+    <!--<script src="{f:uri.resource(path: 'Template/assets/js/jquery.min.js', package: 'AS.NeosVisio')}"></script>-->
+
+</f:section>
+</body>
+</html>

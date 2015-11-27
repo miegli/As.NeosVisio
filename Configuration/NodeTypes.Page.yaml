@@ -1,0 +1,45 @@
+'TYPO3.Neos.NodeTypes:Page':
+  childNodes:
+    'main':
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': TRUE
+          'AS.NeosVisio:OnePage': TRUE
+          'TYPO3.Neos.NodeTypes:Text': TRUE
+  ui:
+    inspector:
+      groups:
+        image:
+          label: 'Bild'
+          position: 200
+      settings:
+        image:
+          label: 'Einstellungen'
+          position: 300
+  properties:
+    image:
+      type: 'TYPO3\Media\Domain\Model\ImageInterface'
+      ui:
+        label: 'Bild'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'
+          position: 50
+          editorOptions:
+            crop:
+              aspectRatio:
+                locked:
+                  width: 2
+                  height: 1
+    subpageLayout:
+      defaultValue: 'Default'
+      ui:
+        inspector:
+          group: layout
+          editorOptions:
+            values:
+              'Default':
+                label: 'Default'
+              'OnePage':
+                label: 'One Page'

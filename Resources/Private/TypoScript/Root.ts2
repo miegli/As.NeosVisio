@@ -1,0 +1,45 @@
+namespace: Site = AS.NeosVisio
+
+include: NodeTypes/*
+
+/**
+* Root TypoScript template for the neos visio site
+*/
+
+page = Page {
+
+
+    head {
+        stylesheets.site = AS.Visio:Template {
+           sectionName = 'stylesheets'
+        }
+
+        javascripts.site = AS.Visio:Template {
+            sectionName = 'headScripts'
+        }
+    }
+
+    body {
+
+        sectionName = 'body'
+        javascripts.site = TYPO3.TypoScript:Template {
+            sectionName = 'bodyScripts'
+        }
+
+        parts {
+            Variable = ${q(node).property('subpageLayout')}
+        }
+
+
+
+    }
+}
+
+/**
+* Layout definitions
+*/
+
+Default < page
+OnePage < page
+
+

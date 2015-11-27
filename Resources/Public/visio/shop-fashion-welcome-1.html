@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>  
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Visio - Responsive Website Template</title>
+
+<!-- BOOTSTRAP -->
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
+
+<!-- ANIMATE -->
+<link rel="stylesheet" href="assets/animate/animate.min.css" type="text/css">
+
+<!-- WEB FONTS -->
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+<!-- ICON FONTS -->
+<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" type="text/css"> 
+<link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css" type="text/css"> 
+
+<!-- GLOBAL STYLE -->
+<link id="stylesheetGlobal" type="text/css" href="css/global-style-spray-gray.min.css" rel="stylesheet" media="screen">
+		<!-- CUSTOM STYLE -- Remove if not necessary -->
+<link type="text/css" href="css/custom-style.css" rel="stylesheet">
+
+
+
+<!-- ASSETS -->
+<link rel="stylesheet" href="assets/owl-carousel/css/owl.carousel.css" type="text/css">
+<link rel="stylesheet" href="assets/owl-carousel/css/owl.theme.css" type="text/css">
+<link rel="stylesheet" href="assets/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen"> 
+
+<!-- FAVICON -->
+<link href="images/favicon.png" rel="icon" type="image/png">
+</head>
+<body>
+
+
+<!-- SIGN IN/UP MODAL -->
+<div class="modal fade" id="mdlUserAccount" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <ul class="nav nav-pills style-2 nav-justified" role="tablist">
+                <li role="presentation" class="active"><a href="#tab-1" aria-controls="tab-1" role="tab" data-toggle="pill">Sign in</a></li>
+                <li role="presentation"><a href="#tab-2" aria-controls="tab-2" role="tab" data-toggle="pill">Create account</a></li>
+            </ul>
+            <div class="modal-body">
+                <div class="tab-content">
+                    <!-- Sign in - Tab 1 -->
+                    <div role="tabpanel" class="tab-pane active" id="tab-1">
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-xs-offset-1 col-xs-10">                                    
+                                    <div class="text-center">
+                                        <h4>Login with your site account</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <form data-toggle="validator" role="form" class="mt-20">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label sr-only" for="inputEmail">Email</label>
+                                    <input type="email" class="form-control input-lg" id="inputEmail" placeholder="Email" required>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label class="control-label sr-only" for="inputPassword">Password</label>
+                                    <input type="password" class="form-control input-lg" id="inputPassword" placeholder="Password" required>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="chkRememberMe">
+                                    <label for="chkRememberMe">Remember me</label>
+                                </div>
+
+                                <button type="submit" class="btn btn-lg btn-block btn-base-1 mt-20">Sign in</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Sign up - Tab 2 -->
+                    <div role="tabpanel" class="tab-pane" id="tab-2">
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-xs-offset-1 col-xs-10">                                    
+                                    <div class="text-center">
+                                        <h4>Sign up. It's free and super easy</h4>
+                                        <small>No credit card are needed</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <form data-toggle="validator" role="form" class="mt-20">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label sr-only" for="inputRegisterEmail">Email</label>
+                                    <input type="email" class="form-control input-lg" id="inputRegisterEmail" placeholder="Email" required>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label class="control-label sr-only" for="inputRegisterPassword">Password</label>
+                                    <input type="password" class="form-control input-lg" id="inputRegisterPassword" placeholder="Password" required data-minlength="8">
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label class="control-label sr-only" for="inputRegisterPasswordConfirm">Confirm Password</label>
+                                    <input type="password" class="form-control input-lg" id="inputRegisterPasswordConfirm" placeholder="Confirm Password" required data-match="#inputRegisterPassword">
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <button type="submit" class="btn btn-lg btn-block btn-base-1 mt-20">Sign up</button>
+                                <small>By clicking "Sign up" you agree to our terms and conditions</small>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Forgot password - Tab 3 -->
+                    <div role="tabpanel" class="tab-pane" id="tab-3">
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-xs-offset-1 col-xs-10">                                    
+                                    <div class="text-center">
+                                        <h4>Enter your email and we will help you to recover <br> your password</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <form data-toggle="validator" role="form" class="mt-20">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label sr-only" for="inputForgotEmail">Email</label>
+                                    <input type="email" class="form-control input-lg" id="inputForgotEmail" placeholder="Email" required>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <button type="submit" class="btn btn-lg btn-block btn-base-1 mb-20">Recover password</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row form-user-links-aux style-1 mt-20">
+            <div class="col-xs-6">
+                <a href="#tab-3" aria-controls="tab-3" role="tab" data-toggle="pill">Forgot your password?</a>
+            </div>
+            <div class="col-xs-6 text-right">
+                <span class="c-text-1">Need an account? </span> 
+                <a href="#tab-2" aria-controls="tab-2" role="tab" data-toggle="pill">Get started</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MAIN WRAPPER -->
+<div class="body-wrap">
+    <section class="slice welcome-page style-1" style="min-height: 400px;">
+        <div class="container">
+
+            <header class="text-center">
+                <div class="logo">
+                    <img src="images/logo/logo-2-b.png">
+                </div>
+                <h4 class="text-caps">Select your country</h4>
+            </header>
+
+            <div class="row mt-40">
+                <div class="col-sm-2 col-xs-6">
+                    <h3 class="heading style-1 text-caps strong-600">Africa</h3>
+                    <ul class="list-style-1 v3 text-caps">
+                        <li><a href="#">Africa</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-2 col-xs-6">
+                    <h3 class="heading style-1 text-caps strong-600">Americas</h3>
+                    <ul class="list-style-1 v3 text-caps">
+                        <li><a href="#">United States</a></li>
+                        <li><a href="#">Latin America</a></li>
+                        <li><a href="#">Argentina</a></li>
+                        <li><a href="#">Brasil</a></li>
+                        <li><a href="#">Canada</a></li>
+                        <li><a href="#">Mexico</a></li>
+                        <li><a href="#">Uruguay</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-2 col-xs-6">
+                    <h3 class="heading style-1 text-caps strong-600">Asia</h3>
+                    <ul class="list-style-1 v3 text-caps">
+                        <li><a href="#">Australia</a></li>
+                        <li><a href="#">India</a></li>
+                        <li><a href="#">Hong Kong</a></li>
+                        <li><a href="#">Indonesia</a></li>
+                        <li><a href="#">Malaysia</a></li>
+                        <li><a href="#">New Zealand</a></li>
+                        <li><a href="#">Philippines</a></li>
+                        <li><a href="#">Singapore</a></li>
+                        <li><a href="#">Thailand</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-2 col-xs-6">
+                    <h3 class="heading style-1 text-caps strong-600">Asia</h3>
+                    <ul class="list-style-1 v3 text-caps">
+                        <li><a href="#">Romania</a></li>
+                        <li><a href="#">United Kingdom</a></li>
+                        <li><a href="#">Belgium</a></li>
+                        <li><a href="#">Denmark</a></li>
+                        <li><a href="#">Deutschland</a></li>
+                        <li><a href="#">Greece</a></li>
+                        <li><a href="#">Spain</a></li>
+                        <li><a href="#">Hungary</a></li>
+                        <li><a href="#">France</a></li>
+                        <li><a href="#">Italia</a></li>
+                        <li><a href="#">Luxemburg</a></li>
+                        <li><a href="#">Norway</a></li>
+                        <li><a href="#">Sweden</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-2 col-xs-6">
+                    <h3 class="heading style-1 text-caps strong-600">Middle East</h3>
+                    <ul class="list-style-1 v3 text-caps">
+                        <li><a href="#">Turkey</a></li>
+                        <li><a href="#">Israel</a></li>
+                        <li><a href="#">Egypt</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>    
+</div><!-- END: body-wrap -->
+
+<!-- SCRIPTS -->
+
+<!-- Required JSs -->
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+
+<!-- Essential JSs -->
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap/js/tooltip.js"></script>
+<script src="js/bootstrap-extensions/bootstrap-dropdownhover.js"></script>
+<script src="js/bootstrap-extensions/bootstrap.slide-menu.js"></script>
+<script src="js/bootstrap-extensions/bootstrap-validator.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/jquery.mousewheel-3.0.6.pack.js"></script>
+<script src="js/jquery.easing.js"></script>
+<script src="js/classie.js"></script>
+
+<!-- Assets - Required -->
+<script src="assets/parallax/parallax.min.js"></script>
+<script src="assets/page-scroller/jquery.ui.totop.min.js"></script>
+<script src="assets/waypoints/waypoints.min.js"></script>
+
+<!-- Assets - Optional (keep what you need) -->
+<!-- Sidebar transitions -->
+<script src="js/sidebar-transitions/sidebar-transitions.js"></script>
+<!-- Smooth scroll -->
+<script src="js/jquery.smoothscroll.js"></script>
+<!-- Media gallery view -->
+<script src="assets/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Animated counter -->
+<script src="assets/milestone-counter/jquery.countTo.js"></script>
+<!-- Animated pie charts -->
+<script src="assets/easy-pie-chart/js/jquery.easypiechart.js"></script>
+<!-- Owl carousel - Touch enabled carousel -->
+<script src="assets/owl-carousel/js/owl.carousel.min.js"></script>
+
+<!-- Cross-browser responsivity scripts -->
+<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+<![endif]-->
+
+<!-- Google Analitycs JS -->
+<script type="text/javascript" src="js/dvs.ga.js"></script>
+
+
+
+
+<!-- App JS -->
+<script src="js/dvs.app.js"></script>
+
+</body>
+</html> 
