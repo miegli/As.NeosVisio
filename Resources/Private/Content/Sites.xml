@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
- <site name="alimentana.ch" state="1" siteResourcesPackageKey="Neoslive.Visio" siteNodeName="company">
+ <site name="neos.live" state="1" siteResourcesPackageKey="Neoslive.Visio" siteNodeName="company">
   <nodes formatVersion="2.0">
    <node nodeName="company">
     <variant workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" sortingIndex="100" version="1" removed="" hidden="" hiddenInIndex="">

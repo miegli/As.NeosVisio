@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <f:section name="stylesheets">
+        <!-- Bootstrap Core CSS -->
+        <!-- BOOTSTRAP -->
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'visio/assets/bootstrap/css/bootstrap.min.css', package: 'Neoslive.Visio')}"
+              type="text/css">
+
+        <!-- ANIMATE -->
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'visio/assets/animate/animate.min.css', package: 'Neoslive.Visio')}"
+              type="text/css">
+
+        <!-- WEB FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+        <!-- ICON FONTS -->
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'visio/fonts/font-awesome/css/font-awesome.min.css', package: 'Neoslive.Visio')}"
+              type="text/css">
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'visio/fonts/ionicons/css/ionicons.min.css', package: 'Neoslive.Visio')}"
+              type="text/css">
+
+        <!-- GLOBAL STYLE -->
+        <link id="stylesheetGlobal" type="text/css"
+              href="{f:uri.resource(path: 'visio/css/global-style-blue.min.css', package: 'Neoslive.Visio')}"
+              rel="stylesheet" media="screen">
+        <!-- CUSTOM STYLE -- Remove if not necessary -->
+        <link type="text/css" href="{f:uri.resource(path: 'visio/css/custom-style.css', package: 'Neoslive.Visio')}"
+              rel="stylesheet">
+
+    </f:section>
+    <f:section name="headScripts">
+        <!-- Put your scripts inclusions for the head here, they will be included in your website by TypoScript -->
+    </f:section>
+</head>
+<body>
+
+<f:section name="body">
+
+
+    <div class="body-wrap">
+
+        <div id="st-container" class="st-container">
+
+            <div class="st-pusher">
+                <div class="st-content">
+                    <div class="st-content-inner">
+                        <!-- HEADER -->
+
+                        <section class="sct-color-1 slice bb">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        {content.main -> f:format.raw()}
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: st-pusher -->
+    </div>
+
+
+</f:section>
+
+<f:section name="bodyScripts">
+
+    <!-- JavaScripts placed at the end of the document so the pages load faster -->
+    <!--<script src="{f:uri.resource(path: 'Template/assets/js/jquery.min.js', package: 'Neoslive.Visio')}"></script>-->
+
+</f:section>
+</body>
+</html>

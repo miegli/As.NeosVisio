@@ -12,7 +12,7 @@ page = Page {
 
     head {
         stylesheets.site = Neoslive.Visio:Template {
-           sectionName = 'stylesheets'
+            sectionName = 'stylesheets'
         }
 
         javascripts.site = Neoslive.Visio:Template {
@@ -31,7 +31,16 @@ page = Page {
             Variable = ${q(node).property('subpageLayout')}
         }
 
+        // These are your content areas, you can define as many as you want, just name them and the nodePath.
+        content {
 
+            // The default content section
+            // Default content section
+            main = PrimaryContent {
+                nodePath = 'main'
+                @if.1 = ${q(node).children('main').get(0)}
+            }
+        }
 
 
 

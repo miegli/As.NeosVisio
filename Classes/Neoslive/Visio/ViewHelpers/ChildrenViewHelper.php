@@ -15,20 +15,34 @@ use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 use TYPO3\Eel\FlowQuery\FlowQuery;
-
 /**
  * ViewHelper to find the closest document node to a given node
  */
 class ChildrenViewHelper extends AbstractViewHelper
 {
+
+    /**
+     * Disable escaping of tag based ViewHelpers so that the rendered tag is not htmlspecialchar'd
+     *
+     * @var boolean
+     */
+    protected $escapeOutput = FALSE;
+
     /**
      * @param NodeInterface $node
+     * @param string $as
      * @return NodeInterface
      */
-    public function render(NodeInterface $node)
+    public function render(NodeInterface $node,$as)
     {
         $flowQuery = new FlowQuery(array($node));
-        return $flowQuery->closest('[instanceof TYPO3.Neos:Document]')->get(0);
+        $query = $flowQuery->children()->get();
+
+        if ($this->templateVariableContainer->exists($as))  $this->templateVariableContainer->remove($as);
+            $this->templateVariableContainer->add($as, $query);
+
+
+        return $this->renderChildren();
     }
 
 }

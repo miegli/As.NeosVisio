@@ -7,7 +7,8 @@ page {
         QuickNavigation = TYPO3.Neos:Content
         QuickNavigation {
             templatePath = 'resource://Neoslive.Visio/Private/Templates/Navigation/QuickNavigation.html'
-            quicklinks = ${q(site).children("[instanceof Neoslive.Visio:Quicklinks]")}
+            quicklinks = ${q(node).children("[instanceof Neoslive.Visio:Quicklinks]").count() > 0 ? q(node).children("[instanceof Neoslive.Visio:Quicklinks]") : q(site).find("[instanceof Neoslive.Visio:Quicklinks]").get()}
+
 
         }
 

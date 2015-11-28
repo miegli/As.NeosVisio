@@ -1,11 +1,3 @@
-##
-# TYPO3.Neos:Document
-#
-
-'TYPO3.Neos:Document':
-  constraints:
-    nodeTypes:
-      'Neoslive.Visio:Quicklinks': TRUE
 
 ##
 # TYPO3.Neos.NodeTypes:Page
@@ -14,7 +6,7 @@
 'TYPO3.Neos.NodeTypes:Page':
   constraints:
     nodeTypes:
-      'Neoslive.Visio:Quicklinks': FALSE
+      'Neoslive.Visio:Quicklinks': TRUE
   childNodes:
     'main':
       type: 'TYPO3.Neos:ContentCollection'
@@ -86,32 +78,13 @@
     inlineEditable: TRUE
 
 
-'TYPO3.Neos.NodeTypes:Text':
-  ui:
-    inspector:
-      groups:
-        settings:
-          label: 'Einstellungen'
-          position: 200
-  properties:
-    'border':
-      type: boolean
-      ui:
-        label: 'Rahmen'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'settings'
-          position: 50
-
-
-
 
 ##
 # Neoslive.Visio:QuickLinks Element
 #
 'Neoslive.Visio:Quicklinks':
   superTypes:
-    'TYPO3.Neos:Document': TRUE
+    'TYPO3.Neos.NodeTypes:Page': TRUE
   constraints:
     nodeTypes:
       'Neoslive.Visio:Quicklinks': FALSE
@@ -127,6 +100,8 @@
           'Neoslive.Visio:OnePage': FALSE
           'TYPO3.Neos.NodeTypes:Page': FALSE
           'TYPO3.Neos:Shortcut': TRUE
+          'TYPO3.Neos.NodeTypes:Text': TRUE
+          'TYPO3.Neos.NodeTypes:ContentCollection': TRUE
           '*': FALSE
   ui:
     label: Quicklinks
