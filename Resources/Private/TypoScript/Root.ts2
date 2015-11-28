@@ -1,6 +1,7 @@
-namespace: Site = AS.NeosVisio
+namespace: Site = Neoslive.Visio
 
 include: NodeTypes/*
+include: Navigation/*
 
 /**
 * Root TypoScript template for the neos visio site
@@ -10,11 +11,11 @@ page = Page {
 
 
     head {
-        stylesheets.site = AS.Visio:Template {
+        stylesheets.site = Neoslive.Visio:Template {
            sectionName = 'stylesheets'
         }
 
-        javascripts.site = AS.Visio:Template {
+        javascripts.site = Neoslive.Visio:Template {
             sectionName = 'headScripts'
         }
     }
@@ -29,6 +30,8 @@ page = Page {
         parts {
             Variable = ${q(node).property('subpageLayout')}
         }
+
+
 
 
 

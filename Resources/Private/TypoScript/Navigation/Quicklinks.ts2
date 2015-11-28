@@ -1,0 +1,16 @@
+page {
+
+    body {
+
+
+
+        QuickNavigation = TYPO3.Neos:Content
+        QuickNavigation {
+            templatePath = 'resource://Neoslive.Visio/Private/Templates/Navigation/QuickNavigation.html'
+            quicklinks = ${q(site).children("[instanceof Neoslive.Visio:Quicklinks]")}
+
+        }
+
+    }
+
+}

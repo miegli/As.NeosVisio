@@ -2,54 +2,10 @@
 # to your pages. You can add as many areas as you like, still only those that are rendered in your TypoScript and
 # Template are visible on your page.
 ---
-#'AS.NeosVisio.NodeTypes:Page':
+#'Neoslive.Visio.NodeTypes:Page':
 #  childNodes:
 #    'sidebar':
 #      type: 'TYPO3.Neos:ContentCollection'
 
-
-
-##
-# AS.NeosVisio:OnePage Element
-#
-'AS.NeosVisio:OnePage':
-  superTypes:
-    'TYPO3.Neos.NodeTypes:Page': TRUE
-  childNodes:
-    main:
-      constraints:
-        nodeTypes:
-          '*': TRUE
-          'TYPO3.Neos.NodeTypes:Headline': TRUE
-          'TYPO3.Neos.NodeTypes:Text': TRUE
-          'TYPO3.Neos.NodeTypes:Image': TRUE
-  ui:
-    label: One Page
-    group: 'structure'
-    icon: 'icon-magic'
-    inlineEditable: TRUE
-    inspector:
-      groups:
-        'contactsProperties':
-          label: Page Element Einstellungen
-          position: 50
-
-
-'TYPO3.Neos.NodeTypes:Text':
-  ui:
-    inspector:
-      groups:
-        settings:
-          label: 'Einstellungen'
-          position: 200
-  properties:
-    'border':
-      type: boolean
-      ui:
-        label: 'Rahmen'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'settings'
-          position: 50
 
 

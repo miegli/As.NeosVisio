@@ -1,0 +1,19 @@
+
+'TYPO3.Neos.NodeTypes:Text':
+  ui:
+    inspector:
+      groups:
+        settings:
+          label: 'Einstellungen'
+          position: 200
+  properties:
+    'border':
+      type: boolean
+      ui:
+        label: 'Rahmen'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+          position: 50
+
+

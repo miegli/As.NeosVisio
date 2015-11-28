@@ -9,33 +9,33 @@
 
     <f:section name="stylesheets">
     <!-- BOOTSTRAP -->
-    <link rel="stylesheet" href="{f:uri.resource(path: 'visio/assets/bootstrap/css/bootstrap.min.css', package: 'AS.NeosVisio')}" type="text/css">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'visio/assets/bootstrap/css/bootstrap.min.css', package: 'Neoslive.Visio')}" type="text/css">
 
     <!-- ANIMATE -->
-    <link rel="stylesheet" href="{f:uri.resource(path: 'visio/assets/animate/animate.min.css', package: 'AS.NeosVisio')}" type="text/css">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'visio/assets/animate/animate.min.css', package: 'Neoslive.Visio')}" type="text/css">
 
     <!-- WEB FONTS -->
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
 
     <!-- ICON FONTS -->
-    <link rel="stylesheet" href="{f:uri.resource(path: 'visio/fonts/font-awesome/css/font-awesome.min.css', package: 'AS.NeosVisio')}" type="text/css">
-    <link rel="stylesheet" href="{f:uri.resource(path: 'visio/fonts/ionicons/css/ionicons.min.css', package: 'AS.NeosVisio')}" type="text/css">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'visio/fonts/font-awesome/css/font-awesome.min.css', package: 'Neoslive.Visio')}" type="text/css">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'visio/fonts/ionicons/css/ionicons.min.css', package: 'Neoslive.Visio')}" type="text/css">
 
     <!-- GLOBAL STYLE -->
-    <link id="stylesheetGlobal" type="text/css" href="{f:uri.resource(path: 'visio/css/global-style-blue.min.css', package: 'AS.NeosVisio')}" rel="stylesheet" media="screen">
+    <link id="stylesheetGlobal" type="text/css" href="{f:uri.resource(path: 'visio/css/global-style-blue.min.css', package: 'Neoslive.Visio')}" rel="stylesheet" media="screen">
     <!-- CUSTOM STYLE -- Remove if not necessary -->
-    <link type="text/css" href="{f:uri.resource(path: 'visio/css/custom-style.css', package: 'AS.NeosVisio')}" rel="stylesheet">
+    <link type="text/css" href="{f:uri.resource(path: 'visio/css/custom-style.css', package: 'Neoslive.Visio')}" rel="stylesheet">
 
 
 
     <!-- ASSETS -->
-    <link rel="stylesheet" href="{f:uri.resource(path: 'visio/assets/owl-carousel/css/owl.carousel.css', package: 'AS.NeosVisio')}" type="text/css">
-    <link rel="stylesheet" href="{f:uri.resource(path: 'visio/assets/owl-carousel/css/owl.theme.css', package: 'AS.NeosVisio')}" type="text/css">
-    <link rel="stylesheet" href="{f:uri.resource(path: 'visio/assets/fancybox/jquery.fancybox.css', package: 'AS.NeosVisio')}" type="text/css" media="screen">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'visio/assets/owl-carousel/css/owl.carousel.css', package: 'Neoslive.Visio')}" type="text/css">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'visio/assets/owl-carousel/css/owl.theme.css', package: 'Neoslive.Visio')}" type="text/css">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'visio/assets/fancybox/jquery.fancybox.css', package: 'Neoslive.Visio')}" type="text/css" media="screen">
 
     <!-- FAVICON -->
-    <link href="{f:uri.resource(path: 'visio/images/favicon.png', package: 'AS.NeosVisio')}" rel="icon" type="image/png">
+    <link href="{f:uri.resource(path: 'visio/images/favicon.png', package: 'Neoslive.Visio')}" rel="icon" type="image/png">
     </f:section>
 
     <f:section name="headScripts">
@@ -50,44 +50,7 @@
 <div class="body-wrap">
 
     <div id="st-container" class="st-container">
-        <nav class="st-menu st-effect-1" id="menu-1">
-            <h3 class="st-menu-title">Menu</h3>
-            <div class="nav">
-                <ul>
-                    <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                    <li><a href="#"><i class="fa fa-angellist"></i>About us</a></li>
-                    <li><a href="#"><i class="fa fa-camera"></i>Blog</a></li>
-                    <li><a href="#"><i class="fa fa-calendar"></i>Work</a></li>
-                    <li><a href="#"><i class="fa fa-shopping-cart"></i>Online shop</a></li>
-                    <li><a href="#"><i class="fa fa-dropbox"></i>Features</a></li>
-                </ul>
-            </div>
-
-            <h3 class="st-menu-title">Quick links</h3>
-            <div class="nav">
-                <ul>
-                    <li><a href="#">Silken <span>Truth</span></a></li>
-                    <li><a href="#">The <span>Cold Ice</span></a></li>
-                    <li><a href="#">Soaring of <span>Stars</span></a></li>
-                </ul>
-            </div>
-
-            <h3 class="st-menu-title">Socia media</h3>
-            <div class="social-media style-1 v2">
-                <a href="#" class="facebook">
-                    <i class="fa fa-facebook "></i>
-                </a>
-                <a href="#" class="google-plus">
-                    <i class="fa fa-google-plus "></i>
-                </a>
-                <a href="#" class="pinterest">
-                    <i class="fa fa-pinterest "></i>
-                </a>
-                <a href="#" class="twitter">
-                    <i class="fa fa-twitter "></i>
-                </a>
-            </div>
-        </nav>
+        {QuickNavigation -> f:format.raw()}
         <div class="st-pusher">
             <div class="st-content">
                 <div class="st-content-inner">
@@ -649,6 +612,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <h2>Page title</h2>
+
                                 </div>
                                 <div class="col-md-6">
                                     <ol class="breadcrumb">
@@ -774,50 +738,50 @@
 <!-- SCRIPTS -->
 
 <!-- Required JSs -->
-<script src="{f:uri.resource(path: 'visio/js/jquery.js', package: 'AS.NeosVisio')}"></script>
-<script src="{f:uri.resource(path: 'visio/js/jquery-ui.min.js', package: 'AS.NeosVisio')}"></script>
+<script src="{f:uri.resource(path: 'visio/js/jquery.js', package: 'Neoslive.Visio')}"></script>
+<script src="{f:uri.resource(path: 'visio/js/jquery-ui.min.js', package: 'Neoslive.Visio')}"></script>
 
 <!-- Essential JSs -->
-<script src="{f:uri.resource(path: 'visio/assets/bootstrap/js/bootstrap.min.js', package: 'AS.NeosVisio')}"></script>
-<script src="{f:uri.resource(path: 'visio/assets/bootstrap/js/tooltip.js', package: 'AS.NeosVisio')}"></script>
-<script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap-dropdownhover.js', package: 'AS.NeosVisio')}"></script>
-<script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap.slide-menu.js', package: 'AS.NeosVisio')}"></script>
-<script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap-validator.js', package: 'AS.NeosVisio')}"></script>
-<script src="{f:uri.resource(path: 'visio/js/modernizr.custom.js', package: 'AS.NeosVisio')}"></script>
-<script src="{f:uri.resource(path: 'visio/js/jquery.mousewheel-3.0.6.pack.js', package: 'AS.NeosVisio')}"></script>
-<script src="{f:uri.resource(path: 'visio/js/jquery.easing.js', package: 'AS.NeosVisio')}"></script>
-<script src="{f:uri.resource(path: 'visio/js/classie.js', package: 'AS.NeosVisio')}"></script>
+<script src="{f:uri.resource(path: 'visio/assets/bootstrap/js/bootstrap.min.js', package: 'Neoslive.Visio')}"></script>
+<script src="{f:uri.resource(path: 'visio/assets/bootstrap/js/tooltip.js', package: 'Neoslive.Visio')}"></script>
+<script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap-dropdownhover.js', package: 'Neoslive.Visio')}"></script>
+<script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap.slide-menu.js', package: 'Neoslive.Visio')}"></script>
+<script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap-validator.js', package: 'Neoslive.Visio')}"></script>
+<script src="{f:uri.resource(path: 'visio/js/modernizr.custom.js', package: 'Neoslive.Visio')}"></script>
+<script src="{f:uri.resource(path: 'visio/js/jquery.mousewheel-3.0.6.pack.js', package: 'Neoslive.Visio')}"></script>
+<script src="{f:uri.resource(path: 'visio/js/jquery.easing.js', package: 'Neoslive.Visio')}"></script>
+<script src="{f:uri.resource(path: 'visio/js/classie.js', package: 'Neoslive.Visio')}"></script>
 
 <!-- Assets - Required -->
-<script src="{f:uri.resource(path: 'visio/assets/parallax/parallax.min.js', package: 'AS.NeosVisio')}"></script>
-<script src="{f:uri.resource(path: 'visio/assets/page-scroller/jquery.ui.totop.min.js', package: 'AS.NeosVisio')}"></script>
-<script src="{f:uri.resource(path: 'visio/assets/waypoints/waypoints.min.js', package: 'AS.NeosVisio')}"></script>
+<script src="{f:uri.resource(path: 'visio/assets/parallax/parallax.min.js', package: 'Neoslive.Visio')}"></script>
+<script src="{f:uri.resource(path: 'visio/assets/page-scroller/jquery.ui.totop.min.js', package: 'Neoslive.Visio')}"></script>
+<script src="{f:uri.resource(path: 'visio/assets/waypoints/waypoints.min.js', package: 'Neoslive.Visio')}"></script>
 
 <!-- Assets - Optional (keep what you need) -->
 <!-- Sidebar transitions -->
-<script src="{f:uri.resource(path: 'visio/js/sidebar-transitions/sidebar-transitions.js', package: 'AS.NeosVisio')}"></script>
+<script src="{f:uri.resource(path: 'visio/js/sidebar-transitions/sidebar-transitions.js', package: 'Neoslive.Visio')}"></script>
 <!-- Smooth scroll -->
-<script src="{f:uri.resource(path: 'visio/js/jquery.smoothscroll.js', package: 'AS.NeosVisio')}"></script>
+<script src="{f:uri.resource(path: 'visio/js/jquery.smoothscroll.js', package: 'Neoslive.Visio')}"></script>
 <!-- Media gallery view -->
-<script src="{f:uri.resource(path: 'visio/assets/fancybox/jquery.fancybox.pack.js', package: 'AS.NeosVisio')}"></script>
+<script src="{f:uri.resource(path: 'visio/assets/fancybox/jquery.fancybox.pack.js', package: 'Neoslive.Visio')}"></script>
 <!-- Animated counter -->
-<script src="{f:uri.resource(path: 'visio/assets/milestone-counter/jquery.countTo.js', package: 'AS.NeosVisio')}"></script>
+<script src="{f:uri.resource(path: 'visio/assets/milestone-counter/jquery.countTo.js', package: 'Neoslive.Visio')}"></script>
 <!-- Animated pie charts -->
-<script src="{f:uri.resource(path: 'visio/assets/easy-pie-chart/js/jquery.easypiechart.js', package: 'AS.NeosVisio')}"></script>
+<script src="{f:uri.resource(path: 'visio/assets/easy-pie-chart/js/jquery.easypiechart.js', package: 'Neoslive.Visio')}"></script>
 <!-- Owl carousel - Touch enabled carousel -->
-<script src="{f:uri.resource(path: 'visio/assets/owl-carousel/js/owl.carousel.min.js', package: 'AS.NeosVisio')}"></script>
+<script src="{f:uri.resource(path: 'visio/assets/owl-carousel/js/owl.carousel.min.js', package: 'Neoslive.Visio')}"></script>
 
 <!-- Cross-browser responsivity scripts -->
 <!--[if lt IE 9]>
-<script src="{f:uri.resource(path: 'visio/js/html5shiv.js', package: 'AS.NeosVisio')}"></script>
-<script src="{f:uri.resource(path: 'visio/js/respond.min.js', package: 'AS.NeosVisio')}"></script>
+<script src="{f:uri.resource(path: 'visio/js/html5shiv.js', package: 'Neoslive.Visio')}"></script>
+<script src="{f:uri.resource(path: 'visio/js/respond.min.js', package: 'Neoslive.Visio')}"></script>
 <![endif]-->
 
 <!-- Google Analitycs JS -->
-<script type="text/javascript" src="{f:uri.resource(path: 'visio/js/dvs.ga.js', package: 'AS.NeosVisio')}"></script>
+<script type="text/javascript" src="{f:uri.resource(path: 'visio/js/dvs.ga.js', package: 'Neoslive.Visio')}"></script>
 
 <!-- App JS -->
-<script src="{f:uri.resource(path: 'visio/js/dvs.app.js', package: 'AS.NeosVisio')}"></script>
+<script src="{f:uri.resource(path: 'visio/js/dvs.app.js', package: 'Neoslive.Visio')}"></script>
 </f:section>
 
 </body>
