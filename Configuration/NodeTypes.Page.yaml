@@ -121,28 +121,28 @@
 #
 'Neoslive.Visio:Quicklinks':
   superTypes:
-    'TYPO3.Neos:Document': TRUE
+    'TYPO3.Neos.NodeTypes:Page': TRUE
   constraints:
     nodeTypes:
-      'Neoslive.Visio:Quicklinks': FALSE
       'Neoslive.Visio:OnePage': FALSE
       'TYPO3.Neos.NodeTypes:Page': FALSE
+      'Neoslive.Visio:PageDelim': FALSE
       'TYPO3.Neos:Shortcut': TRUE
       '*': FALSE
   childNodes:
     'main':
       constraints:
         nodeTypes:
+          'TYPO3.Neos.NodeTypes:Page': TRUE
           'Neoslive.Visio:Quicklinks': FALSE
           'Neoslive.Visio:OnePage': FALSE
           'TYPO3.Neos.NodeTypes:Page': FALSE
-          'TYPO3.Neos:Shortcut': TRUE
+          'TYPO3.Neos:Shortcut': FALSE
           'TYPO3.Neos.NodeTypes:Text': TRUE
           'TYPO3.Neos.NodeTypes:Image': TRUE
           'TYPO3.Neos.NodeTypes:Html': TRUE
-          'TYPO3.Neos.NodeTypes:FourColumn': TRUE
-          'TYPO3.Neos.NodeTypes:ContentCollection': TRUE
-          '*': FALSE
+          'TYPO3.Neos.NodeTypes:FourColumn': FALSE
+          'TYPO3.Neos.NodeTypes:ContentCollection': FALSE
   ui:
     label: Quicklinks
     group: 'structure'
