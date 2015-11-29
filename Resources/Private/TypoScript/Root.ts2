@@ -7,6 +7,7 @@ include: Navigation/*
 * Root TypoScript template for the neos visio site
 */
 
+
 page = Page {
 
 

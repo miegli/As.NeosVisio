@@ -21,11 +21,48 @@
         image:
           label: 'Bild'
           position: 200
-      settings:
-        image:
-          label: 'Einstellungen'
+        menu:
+          label: 'Menu settings'
           position: 300
   properties:
+    label:
+      type: string
+      ui:
+        label: 'Label'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'document'
+          position: 950
+    menumaxwidth:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Dropdown menu max width'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'menu'
+    menu:
+      type: string
+      defaultValue: 'default'
+      ui:
+        label: 'Menu'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'menu'
+          position: 950
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'default':
+                label: 'Default'
+              'fullwidth':
+                label: 'Fullwidth'
+              '2columns':
+                label: '2 columns'
+              '3columns':
+                label: '3 columns'
+              '4columns':
+                label: '4 columns'
     image:
       type: 'TYPO3\Media\Domain\Model\ImageInterface'
       ui:
@@ -84,7 +121,7 @@
 #
 'Neoslive.Visio:Quicklinks':
   superTypes:
-    'TYPO3.Neos.NodeTypes:Page': TRUE
+    'TYPO3.Neos:Document': TRUE
   constraints:
     nodeTypes:
       'Neoslive.Visio:Quicklinks': FALSE
@@ -101,6 +138,9 @@
           'TYPO3.Neos.NodeTypes:Page': FALSE
           'TYPO3.Neos:Shortcut': TRUE
           'TYPO3.Neos.NodeTypes:Text': TRUE
+          'TYPO3.Neos.NodeTypes:Image': TRUE
+          'TYPO3.Neos.NodeTypes:Html': TRUE
+          'TYPO3.Neos.NodeTypes:FourColumn': TRUE
           'TYPO3.Neos.NodeTypes:ContentCollection': TRUE
           '*': FALSE
   ui:
@@ -108,3 +148,49 @@
     group: 'structure'
     icon: 'icon-windows'
     inlineEditable: TRUE
+
+
+
+
+##
+# Neoslive.Visio:PageDelim
+#
+'Neoslive.Visio:PageDelim':
+  superTypes:
+    'TYPO3.Neos.NodeTypes:Page': TRUE
+  constraints:
+    nodeTypes:
+      'Neoslive.Visio:Quicklinks': FALSE
+      'Neoslive.Visio:OnePage': FALSE
+      'TYPO3.Neos.NodeTypes:Page': TRUE
+      'TYPO3.Neos:Shortcut': FALSE
+      '*': FALSE
+  childNodes:
+    'main':
+      constraints:
+        nodeTypes:
+          'TYPO3.Neos.NodeTypes:Page': TRUE
+          'Neoslive.Visio:Quicklinks': FALSE
+          'Neoslive.Visio:OnePage': FALSE
+          'TYPO3.Neos.NodeTypes:Page': FALSE
+          'TYPO3.Neos:Shortcut': FALSE
+          'TYPO3.Neos.NodeTypes:Text': TRUE
+          'TYPO3.Neos.NodeTypes:Image': TRUE
+          'TYPO3.Neos.NodeTypes:Html': TRUE
+          'TYPO3.Neos.NodeTypes:FourColumn': FALSE
+          'TYPO3.Neos.NodeTypes:ContentCollection': FALSE
+          '*': FALSE
+  ui:
+    label: Page Delimiter
+    group: 'structure'
+    icon: 'icon-ellipsis-horizontal'
+    inlineEditable: FALSE
+  properties:
+    link:
+      type: string
+      ui:
+        label: 'Link'
+        reloadPageIfChanged: TRUE
+        inspector:
+          group: 'document'
+          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'

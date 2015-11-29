@@ -1,0 +1,31 @@
+page {
+
+    body {
+
+
+
+        FullNavigation = Menu
+
+        FullNavigation {
+            entryLevel = 1
+            templatePath = 'resource://Neoslive.Visio/Private/Templates/Navigation/FullNavigation.html'
+            maximumLevels = 5
+            startingPoint = ${q(site).children('[uriPathSegment="metamenu"]').get(0)}
+            normal.attributes = TYPO3.TypoScript:Attributes {
+                class = 'menu-item'
+            }
+
+            node = TYPO3.Neos:ContentCollection
+            node {
+                nodePath = 'main'
+            }
+
+
+        }
+
+
+
+
+    }
+
+}

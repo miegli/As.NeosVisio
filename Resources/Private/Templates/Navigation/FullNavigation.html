@@ -1,0 +1,191 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace visio=Neoslive\Visio\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+
+<ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
+    <f:render section="itemsList" arguments="{items: items,sub:0}"/>
+    <li class="dropdown-icon hidden-xs hidden-sm">
+        <a href="#" class="btn-st-trigger ttip" data-effect="st-effect-1">
+            <span><i class="fa fa-bars"></i></span>
+        </a>
+    </li>
+</ul>
+
+
+<f:section name="itemsList">
+    <f:for each="{items}" as="item" iteration="iterator">
+
+
+        <f:switch expression="{item.node.nodetype.name}">
+
+            <f:case value="TYPO3.Neos.NodeTypes:Page">
+
+
+                <f:if condition="{item.node.properties.menu}">
+                    <f:then>
+                        <f:render section="itemsListSub"
+                                  arguments="{item: item,sub:sub,menu:item.node.properties.menu}"/>
+                    </f:then>
+                    <f:else>
+                        <f:render section="itemsListSub" arguments="{item: item,sub:sub,menu:'default'}"/>
+                    </f:else>
+                </f:if>
+
+
+            </f:case>
+
+
+            <f:case value="Neoslive.Visio:PageDelim">
+
+
+                <li class="dropdown-header">
+                    <f:if condition="{item.node.properties.link}">
+
+                        <f:then>
+
+                        <a href="{item.node.properties.link}">
+                                <h3 class="meganav-section-title">{item.node.properties.title}</h3>
+                                <ts:render path="node" context="{node: item.node}"/>
+                        </a>
+
+                        </f:then>
+                        <f:else>
+                            <h3 class="meganav-section-title">{item.node.properties.title}</h3>
+                            <ts:render path="node" context="{node: item.node}"/>
+                        </f:else>
+                    </f:if>
+
+                </li>
+
+
+                <f:if condition="{item.subItems}">
+                    <f:for each="{item.subItems}" as="subitem">
+
+                        <f:if condition="{item.node.properties.menu}">
+                            <f:then>
+                                <f:render section="itemsListSub"
+                                          arguments="{item: subitem,sub:2,menu:item.node.properties.menu}"/>
+                            </f:then>
+                            <f:else>
+                                <f:render section="itemsListSub"
+                                          arguments="{item: subitem,sub:2,menu:item.node.properties.menu}"/>
+                            </f:else>
+                        </f:if>
+
+
+                    </f:for>
+                </f:if>
+
+
+            </f:case>
+
+
+            <f:defaultCase>
+
+
+            </f:defaultCase>
+
+
+        </f:switch>
+
+
+    </f:for>
+</f:section>
+
+
+<f:section name="itemsListSub">
+
+
+    <f:if condition="{visio:CountChildren(node:item.node, instanceof:'TYPO3.Neos.NodeTypes:Page')}>0">
+        <f:then>
+            <li class="dropdown {f:if(condition: '{sub}==1', then: 'dropdown-submenu', else: '')} {f:if(condition: '{menu}!="default"', then: 'mega-dropdown', else: '')}">
+            <neos:link.node node="{item.node}" class="dropdown-toggle" data="{toggle:dropdown}">
+                <span>{item.node.properties.title}</span>
+            </neos:link.node>
+
+            <ul style="max-width:{item.node.properties.menumaxwidth}" class="dropdown-menu {f:if(condition: '{menu}!="default"', then: 'mega-dropdown-menu row p-20', else: '')}">
+
+            <f:switch expression="{menu}">
+
+                <f:case value="4columns">
+                    <visio:SpliceGroup input="{item.subItems}" splice="4" as="grouped">
+                        <f:for each="{grouped}" as="group">
+                            <li class="col-sm-3">
+                                <ul>
+                                    <f:render section="itemsList"
+                                              arguments="{items: group,sub:1,menu:item.node.properties.menu}"/>
+                                </ul>
+                            </li>
+                        </f:for>
+                    </visio:SpliceGroup>
+                </f:case>
+
+
+                <f:case value="3columns">
+                    <visio:SpliceGroup input="{item.subItems}" splice="3" as="grouped">
+                        <f:for each="{grouped}" as="group">
+                            <li class="col-sm-4">
+                                <ul>
+                                    <f:render section="itemsList"
+                                              arguments="{items: group,sub:1,menu:item.node.properties.menu}"/>
+                                </ul>
+                            </li>
+                        </f:for>
+                    </visio:SpliceGroup>
+                </f:case>
+
+                <f:case value="2columns">
+                    <visio:SpliceGroup input="{item.subItems}" splice="2" as="grouped">
+                        <f:for each="{grouped}" as="group">
+                            <li class="col-sm-6">
+                                <ul>
+                                    <f:render section="itemsList"
+                                              arguments="{items: group,sub:1,menu:item.node.properties.menu}"/>
+                                </ul>
+                            </li>
+                        </f:for>
+                    </visio:SpliceGroup>
+                </f:case>
+
+
+                <f:case value="fullwidth">
+                    <visio:SpliceGroup input="{item.subItems}" splice="1" as="grouped">
+                        <f:for each="{grouped}" as="group">
+                            <li class="col-sm-12">
+                                <ul>
+                                    <f:render section="itemsList"
+                                              arguments="{items: group,sub:1,menu:item.node.properties.menu}"/>
+                                </ul>
+                            </li>
+                        </f:for>
+                    </visio:SpliceGroup>
+                </f:case>
+
+
+                <f:case value="default">
+                    <f:render section="itemsList"
+                              arguments="{items: item.subItems,sub:1,menu:item.node.properties.menu}"/>
+
+                </f:case>
+
+            </f:switch>
+
+
+            </ul>
+            </li>
+        </f:then>
+        <f:else>
+            <li>
+                <neos:link.node node="{item.node}">
+                    {item.node.properties.title}
+                    <f:if condition="{item.node.properties.label} != ''}"><span class="label bg-base-1 pull-right">{item.node.properties.label}</span>
+                    </f:if>
+                </neos:link.node>
+            </li>
+        </f:else>
+    </f:if>
+
+
+</f:section>
+

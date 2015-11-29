@@ -18,7 +18,7 @@ use TYPO3\Eel\FlowQuery\FlowQuery;
 /**
  * ViewHelper to find the closest document node to a given node
  */
-class ChildrenViewHelper extends AbstractViewHelper
+class CountChildrenViewHelper extends AbstractViewHelper
 {
 
     /**
@@ -30,19 +30,15 @@ class ChildrenViewHelper extends AbstractViewHelper
 
     /**
      * @param NodeInterface $node
-     * @param string $as
+     * @param string $instanceof
      * @return NodeInterface
      */
-    public function render(NodeInterface $node,$as,$instanceof)
+    public function render(NodeInterface $node,$instanceof)
     {
         $flowQuery = new FlowQuery(array($node));
-        $query = $flowQuery->children('[instanceof '.$instanceof.']')->get();
+        $query = $flowQuery->children('[instanceof '.$instanceof.']')->count();
 
-        if ($this->templateVariableContainer->exists($as))  $this->templateVariableContainer->remove($as);
-            $this->templateVariableContainer->add($as, $query);
-
-
-        return $this->renderChildren();
+        return $query;
     }
 
 }

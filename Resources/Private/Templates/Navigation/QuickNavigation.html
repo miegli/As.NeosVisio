@@ -3,7 +3,6 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
 
-
 <nav class="st-menu st-effect-1" id="menu-1">
 
 
@@ -12,7 +11,7 @@
         <h3 class="st-menu-title">{quicklink.properties.title}</h3>
         <div class="nav">
             <ul>
-                <visio:children node="{quicklink}" as="q">
+                <visio:children node="{quicklink}" as="q" instanceof="TYPO3.Neos:Shortcut">
                     <f:for each="{q}" as="item">
 
 
@@ -22,36 +21,12 @@
                             </li>
                         </f:if>
 
-                        <f:if condition="{item.nodetype.name} == 'TYPO3.Neos.NodeTypes:Text'">
-                            <li>
-
-                            </li>
-                        </f:if>
-
-
                     </f:for>
                 </visio:children>
             </ul>
+            <ts:render path="node" context="{node: quicklink}" />
         </div>
 
     </f:for>
-
-
-    <!--<h3 class="st-menu-title">Socia media</h3>-->
-    <!--<div class="social-media style-1 v2">-->
-        <!--<a href="#" class="facebook">-->
-            <!--<i class="fa fa-facebook "></i>-->
-        <!--</a>-->
-        <!--<a href="#" class="google-plus">-->
-            <!--<i class="fa fa-google-plus "></i>-->
-        <!--</a>-->
-        <!--<a href="#" class="pinterest">-->
-            <!--<i class="fa fa-pinterest "></i>-->
-        <!--</a>-->
-        <!--<a href="#" class="twitter">-->
-            <!--<i class="fa fa-twitter "></i>-->
-        <!--</a>-->
-    <!--</div>-->
-
 
 </nav>
