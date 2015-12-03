@@ -6,4 +6,7 @@ prototype(Neoslive.Visio:PageDelim) {
 }
 
 
+prototype(TYPO3.Neos.NodeTypes:Page) < prototype(TYPO3.Neos:Content) {
 
+    title = ${q(node).property('title')}
+}

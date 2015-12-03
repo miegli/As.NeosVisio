@@ -1,0 +1,73 @@
+{namespace m=TYPO3\Media\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+    <f:switch expression="{content.titlerow}">
+
+        <f:case value="default">
+            <div class="page-title style-1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <h2>{node.properties.title}</h2>
+
+                        </div>
+                        <div class="col-md-6">
+                            {BreadcrumbNavigation -> f:format.raw()}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:case>
+
+
+        <f:case value="image">
+
+            <div class="page-title style-2" <f:if condition="{content.image}"><f:then> style="background-image:url('{m:uri.image(asset: content.image,allowCropping:false)}'); "</f:then><f:else></f:else></f:if>>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="c-dark">{node.properties.title}</h2>
+                            {BreadcrumbNavigation -> f:format.raw()}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </f:case>
+
+        <f:case value="color">
+
+            <div class="page-title style-2 text-center" style="background-color:{content.color};">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="c-dark">{node.properties.title}</h2>
+                            {BreadcrumbNavigation -> f:format.raw()}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </f:case>
+
+        <f:case value="parallax">
+
+            <section class="parallax-section parallax-section-2" <f:if condition="{content.image}"><f:then> style="background-image:url('{m:uri.image(asset: content.image,allowCropping:false)}'); background-position: 50% 12px;"</f:then><f:else></f:else></f:if> ">
+                <div class="parallax-content">
+                    <h1 class="parallax-title white">{node.properties.title}</h1>
+                    <div class="text-center mt-20">
+                        <ol class="breadcrumb style-1">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Pages</a></li>
+                            <li><a href="#">Headers</a></li>
+                            <li class="active">Parallax header</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+        </f:case>
+
+    </f:switch>
+

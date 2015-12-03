@@ -81,6 +81,7 @@
                 label: '3 columns'
               '4columns':
                 label: '4 columns'
+
     subpageLayout:
       defaultValue: ''
       ui:
@@ -110,10 +111,10 @@
                 label: 'Yes'
               'no':
                 label: 'No'
-    titlerow:
+    navigationheader:
       type: string
       ui:
-        label: 'Title row'
+        label: 'Navigation header'
         inspector:
           group: layout
           position: 110
@@ -124,10 +125,49 @@
             values:
               '':
                 label: ''
-              'yes':
-                label: 'Yes'
-              'no':
-                label: 'No'
+              'default':
+                label: 'Default'
+              'affix':
+                label: 'Affix'
+    titlerow:
+      type: string
+      ui:
+        label: 'Page header'
+        inspector:
+          group: layout
+          position: 110
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Inherit from parent'
+            allowEmpty: TRUE
+            values:
+              '':
+                label: ''
+              'default':
+                label: 'Default'
+              'image':
+                label: 'Image'
+              'color':
+                label: 'Color'
+              'parallax':
+                label: 'Parallax'
+              'none':
+                label: 'None'
+    image:
+      type: TYPO3\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'Image'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'
+    color:
+      type: string
+      ui:
+        label: 'Background color'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'
+
 
 
 
