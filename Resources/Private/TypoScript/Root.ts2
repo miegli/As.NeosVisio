@@ -22,6 +22,10 @@ page = Page {
         }
     }
 
+    bodyTag {
+        attributes.class = ${q(node).children().count() > 1 ? 'has-subpages' : ''}
+    }
+
     body {
 
         sectionName = 'body'

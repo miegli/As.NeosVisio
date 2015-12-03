@@ -28,13 +28,13 @@ if (typeof document.addEventListener === 'function') {
 
 	document.addEventListener('Neos.PageLoaded', function(event) {
 		// Do stuff
-		//init_document();
+		init_document();
 
 	}, false);
 }
 
 $(document).ready(function() {
-	//init_document();
+	init_document();
 });
 
 
@@ -86,7 +86,7 @@ function init_document() {
 
     // Fix the closing problem when clicking inside dopdown menu
 	$('ul.dropdown-menu').on('click', function(event) {
-	    event.stopPropagation();
+	    //event.stopPropagation();
 	});
 	
 	// Collapsible Menu
@@ -131,7 +131,7 @@ function init_document() {
         // Animate scroll to the selected section
        $('html, body').stop(true, true).animate({scrollTop: $(this.hash).offset().top}, 600);
 
-        event.preventDefault();
+        //event.preventDefault();
     });
 
 	// Owl Carousel
@@ -442,7 +442,7 @@ function init_document() {
 
     // Disable Empty Links
     $("[href=#]").click(function(event){
-        event.preventDefault();
+        //event.preventDefault();
     });
 
     // Rating Stars
