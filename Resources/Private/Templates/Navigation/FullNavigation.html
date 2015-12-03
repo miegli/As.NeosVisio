@@ -5,11 +5,7 @@
 
 <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
     <f:render section="itemsList" arguments="{items: items,sub:0}"/>
-    <li class="dropdown-icon hidden-xs hidden-sm">
-        <a href="#" class="btn-st-trigger ttip" data-effect="st-effect-1">
-            <span><i class="fa fa-bars"></i></span>
-        </a>
-    </li>
+
 </ul>
 
 
@@ -114,7 +110,7 @@
                             <li class="col-sm-3">
                                 <ul>
                                     <f:render section="itemsList"
-                                              arguments="{items: group,sub:1,menu:item.node.properties.menu}"/>
+                                              arguments="{items: group,sub:sub,menu:item.node.properties.menu}"/>
                                 </ul>
                             </li>
                         </f:for>
@@ -128,7 +124,7 @@
                             <li class="col-sm-4">
                                 <ul>
                                     <f:render section="itemsList"
-                                              arguments="{items: group,sub:1,menu:item.node.properties.menu}"/>
+                                              arguments="{items: group,sub:sub,menu:item.node.properties.menu}"/>
                                 </ul>
                             </li>
                         </f:for>
@@ -141,7 +137,7 @@
                             <li class="col-sm-6">
                                 <ul>
                                     <f:render section="itemsList"
-                                              arguments="{items: group,sub:1,menu:item.node.properties.menu}"/>
+                                              arguments="{items: group,sub:sub,menu:item.node.properties.menu}"/>
                                 </ul>
                             </li>
                         </f:for>
@@ -155,7 +151,7 @@
                             <li class="col-sm-12">
                                 <ul>
                                     <f:render section="itemsList"
-                                              arguments="{items: group,sub:1,menu:item.node.properties.menu}"/>
+                                              arguments="{items: group,sub:sub,menu:item.node.properties.menu}"/>
                                 </ul>
                             </li>
                         </f:for>
@@ -164,8 +160,9 @@
 
 
                 <f:case value="default">
+
                     <f:render section="itemsList"
-                              arguments="{items: item.subItems,sub:1,menu:item.node.properties.menu}"/>
+                              arguments="{items: item.subItems,sub:sub,menu:item.node.properties.menu}"/>
 
                 </f:case>
 

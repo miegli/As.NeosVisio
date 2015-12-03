@@ -8,7 +8,7 @@
   // =========================
 
   var Dropdownhover = function (element, options) {
-    this.options    = options    
+    this.options    = options
     this.$element   = $(element)
 
     var that = this
@@ -23,7 +23,12 @@
     })
     this.dropdowns.each(function(){
         $(this).on('mouseleave.bs.dropdownhover', function(e) {
-          that.hide($(this).children('a, button'))
+          if (typeof document.addEventListener === 'function') {
+
+          } else {
+             that.hide($(this).children('a, button'))
+          }
+
         })
     })
 
@@ -104,23 +109,23 @@
 
     // Reset css to prevent incorrect position
     dropdown.css({ bottom: '', left: '', top: '', right: '' }).removeClass('dropdownhover-top')
-  
+
     var viewport = {
       top : win.scrollTop(),
       left : win.scrollLeft()
     };
     viewport.right = viewport.left + win.width();
     viewport.bottom = viewport.top + win.height();
-    
+
     var bounds = dropdown.offset();
       bounds.right = bounds.left + dropdown.outerWidth();
       bounds.bottom = bounds.top + dropdown.outerHeight();
     var position = dropdown.position();
       position.right = bounds.left + dropdown.outerWidth();
       position.bottom = bounds.top + dropdown.outerHeight();
-  
+
     var side = ''
-   
+
     var isSubnow = dropdown.parents('.dropdown-menu').length
 
     if(isSubnow) {
@@ -215,6 +220,7 @@
       Plugin.call($target, $target.data())
     })
   })
+
   $(window).on('resize', function () {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function(){
@@ -233,5 +239,27 @@
         })
     }, 200)
   })
+
+  if (typeof document.addEventListener === 'function') {
+
+    document.addEventListener('Neos.PageLoaded', function(event) {
+      // Do stuff
+
+
+          $('[data-hover="dropdown"]').each(function () {
+            var $target = $(this)
+            Plugin.call($target, $target.data())
+          });
+
+
+
+      init_template();
+
+
+
+
+    }, false);
+  }
+
 
 }(jQuery);
