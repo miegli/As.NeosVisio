@@ -1,0 +1,8 @@
+// Enhance image prototype when inside the carousel
+prototype(TYPO3.Neos.NodeTypes:Image) {
+
+    // Render images in the carousel with a special template.
+    templatePath = 'resource://Neoslive.Visio/Private/Templates/NodeTypes/Image.html'
+
+
+}

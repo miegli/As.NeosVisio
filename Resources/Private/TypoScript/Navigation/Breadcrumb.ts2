@@ -1,0 +1,12 @@
+# TYPO3.Neos:BreadcrumbMenu provides a breadcrumb navigation based on menu items.
+#
+prototype(TYPO3.Neos:BreadcrumbMenu) < prototype(TYPO3.Neos:Menu) {
+    templatePath = 'resource://Neoslive.Visio/Private/Templates/Navigation/BreadcrumbNavigation.html'
+    itemCollection = ${q(node).add(q(node).parents('[instanceof TYPO3.Neos:Document]')).get()}
+    attributes.class = 'breadcrumb'
+
+    breadcrumb = ${q(node).property('breadcrumb') != null && q(node).property('breadcrumb') != '' ? q(node).property('breadcrumb') : q(node).closest('[breadcrumb!=""]').property('breadcrumb')  }
+
+
+}
+

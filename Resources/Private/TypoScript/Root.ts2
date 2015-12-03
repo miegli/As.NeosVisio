@@ -2,6 +2,7 @@ namespace: Site = Neoslive.Visio
 
 include: NodeTypes/*
 include: Navigation/*
+include: NodeTypes/Headers/*
 
 /**
 * Root TypoScript template for the neos visio site
@@ -28,8 +29,11 @@ page = Page {
             sectionName = 'bodyScripts'
         }
 
+
+        BreadcrumbNavigation = BreadcrumbMenu
+
         parts {
-            Variable = ${q(node).property('subpageLayout')}
+            title = ${q(node).property('title')}
         }
 
         // These are your content areas, you can define as many as you want, just name them and the nodePath.
@@ -41,6 +45,28 @@ page = Page {
                 nodePath = 'main'
                 @if.1 = ${q(node).children('main').get(0)}
             }
+
+            titlerow = ${q(node).property('titlerow') != null && q(node).property('titlerow') != '' ? q(node).property('titlerow') : q(node).closest('[titlerow!=""]').property('titlerow')  }
+
+
+            header = ContentCollection {
+                nodePath = 'header'
+
+            }
+
+            footer = ContentCollection {
+                nodePath = ${q(site).find('footer').property('_path')}
+                collection = ${q(site).children('footer').children()}
+
+
+            }
+
+            copyright = ContentCollection {
+                nodePath = ${q(site).find('copyright').property('_path')}
+                collection = ${q(site).children('copyright').children()}
+
+            }
+
 
         }
 

@@ -6,4 +6,19 @@
     max-width:100%;
     height:auto;
 }
+.neos-header-wrapper {
+    padding:0 !important;
+}
+.neos-header-wrapper .neos-contentelement-overlay {
+    height:0 !important;
+}
 
+.body-wrap:before,
+.body-wrap:after {
+    height:auto !important;
+}
+
+.content-wrapper-all {
+
+
+}

@@ -1,0 +1,5 @@
+prototype(Neoslive.Visio.Headers:Default) < prototype(TYPO3.Neos:Content) {
+    templatePath = 'resource://Neoslive.Visio/Private/Templates/Headers/Default.html'
+    image = ${q(node).property('image')}
+
+}

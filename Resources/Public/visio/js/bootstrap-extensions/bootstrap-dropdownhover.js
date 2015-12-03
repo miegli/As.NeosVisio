@@ -253,7 +253,7 @@
 
 
 
-      init_template();
+
 
 
 

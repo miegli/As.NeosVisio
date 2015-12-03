@@ -15,6 +15,24 @@
           '*': TRUE
           'Neoslive.Visio:OnePage': TRUE
           'TYPO3.Neos.NodeTypes:Text': TRUE
+    'header':
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'Neoslive.Visio.Headers:Default': TRUE
+    'footer':
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': TRUE
+          'TYPO3.Neos.NodeTypes:Text': TRUE
+    'copyright':
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': TRUE
+          'TYPO3.Neos.NodeTypes:Text': TRUE
   ui:
     inspector:
       groups:
@@ -63,20 +81,6 @@
                 label: '3 columns'
               '4columns':
                 label: '4 columns'
-    image:
-      type: 'TYPO3\Media\Domain\Model\ImageInterface'
-      ui:
-        label: 'Bild'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'image'
-          position: 50
-          editorOptions:
-            crop:
-              aspectRatio:
-                locked:
-                  width: 2
-                  height: 1
     subpageLayout:
       defaultValue: ''
       ui:
@@ -88,6 +92,42 @@
                 label: 'Default'
               'OnePage':
                 label: 'One Page'
+    breadcrumb:
+      type: string
+      ui:
+        label: 'Breadcrumb'
+        inspector:
+          group: layout
+          position: 110
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Inherit from parent'
+            allowEmpty: TRUE
+            values:
+              '':
+                label: ''
+              'yes':
+                label: 'Yes'
+              'no':
+                label: 'No'
+    titlerow:
+      type: string
+      ui:
+        label: 'Title row'
+        inspector:
+          group: layout
+          position: 110
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Inherit from parent'
+            allowEmpty: TRUE
+            values:
+              '':
+                label: ''
+              'yes':
+                label: 'Yes'
+              'no':
+                label: 'No'
 
 
 

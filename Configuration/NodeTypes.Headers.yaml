@@ -1,0 +1,31 @@
+
+##
+# Neoslive.Visio.Headers
+#
+
+
+##
+# Neoslive.Visio.Headers:Default
+#
+
+'Neoslive.Visio.Headers:Default':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  ui:
+    label: 'Header default'
+    group: 'general'
+    inlineEditable: FALSE
+    inspector:
+      groups:
+        image:
+          label: 'Image'
+          position: 1
+  properties:
+    image:
+      type: TYPO3\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'Image'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'
+

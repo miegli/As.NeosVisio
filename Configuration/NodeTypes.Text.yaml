@@ -7,13 +7,11 @@
           label: 'Einstellungen'
           position: 200
   properties:
-    'border':
-      type: boolean
-      ui:
-        label: 'Rahmen'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'settings'
-          position: 50
+      text:
+        ui:
+          aloha:
+            'format':
+              'h4': TRUE
+
 
 
