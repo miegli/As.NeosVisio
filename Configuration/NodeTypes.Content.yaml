@@ -151,10 +151,10 @@
             values:
               '':
                 label: ''
-              'btn-white':
-                label: 'Default'
-              'btn-b-white':
-                label: 'Inverted'
+              'slim':
+                label: 'Slim'
+              'slimInverted':
+                label: 'Slim Inverted'
 
 
 ##
@@ -185,6 +185,39 @@
             'a': FALSE
 
 ##
+# Neoslive.Visio:Icon
+#
+
+'Neoslive.Visio:Icon':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  ui:
+    label: 'Icon'
+    icon: 'icon-smile'
+    position: 100
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        settings:
+          label: 'Settings'
+          position: 1
+  properties:
+    icon:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Icon'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+          position: 950
+          editor: 'Content/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            dataSourceIdentifier: 'neoslive-visio-fontawesome-4'
+##
 # Neoslive.Visio:Parallax
 #
 
@@ -196,6 +229,7 @@
     label: 'Parallax'
     group: 'general'
     inlineEditable: TRUE
+
   properties:
     mask:
       type: string
@@ -244,6 +278,38 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'settings'
+    centered:
+      type: boolean
+      ui:
+        label: 'Centered'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+    color:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Color scheme'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+          position: 950
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: TRUE
+            values:
+              '':
+                label: ''
+              '1':
+                label: 'Color 1'
+              '2':
+                label: 'Color 2'
+              '3':
+                label: 'Color 3'
+              '4':
+                label: 'Color 4'
+              '5':
+                label: 'Color 5'
     anchor:
       type: string
       ui:
@@ -251,6 +317,7 @@
         reloadIfChanged: FALSE
         inspector:
           group: 'settings'
+
 
 ##
 # Neoslive.Visio.Headers:Default

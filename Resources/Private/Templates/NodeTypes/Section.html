@@ -1,34 +1,39 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace m=TYPO3\Media\ViewHelpers}
+{namespace visio=Neoslive\Visio\ViewHelpers}
+
+<visio:section node="{node}" asCss="css">
+
+    <f:if condition="{node.properties.nopadding}">
 
 
-<f:if condition="{node.properties.nopadding}">
+        <f:then>
+            <section class="{css} no-padding" id="{node.properties.anchor}">
+                <div>
+                    <div class="container">
+                        <div class="{f:if(condition: '{node.properties.centered} == 1', then: 'block style-4 v2 text-center', else: '')} ">
+                            <ts:render path="col1"/>
+                        </div>
+                    </div>
 
-
-    <f:then>
-        <section class="bg-base-1 no-padding" id="{node.properties.anchor}">
-            <div>
-                <div class="container">
-
-                    <ts:render path="col1"/>
                 </div>
+            </section>
+        </f:then>
+        <f:else>
+            <section class="{css}" id="{node.properties.anchor}">
+                <div class="cta-wrapper">
+                    <div class="container ">
 
-            </div>
-        </section>
-    </f:then>
-    <f:else>
-        <section class="bg-base-1"  id="{node.properties.anchor}">
-            <div class="cta-wrapper">
-                <div class="container">
+                        <div class="{f:if(condition: '{node.properties.centered} == 1', then: 'block style-4 v2 text-center', else: '')} ">
+                            <ts:render path="col1"/>
+                        </div>
+                    </div>
 
-                    <ts:render path="col1"/>
                 </div>
+            </section>
+        </f:else>
 
-            </div>
-        </section>
-    </f:else>
-
-</f:if>
-
+    </f:if>
+</visio:section>
 

@@ -2,27 +2,28 @@
 {namespace visio=Neoslive\Visio\ViewHelpers}
 
 
-
 <f:switch expression="{container.nodetype.name}">
     <f:case value="Neoslive.Visio:Parallax">
 
 
-            <f:if condition="{neos:rendering.inBackend()}">
-                <f:then>
-                    <span class="btn btn-xl {node.properties.style}">
+        <f:if condition="{neos:rendering.inBackend()}">
+            <f:then>
+                <visio:getButton identifier="{link}" asUrl="url" asCss="css" style="{node.properties.style}" backend="true">
+                    <span class="btn btn-xl {css}">
                         {neos:contentElement.editable(property: 'title', tag: 'span')}
                     </span>
-                </f:then>
-                <f:else>
+               </visio:getButton>
+            </f:then>
+            <f:else>
 
-                    <visio:getButton identifier="{link}" asUrl="url" asCss="css">
-                         <a href="{url}" class="btn btn-xl {node.properties.style} {css}">
-                                {neos:contentElement.editable(property: 'title', tag: 'span')}
-                         </a>
-                    </visio:getButton>
+                <visio:getButton identifier="{link}" asUrl="url" asCss="css" style="{node.properties.style}" backend="false">
+                    <a href="{url}" class="btn btn-xl {css}">
+                        {neos:contentElement.editable(property: 'title', tag: 'span')}
+                    </a>
+                </visio:getButton>
 
-                </f:else>
-            </f:if>
+            </f:else>
+        </f:if>
 
 
     </f:case>
@@ -32,15 +33,19 @@
         <div class="cta-button">
             <f:if condition="{neos:rendering.inBackend()}">
                 <f:then>
-                    <span class="btn-a btn-lg btn-1 btn-1a fa-long-arrow-right text-center">
+                    <visio:getButton identifier="{link}" asUrl="url" asCss="css" style="{node.properties.style}" backend="true">
+                    <span class="text-center {css}">
                         {neos:contentElement.editable(property: 'title', tag: 'span')}
                     </span>
+                    </visio:getButton>
                 </f:then>
                 <f:else>
-
-                    <a href="{node.properties.link}" class="btn-a btn-lg btn-1 btn-1a fa-long-arrow-right text-center">
-                    {neos:contentElement.editable(property: 'title', tag: 'span')}
-                </a>
+                    <visio:getButton identifier="{link}" asUrl="url" asCss="css" style="{node.properties.style}" backend="false">
+                        <a href="{url}"
+                           class="text-center {css}">
+                            {neos:contentElement.editable(property: 'title', tag: 'span')}
+                        </a>
+                    </visio:getButton>
                 </f:else>
             </f:if>
 

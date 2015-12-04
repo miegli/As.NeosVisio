@@ -1,13 +1,39 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 
 <f:switch expression="{container.nodetype.name}">
+
     <f:case value="Neoslive.Visio:Parallax">
-        <h1 class="parallax-title white">{neos:contentElement.editable(property: 'title', tag: 'span')}</h1>
-     </f:case>
+        <h1 class="parallax-title parallax-title-sm white text-caps">{neos:contentElement.editable(property: 'title',
+            tag: 'span')}</h1>
+    </f:case>
 
     <f:case value="Neoslive.Visio:Section">
-        <h1>{neos:contentElement.editable(property: 'title', tag: 'span')}</h1>
-     </f:case>
+
+
+        <f:switch expression="{node.parent.parent.nodetype.name}">
+
+            <f:case value="TYPO3.Neos.NodeTypes:FourColumn">
+                <h2 class="block-title">{neos:contentElement.editable(property: 'title', tag: 'span')}</h2>
+            </f:case>
+
+            <f:case value="Neoslive.Visio:Section">
+
+                <div class="section-title-wrapper style-2 v1">
+                    <h3 class="section-title center">
+                        <span class="text-caps">{neos:contentElement.editable(property: 'title', tag: 'span')}</span>
+                    </h3>
+                </div>
+            </f:case>
+
+            <f:defaultCase>
+                <h1>{neos:contentElement.editable(property: 'title', tag: 'span')}</h1>
+            </f:defaultCase>
+
+
+        </f:switch>
+
+
+    </f:case>
 
     <f:defaultCase>
         <div class="section-title-wrapper style-1 v1">

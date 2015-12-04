@@ -29,6 +29,11 @@
     margin-top:10px;
 }
 
-.bg-base-1.no-padding .typo3-neos-nodetypes-text {
+.bg-base.no-padding .typo3-neos-nodetypes-text {
     padding-top:30px;
+}
+
+
+.bg-base-0 {
+    background-color:transparent;
 }

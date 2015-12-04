@@ -20,7 +20,7 @@ use TYPO3\Neos\Service\LinkingService;
 /**
  * ViewHelper to find the closest document node to a given node
  */
-class GetButtonViewHelper extends AbstractViewHelper
+class SectionViewHelper extends AbstractViewHelper
 {
 
     /**
@@ -31,61 +31,52 @@ class GetButtonViewHelper extends AbstractViewHelper
     protected $escapeOutput = FALSE;
 
 
-    /**
-     * @Flow\Inject
-     * @var LinkingService
-     */
-    protected $linkingService;
 
 
     /**
      * @param string $identifier
-     * @param string $asUrl
      * @param string $asCss
-     * @param string $style
-     * @param bool $backend
      * @return NodeInterface
      */
-    public function render($identifier, $asUrl, $asCss, $style, $backend = false)
+    public function render($node,$asCss)
     {
 
 
-        $url = $identifier;
-        $css = "";
+       $css = " bg bg-base ";
 
 
-        if (substr($identifier, 0, 4) == 'http') {
-            if ($backend == false) $css = "ext-source";
-        } else {
-            $css = "";
-        }
+        switch ($node->getProperty('color')) {
 
-        if (substr($identifier, 0, 1) == '#') {
-            if ($backend == false) $css = "scroll-me";
-        }
-
-
-
-        switch ($style) {
-
-            case 'slim':
-                $css .= " btn btn-lg btn-b-base-5 ";
+            case '1':
+                $css .= " sct-color-2 bb ";
                 break;
 
-            case 'slimInverted':
-                $css .= " btn btn-xl btn-white  ";
+            case '2':
+                $css .= " bg-base-2  ";
                 break;
+
+            case '3':
+                $css .= " bg-base-3  ";
+                break;
+
+
+            case '4':
+                $css .= " bg-base-4  ";
+                break;
+
+
+            case '5':
+                $css .= " bg-base-5  ";
+                break;
+
+
 
             default:
-                $css .= " btn-a btn-lg btn-1 btn-1a fa-long-arrow-right ";
+                $css .= " bg-base-0 ";
                 break;
         }
 
 
-
-
-        if ($this->templateVariableContainer->exists($asUrl)) $this->templateVariableContainer->remove($asUrl);
-        $this->templateVariableContainer->add($asUrl, $url);
 
         if ($this->templateVariableContainer->exists($asCss)) $this->templateVariableContainer->remove($asCss);
         $this->templateVariableContainer->add($asCss, $css);
