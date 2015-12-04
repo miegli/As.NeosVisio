@@ -1,0 +1,22 @@
+
+
+prototype(Neoslive.Visio.Content.Default) < prototype(TYPO3.Neos:Content) {
+
+
+
+
+}
+
+
+
+
+prototype(Neoslive.Visio.Content:Default) < prototype(TYPO3.Neos:Content) {
+
+        templatePath = 'resource://Neoslive.Visio/Private/Templates/NodeTypes/Content.html'
+        col1 = TYPO3.Neos:ContentCollection
+        col1 {
+                nodePath = 'col1'
+        }
+
+}
+

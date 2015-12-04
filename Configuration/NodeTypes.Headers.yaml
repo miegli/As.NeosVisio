@@ -14,7 +14,7 @@
   ui:
     label: 'Header default'
     group: 'general'
-    inlineEditable: FALSE
+    inlineEditable: TRUE
     inspector:
       groups:
         image:

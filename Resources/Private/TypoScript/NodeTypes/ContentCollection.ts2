@@ -1,0 +1,17 @@
+
+
+prototype(TYPO3.Neos:ContentCollection) {
+
+
+
+	attributes.class = 'test neos-contentcollection'
+	//content = Neoslive.Visio:ContentCollectionRenderer
+
+
+
+
+}
+
+
+
+

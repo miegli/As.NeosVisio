@@ -1,0 +1,45 @@
+
+##
+# Neoslive.Visio.Headers:Default
+#
+
+'Neoslive.Visio.Content:Default':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  ui:
+    label: 'Default'
+    group: 'general'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        image:
+          label: 'Image'
+          position: 1
+  childNodes:
+    col1:
+      type: 'Neoslive.Visio.Contentcollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'TYPO3.Neos.NodeTypes:Text': TRUE
+          'TYPO3.Neos.NodeTypes:Image': TRUE
+          'TYPO3.Neos.NodeTypes:TwoColumn': TRUE
+          'TYPO3.Neos.NodeTypes:ThreeColumn': TRUE
+          'TYPO3.Neos.NodeTypes:FourColumn': TRUE
+          'TYPO3.Neos.NodeTypes:Headline': TRUE
+          'Neoslive.Visio.Headers:Default': FALSE
+
+##
+# Neoslive.Visio.Headers:Default
+#
+
+'Neoslive.Visio.Contentcollection':
+  superTypes:
+    'TYPO3.Neos:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+

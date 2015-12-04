@@ -89,8 +89,8 @@
 
                     <div class="content-wrapper-all">
 
-                        <div class="neos-header-wrapper slice">
-                            {content.header -> f:format.raw()}
+                        <div class="neos-main-wrapper slice">
+                            <f:render partial="Content" arguments="{node:node,content:content.main}" />
                         </div>
 
                     </div>

@@ -12,14 +12,10 @@
       type: 'TYPO3.Neos:ContentCollection'
       constraints:
         nodeTypes:
-          '*': TRUE
-          'Neoslive.Visio:OnePage': TRUE
-          'TYPO3.Neos.NodeTypes:Text': TRUE
-    'header':
-      type: 'TYPO3.Neos:ContentCollection'
-      constraints:
-        nodeTypes:
           '*': FALSE
+          'Neoslive.Visio:OnePage': FALSE
+          'TYPO3.Neos.NodeTypes:Text': FALSE
+          'Neoslive.Visio.Content:Default': TRUE
           'Neoslive.Visio.Headers:Default': TRUE
     'footer':
       type: 'TYPO3.Neos:ContentCollection'

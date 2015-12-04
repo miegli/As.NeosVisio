@@ -9,6 +9,8 @@ include: NodeTypes/Headers/*
 */
 
 
+
+
 page = Page {
 
 
@@ -46,10 +48,12 @@ page = Page {
 
             // The default content section
             // Default content section
-            main = PrimaryContent {
+             main = TYPO3.Neos:PrimaryContent {
                 nodePath = 'main'
-                @if.1 = ${q(node).children('main').get(0)}
+
+
             }
+
 
             titlerow = ${q(node).property('titlerow') != null && q(node).property('titlerow') != '' ? q(node).property('titlerow') : q(node).closest('[titlerow!=""]').property('titlerow')  }
 
@@ -58,10 +62,6 @@ page = Page {
             color = ${q(node).property('color')}
             title = ${q(node).property('title')}
 
-            header = ContentCollection {
-                nodePath = 'header'
-
-            }
 
             footer = ContentCollection {
                 nodePath = ${q(site).find('footer').property('_path')}
