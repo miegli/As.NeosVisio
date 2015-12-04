@@ -18,7 +18,17 @@
     height:auto !important;
 }
 
-.content-wrapper-all {
 
 
+
+.parallax-content .neos-contentcollection {
+    text-align: center;
+}
+.parallax-content .neos-contentcollection .btn {
+    margin-right:10px;
+    margin-top:10px;
+}
+
+.bg-base-1.no-padding .typo3-neos-nodetypes-text {
+    padding-top:30px;
 }

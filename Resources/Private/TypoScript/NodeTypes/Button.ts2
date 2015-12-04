@@ -1,0 +1,10 @@
+prototype(Neoslive.Visio:Button) {
+
+    templatePath = ${'resource://Neoslive.Visio/Private/Templates/NodeTypes/Button.html'}
+    title = ${q(node).property('title')}
+    style = ${q(node).property('style')}
+    container = ${q(node).parent().is('[instanceof Neoslive.Visio:AbstractSection]') ? q(node).parent().get(0) : q(node).closest('[instanceof Neoslive.Visio:AbstractSection]').get(0)  }
+    link.@process.1 = TYPO3.Neos:ConvertUris {
+        forceConversion = true
+    }
+}

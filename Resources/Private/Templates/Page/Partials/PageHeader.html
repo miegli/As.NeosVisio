@@ -54,7 +54,8 @@
         <f:case value="parallax">
 
             <section class="parallax-section parallax-section-2" <f:if condition="{content.image}"><f:then> style="background-image:url('{m:uri.image(asset: content.image,allowCropping:false)}'); background-position: 50% 12px; background-size:cover"</f:then><f:else></f:else></f:if> ">
-                <div class="parallax-content">
+            <div class="{node.properties.mask}"></div>
+            <div class="parallax-content">
                     <h1 class="parallax-title white">{node.properties.title}</h1>
                     <div class="text-center mt-20">
                         <ol class="breadcrumb style-1">

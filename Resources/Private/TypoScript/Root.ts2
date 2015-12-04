@@ -68,6 +68,11 @@ page = Page {
                 collection = ${q(site).children('footer').children()}
             }
 
+            logo = ContentCollection {
+                nodePath = ${q(site).find('logo').property('_path')}
+                collection = ${q(site).children('logo').children()}
+            }
+
             copyright = ContentCollection {
                 nodePath = ${q(site).find('copyright').property('_path')}
                 collection = ${q(site).children('copyright').children()}

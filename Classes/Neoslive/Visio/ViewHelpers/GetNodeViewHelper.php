@@ -38,7 +38,7 @@ class GetNodeViewHelper extends AbstractViewHelper
 
 
         $data = $identifier;
-        \typo3\flow\var_dump($identifier);
+
 
         if ($this->templateVariableContainer->exists($as))  $this->templateVariableContainer->remove($as);
         $this->templateVariableContainer->add($as, $data);

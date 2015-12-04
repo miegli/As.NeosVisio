@@ -1,11 +1,87 @@
-
 ##
-# Neoslive.Visio.Headers:Default
-#
+# Neoslive.Visio:Abstracts
+# ***************************************************************
+##
 
-'Neoslive.Visio.Content:Default':
+
+
+# Neoslive.Visio:Abstract
+'Neoslive.Visio:Abstract':
   superTypes:
     'TYPO3.Neos:Content': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  childNodes:
+    col1:
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'TYPO3.Neos.NodeTypes:Text': TRUE
+          'TYPO3.Neos.NodeTypes:Image': TRUE
+          'TYPO3.Neos.NodeTypes:TwoColumn': TRUE
+          'TYPO3.Neos.NodeTypes:ThreeColumn': TRUE
+          'TYPO3.Neos.NodeTypes:FourColumn': TRUE
+          'Neoslive.Visio:Headline': TRUE
+          'Neoslive.Visio:Button': TRUE
+
+
+'Neoslive.Visio:AbstractContent':
+  childNodes:
+    'main':
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'Neoslive.Visio:AbstractSection': TRUE
+
+
+
+'Neoslive.Visio:AbstractSection':
+  ui:
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        image:
+          label: 'Image'
+          position: 1
+  childNodes:
+    col1:
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'TYPO3.Neos.NodeTypes:TwoColumn': TRUE
+          'TYPO3.Neos.NodeTypes:ThreeColumn': TRUE
+          'TYPO3.Neos.NodeTypes:FourColumn': TRUE
+  properties:
+    image:
+      type: TYPO3\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'Image'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'
+
+
+
+
+
+##
+# Neoslive.Visio:*
+# ***************************************************************
+##
+
+
+
+##
+# Neoslive.Visio:Default
+#
+
+'Neoslive.Visio:Default':
+  superTypes:
+    'Neoslive.Visio:Abstract': TRUE
   constraints:
     nodeTypes:
       '*': FALSE
@@ -18,28 +94,172 @@
         image:
           label: 'Image'
           position: 1
-  childNodes:
-    col1:
-      type: 'Neoslive.Visio.Contentcollection'
-      constraints:
-        nodeTypes:
-          '*': FALSE
-          'TYPO3.Neos.NodeTypes:Text': TRUE
-          'TYPO3.Neos.NodeTypes:Image': TRUE
-          'TYPO3.Neos.NodeTypes:TwoColumn': TRUE
-          'TYPO3.Neos.NodeTypes:ThreeColumn': TRUE
-          'TYPO3.Neos.NodeTypes:FourColumn': TRUE
-          'TYPO3.Neos.NodeTypes:Headline': TRUE
-          'Neoslive.Visio.Headers:Default': FALSE
+
+
+
+##
+# Neoslive.Visio:Button
+#
+
+'Neoslive.Visio:Button':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  ui:
+    inspector:
+      groups:
+        settings:
+          label: 'Settings'
+          position: 1
+    label: 'Button'
+    icon: 'icon-external-link-sign'
+    position: 2000
+    inlineEditable: TRUE
+  properties:
+    title:
+      type: string
+      defaultValue: 'Enter Button Text here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    link:
+      type: string
+      ui:
+        label: 'Link'
+        reloadPageIfChanged: TRUE
+        inspector:
+          group: 'settings'
+          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+    style:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Style'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+          position: 1250
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: TRUE
+            values:
+              '':
+                label: ''
+              'btn-white':
+                label: 'Default'
+              'btn-b-white':
+                label: 'Inverted'
+
+
+##
+# Neoslive.Visio:Headline
+#
+
+'Neoslive.Visio:Headline':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  ui:
+    label: 'Headline'
+    icon: 'icon-font'
+    position: 100
+    inlineEditable: TRUE
+  properties:
+    title:
+      type: string
+      defaultValue: 'Enter headline here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+
+##
+# Neoslive.Visio:Parallax
+#
+
+'Neoslive.Visio:Parallax':
+  superTypes:
+    'Neoslive.Visio:AbstractSection': TRUE
+    'Neoslive.Visio:Abstract': TRUE
+  ui:
+    label: 'Parallax'
+    group: 'general'
+    inlineEditable: TRUE
+  properties:
+    mask:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Image Mask'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'
+          position: 950
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: TRUE
+            values:
+              '':
+                label: ''
+              'mask mask-3 v1':
+                label: 'Color mask'
+              'mask mask-2':
+                label: 'Dark exa'
+              'mask mask-1':
+                label: 'Slash it'
+
+
+##
+# Neoslive.Visio:Parallax
+#
+
+'Neoslive.Visio:Section':
+  superTypes:
+    'Neoslive.Visio:AbstractSection': TRUE
+    'Neoslive.Visio:Abstract': TRUE
+  ui:
+    label: 'Section'
+    group: 'general'
+    inspector:
+      groups:
+        settings:
+          label: 'Settings'
+          position: 1
+  properties:
+    nopadding:
+      type: boolean
+      ui:
+        label: 'No padding'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+    anchor:
+      type: string
+      ui:
+        label: 'Anchor'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'settings'
 
 ##
 # Neoslive.Visio.Headers:Default
 #
 
-'Neoslive.Visio.Contentcollection':
+'Neoslive.Visio:Fullscreenimage':
   superTypes:
-    'TYPO3.Neos:ContentCollection': TRUE
-  constraints:
-    nodeTypes:
-      '*': FALSE
-
+    'Neoslive.Visio:AbstractSection': TRUE
+    'Neoslive.Visio:Abstract': TRUE
+  ui:
+    label: 'Fullscreen Image'
+    group: 'general'

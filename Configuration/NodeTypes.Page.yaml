@@ -4,6 +4,8 @@
 #
 
 'TYPO3.Neos.NodeTypes:Page':
+  superTypes:
+    'Neoslive.Visio:AbstractContent': TRUE
   constraints:
     nodeTypes:
       'Neoslive.Visio:Quicklinks': TRUE
@@ -13,10 +15,6 @@
       constraints:
         nodeTypes:
           '*': FALSE
-          'Neoslive.Visio:OnePage': FALSE
-          'TYPO3.Neos.NodeTypes:Text': FALSE
-          'Neoslive.Visio.Content:Default': TRUE
-          'Neoslive.Visio.Headers:Default': TRUE
     'footer':
       type: 'TYPO3.Neos:ContentCollection'
       constraints:
@@ -29,6 +27,13 @@
         nodeTypes:
           '*': TRUE
           'TYPO3.Neos.NodeTypes:Text': TRUE
+    'logo':
+      type: 'TYPO3.Neos:ContentCollection'
+      inlineEditable: FALSE
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'TYPO3.Neos.NodeTypes:Image': TRUE
   ui:
     inspector:
       groups:
@@ -43,6 +48,15 @@
       type: string
       ui:
         label: 'Label'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'document'
+          position: 950
+    title:
+      type: string
+      ui:
+        label: 'Title'
+        inlineEditable: TRUE
         reloadIfChanged: FALSE
         inspector:
           group: 'document'
@@ -156,6 +170,28 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'image'
+    mask:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Image Mask'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'
+          position: 950
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: TRUE
+            values:
+              '':
+                label: ''
+              'mask mask-3 v1':
+                label: 'Color mask'
+              'mask mask-2':
+                label: 'Dark exa'
+              'mask mask-1':
+                label: 'Slash it'
+
     color:
       type: string
       ui:

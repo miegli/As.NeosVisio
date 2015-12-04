@@ -1,0 +1,20 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+<f:switch expression="{container.nodetype.name}">
+
+    <f:case value="Neoslive.Visio:Parallax">
+<span class="c-white">
+<div{attributes -> f:format.raw()}>
+	{neos:contentElement.editable(property: 'text')}
+</div>
+</span>
+    </f:case>
+
+    <f:defaultCase>
+        <div{attributes -> f:format.raw()}>
+        {neos:contentElement.editable(property: 'text')}
+        </div>
+    </f:defaultCase>
+
+</f:switch>

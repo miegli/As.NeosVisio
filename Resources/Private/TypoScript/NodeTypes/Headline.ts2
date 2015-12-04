@@ -1,0 +1,7 @@
+prototype(Neoslive.Visio:Headline) {
+
+    templatePath = ${'resource://Neoslive.Visio/Private/Templates/NodeTypes/Headline.html'}
+    title = ${q(node).property('title')}
+    container = ${q(node).parent().is('[instanceof Neoslive.Visio:AbstractSection]') ? q(node).parent().get(0) : q(node).closest('[instanceof Neoslive.Visio:AbstractSection]').get(0)  }
+
+}

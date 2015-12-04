@@ -6,6 +6,8 @@ prototype(TYPO3.TypoScript:Template) {
 
     templatePath = ${'resource://Neoslive.Visio/Private/Templates/Page/Template' +  this.layout +'.html'}
 
+    title = ${q(node).property('title')}
+
 }
 
 prototype(Neoslive.Visio:Template) < prototype(TYPO3.TypoScript:Template) {

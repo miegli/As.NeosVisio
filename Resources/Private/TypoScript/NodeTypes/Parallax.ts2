@@ -1,0 +1,6 @@
+
+prototype(Neoslive.Visio:Parallax) < prototype(Neoslive.Visio:Abstract) {
+
+
+}
+

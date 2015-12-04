@@ -1,0 +1,26 @@
+'TYPO3.Neos:Content':
+  childNodes:
+    column0:
+      constraints:
+        nodeTypes:
+          'Neoslive.Visio:AbstractSection': FALSE
+          'Neoslive.Visio:Abstract': FALSE
+          'TYPO3.Neos.NodeTypes:Headline': FALSE
+    column1:
+      constraints:
+        nodeTypes:
+          'Neoslive.Visio:AbstractSection': FALSE
+          'Neoslive.Visio:Abstract': FALSE
+          'TYPO3.Neos.NodeTypes:Headline': FALSE
+    column2:
+          constraints:
+            nodeTypes:
+              'Neoslive.Visio:AbstractSection': FALSE
+              'Neoslive.Visio:Abstract': FALSE
+              'TYPO3.Neos.NodeTypes:Headline': FALSE
+    column3:
+          constraints:
+            nodeTypes:
+              'Neoslive.Visio:AbstractSection': FALSE
+              'Neoslive.Visio:Abstract': FALSE
+              'TYPO3.Neos.NodeTypes:Headline': FALSE

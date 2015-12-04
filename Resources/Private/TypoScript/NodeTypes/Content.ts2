@@ -1,22 +1,24 @@
 
-
-prototype(Neoslive.Visio.Content.Default) < prototype(TYPO3.Neos:Content) {
-
-
-
-
-}
-
-
-
-
-prototype(Neoslive.Visio.Content:Default) < prototype(TYPO3.Neos:Content) {
-
-        templatePath = 'resource://Neoslive.Visio/Private/Templates/NodeTypes/Content.html'
+prototype(Neoslive.Visio:Abstract) < prototype(TYPO3.Neos:Content) {
         col1 = TYPO3.Neos:ContentCollection
         col1 {
                 nodePath = 'col1'
         }
+}
+
+
+
+prototype(Neoslive.Visio:Default) < prototype(Neoslive.Visio:Abstract) {
 
 }
 
+
+prototype(Neoslive.Visio:Section) < prototype(Neoslive.Visio:Abstract) {
+
+}
+
+
+prototype(Neoslive.Visio:Parallax) < prototype(Neoslive.Visio:Abstract) {
+
+
+}

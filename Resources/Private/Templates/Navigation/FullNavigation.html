@@ -40,10 +40,21 @@
 
                         <f:then>
 
-                        <a href="{item.node.properties.link}">
-                                <h3 class="meganav-section-title">{item.node.properties.title}</h3>
-                                <ts:render path="node" context="{node: item.node}"/>
-                        </a>
+                            <f:if condition="{neos:rendering.inBackend()}">
+                                <f:then>
+
+                                        <h3 class="meganav-section-title">{item.node.properties.title}</h3>
+                                        <ts:render path="node" context="{node: item.node}"/>
+
+                                </f:then>
+                                <f:else>
+                                    <a href="{item.node.properties.link}">
+                                        <h3 class="meganav-section-title">{item.node.properties.title}</h3>
+                                        <ts:render path="node" context="{node: item.node}"/>
+                                    </a>
+                                </f:else>
+
+                                </f:if>
 
                         </f:then>
                         <f:else>

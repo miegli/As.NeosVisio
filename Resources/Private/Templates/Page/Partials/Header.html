@@ -58,13 +58,9 @@
         <div class="container relative">
             <div class="navbar-header">
                 <!-- LOGO -->
-                <a class="navbar-logo" href="index.html">
-                    <img id="logoOne"
-                         src="/_Resources/Static/Packages/Neoslive.Visio/visio/images//logo/logo-1-a.png"
-                         class="hide">
-                    <img id="logoTwo"
-                         src="/_Resources/Static/Packages/Neoslive.Visio/visio/images//logo/logo-1-b.png">
-                </a>
+                <div class="navbar-logo">
+                {logo -> f:format.raw()}
+                </div>
 
                 <!-- NAVBAR TOGGLE -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse"

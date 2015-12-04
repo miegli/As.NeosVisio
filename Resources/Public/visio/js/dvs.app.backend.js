@@ -23,8 +23,23 @@ $(window).load(function(){
 	}
 });
 
-// On document ready functions
+
+if (typeof document.addEventListener === 'function') {
+
+	document.addEventListener('Neos.PageLoaded', function(event) {
+		// Do stuff
+		init_document();
+
+	}, false);
+}
+
 $(document).ready(function() {
+	init_document();
+});
+
+
+// On document ready functions
+function init_document() {
 	// GLOBAL VARIABLES
 	var navbarOffsetTop = $('.header-affix').data('offset-top');
 
@@ -33,7 +48,7 @@ $(document).ready(function() {
 		offset: {
 			top: navbarOffsetTop
 		}
-	});;
+	});
 
 	// Affix navbar before event fires
 	$(".header-affix").on('affix.bs.affix', function(){
@@ -71,7 +86,7 @@ $(document).ready(function() {
 
     // Fix the closing problem when clicking inside dopdown menu
 	$('ul.dropdown-menu').on('click', function(event) {
-	    event.stopPropagation();
+	    //event.stopPropagation();
 	});
 	
 	// Collapsible Menu
@@ -112,11 +127,11 @@ $(document).ready(function() {
 	});
 
 	// Smooth scroll
-	$('.scroll-me').bind('click', function (event) { 
+	$('.scroll-me').bind('click', function (event) {
         // Animate scroll to the selected section
        $('html, body').stop(true, true).animate({scrollTop: $(this.hash).offset().top}, 600);
 
-        event.preventDefault();
+        //event.preventDefault();
     });
 
 	// Owl Carousel
@@ -427,7 +442,7 @@ $(document).ready(function() {
 
     // Disable Empty Links
     $("[href=#]").click(function(event){
-        event.preventDefault();
+        //event.preventDefault();
     });
 
     // Rating Stars
@@ -494,4 +509,4 @@ $(document).ready(function() {
     });
 
 // END document ready	
-});
+}

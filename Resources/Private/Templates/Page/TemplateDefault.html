@@ -34,7 +34,7 @@
 
         <!-- GLOBAL STYLE -->
         <link id="stylesheetGlobal" type="text/css"
-              href="{f:uri.resource(path: 'visio/less/global-style-blue.css', package: 'Neoslive.Visio')}"
+              href="{f:uri.resource(path: 'visio/css/global-style-blue.min.css', package: 'Neoslive.Visio')}"
               rel="stylesheet" media="screen">
         <!-- CUSTOM STYLE -->
         <link type="text/css" href="{f:uri.resource(path: 'visio/css/custom-style.css', package: 'Neoslive.Visio')}"
@@ -78,7 +78,7 @@
                 <div class="st-content">
                     <div class="st-content-inner">
                         <!-- HEADER -->
-                        <f:render partial="Header" arguments="{node:node,mode:navigationheader,FullNavigation:FullNavigation}" />
+                        <f:render partial="Header" arguments="{node:node,mode:navigationheader,FullNavigation:FullNavigation,logo:content.logo}" />
                     </div>
 
                     <!-- TITLE ROW -->
@@ -131,7 +131,18 @@
     <!-- Essential JSs -->
     <script src="{f:uri.resource(path: 'visio/assets/bootstrap/js/bootstrap.min.js', package: 'Neoslive.Visio')}"></script>
     <script src="{f:uri.resource(path: 'visio/assets/bootstrap/js/tooltip.js', package: 'Neoslive.Visio')}"></script>
-    <script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap-dropdownhover.js', package: 'Neoslive.Visio')}"></script>
+
+    <f:if condition="{neos:rendering.inBackend()}">
+        <f:then>
+            <script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap-dropdownhover.backend.js', package: 'Neoslive.Visio')}"></script>
+        </f:then>
+        <f:else>
+            <script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap-dropdownhover.js', package: 'Neoslive.Visio')}"></script>
+        </f:else>
+    </f:if>
+
+
+
     <script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap.slide-menu.js', package: 'Neoslive.Visio')}"></script>
     <script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap-validator.js', package: 'Neoslive.Visio')}"></script>
     <script src="{f:uri.resource(path: 'visio/js/modernizr.custom.js', package: 'Neoslive.Visio')}"></script>
@@ -172,8 +183,20 @@
     <script src="{f:uri.resource(path: 'visio/assets/owl-carousel/js/owl.carousel.min.js', package: 'Neoslive.Visio')}"></script>
 
 
-    <!-- App JS -->
-    <script src="{f:uri.resource(path: 'visio/js/dvs.app.js', package: 'Neoslive.Visio')}"></script>
+
+    <f:if condition="{neos:rendering.inBackend()}">
+        <f:then>
+            <!-- App JS -->
+            <script src="{f:uri.resource(path: 'visio/js/dvs.app.backend.js', package: 'Neoslive.Visio')}"></script>
+        </f:then>
+        <f:else>
+            <!-- App JS -->
+            <script src="{f:uri.resource(path: 'visio/js/dvs.app.js', package: 'Neoslive.Visio')}"></script>
+
+        </f:else>
+    </f:if>
+
+
 </f:section>
 </body>
 </html>
