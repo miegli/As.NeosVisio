@@ -1,0 +1,30 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<f:switch expression="{container.nodetype.name}">
+
+
+    <f:defaultCase>
+        <div{attributes -> f:format.raw()}>
+
+
+        <div class="block style-5 v1a">
+            <div class="block-icon">
+                <i class="fa {node.properties.icon}"></i>
+            </div>
+            <div class="block-content">
+                <h3 class="block-title">{neos:contentElement.editable(property: 'title')}</h3>
+                <p>
+                    {neos:contentElement.editable(property: 'text')}
+                </p>
+            </div>
+        </div>
+
+
+
+        </div>
+    </f:defaultCase>
+
+</f:switch>
+
+

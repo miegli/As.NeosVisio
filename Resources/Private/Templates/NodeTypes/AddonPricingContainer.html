@@ -1,0 +1,15 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+
+<div class="promos bg-base-1">
+    <div class="promo first">
+        <ts:render path="textRenderer" context="{node: price1}"/>
+    </div>
+    <div class="promo second">
+        <ts:render path="textRenderer" context="{node: price2}"/>
+    </div>
+    <div class="promo third scale mb-30">
+        <ts:render path="textRenderer" context="{node: price3}"/>
+    </div>
+</div>

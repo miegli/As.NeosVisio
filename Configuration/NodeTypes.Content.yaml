@@ -25,6 +25,8 @@
           'TYPO3.Neos.NodeTypes:FourColumn': TRUE
           'Neoslive.Visio:Headline': TRUE
           'Neoslive.Visio:Button': TRUE
+          'Neoslive.Visio:AddonPricingContainer': TRUE
+          'Neoslive.Visio:AbstractAddon': TRUE
 
 
 'Neoslive.Visio:AbstractContent':
@@ -217,6 +219,51 @@
           editor: 'Content/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             dataSourceIdentifier: 'neoslive-visio-fontawesome-4'
+
+
+
+##
+# Neoslive.Visio:Icon
+#
+
+'Neoslive.Visio:TextWithIcon':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+    'TYPO3.Neos.NodeTypes:TextMixin': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  ui:
+    label: 'Text with icon'
+    icon: 'icon-smile'
+    position: 100
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        settings:
+          label: 'Settings'
+          position: 1
+  properties:
+    title:
+      type: string
+      defaultValue: 'Enter title here'
+    ui:
+      reloadIfChanged: FALSE
+    icon:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Icon'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+          position: 950
+          editor: 'Content/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            dataSourceIdentifier: 'neoslive-visio-ion-icons'
+            allowEmpty: TRUE
+
+
 ##
 # Neoslive.Visio:Parallax
 #

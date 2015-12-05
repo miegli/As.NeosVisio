@@ -7,14 +7,33 @@
 <span class="c-white">
 <div{attributes -> f:format.raw()}>
 	{neos:contentElement.editable(property: 'text')}
-</div>
+    </div>
 </span>
     </f:case>
 
     <f:defaultCase>
-        <div{attributes -> f:format.raw()}>
-        {neos:contentElement.editable(property: 'text')}
-        </div>
+
+
+        <f:if condition="{node.parent.parent.nodetype.name} == 'Neoslive.Visio:Section'">
+            <f:then>
+                <h4 class="strong-500">
+                    <div
+                            {attributes -> f:format.raw()}>
+                        {neos:contentElement.editable(property: 'text')}
+                    </div>
+                </h4>
+            </f:then>
+            <f:else>
+                <div {attributes -> f:format.raw()}>
+                    {neos:contentElement.editable(property: 'text')}
+                </div>
+            </f:else>
+        </f:if>
+
+
+
+
+
     </f:defaultCase>
 
 </f:switch>

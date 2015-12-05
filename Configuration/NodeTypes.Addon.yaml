@@ -1,0 +1,121 @@
+
+# Neoslive.Visio:Abstract
+'Neoslive.Visio:AbstractAddon':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+
+##
+# Neoslive.Visio:Icon
+#
+
+'Neoslive.Visio:AddonPricingContainer':
+  superTypes:
+    'Neoslive.Visio:AbstractAddon': TRUE
+
+  constraints:
+    nodeTypes:
+      'Neoslive.Visio:AddonPricing': TRUE
+  ui:
+    label: 'Pricing'
+    icon: 'icon-dollar'
+    inlineEditable: FALSE
+  childNodes:
+    price1:
+      type: 'Neoslive.Visio:AddonPricing'
+    price2:
+      type: 'Neoslive.Visio:AddonPricing'
+    price3:
+      type: 'Neoslive.Visio:AddonPricing'
+
+
+##
+# Neoslive.Visio:Icon
+#
+
+'Neoslive.Visio:AddonPricing':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  ui:
+    label: 'Price'
+    icon: 'icon-dollar'
+    position: 100
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        addons:
+          label: 'Addon'
+          position: 1
+  properties:
+    title:
+      type: string
+      defaultValue: 'Enter title here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    subtitle:
+      type: string
+      defaultValue: 'Enter sub title here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    linktext:
+      type: string
+      defaultValue: 'Add button text'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    link:
+      type: string
+      ui:
+        label: 'Link'
+        reloadPageIfChanged: TRUE
+        inspector:
+          group: 'settings'
+          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+    price:
+      type: string
+      defaultValue: '$0'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    features:
+      type: string
+      defaultValue: 'Enter features here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'TYPO3.Neos.NodeTypes:Text': TRUE
+          'Neoslive.Visio:Button': TRUE
+
+

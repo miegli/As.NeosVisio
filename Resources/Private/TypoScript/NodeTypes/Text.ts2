@@ -11,4 +11,15 @@ prototype(TYPO3.Neos.NodeTypes:Text) {
 
 }
 
+##
+# Set the default preset for the "Form" element
+#
+prototype(Neoslive.Visio:TextWithIcon) < prototype(TYPO3.Neos.NodeTypes:Text) {
+    attributes.class = ${'border' + q(node).property('border')}
+    text = ${q(node).property('text')}
+    templatePath = 'resource://Neoslive.Visio/Private/Templates/NodeTypes/TextWithIcon.html'
+
+
+}
+
 

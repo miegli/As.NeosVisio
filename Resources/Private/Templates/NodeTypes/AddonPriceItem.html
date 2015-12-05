@@ -1,0 +1,23 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<h4>{neos:contentElement.editable(property: 'title', tag: 'span')}</h4>
+<ul class="features">
+    <li class="brief">{neos:contentElement.editable(property: 'subtitle', tag: 'span')}</li>
+    <li class="price">{neos:contentElement.editable(property: 'price', tag: 'span')}</li>
+    <li>{neos:contentElement.editable(property: 'features', tag: 'span')}</li>
+    <li class="buy">
+        <f:if condition="{neos:rendering.inBackend()}">
+            <f:then>
+                <div class="btn btn-lg btn-b-white">
+                    <span>{neos:contentElement.editable(property: 'linktext', tag: 'span')}</span>
+                </div>
+            </f:then>
+            <f:else>
+                <a href="{link}" class="btn btn-lg btn-b-white">
+                    <span>{neos:contentElement.editable(property: 'linktext', tag: 'span')}</span>
+                </a>
+            </f:else>
+
+            </f:if>
+    </li>
+</ul>

@@ -1,0 +1,27 @@
+prototype(Neoslive.Visio:AddonPricingContainer) {
+
+   textRenderer = Neoslive.Visio:AddonPricing
+
+    price1 = ${q(node).children('price1').get(0)}
+    price2 = ${q(node).children('price2').get(0)}
+    price3 = ${q(node).children('price3').get(0)}
+
+
+
+
+}
+
+// Enhance image prototype when inside the carousel
+prototype(Neoslive.Visio:AddonPricing) < prototype(TYPO3.Neos:Content) {
+
+    // Render images in the carousel with a special template.
+    templatePath = ${'resource://Neoslive.Visio/Private/Templates/NodeTypes/AddonPriceItem.html'}
+
+    title = ${q(node).property('title')}
+    node = ${node}
+
+    link.@process.1 = TYPO3.Neos:ConvertUris {
+        forceConversion = true
+    }
+
+}

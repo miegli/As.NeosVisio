@@ -1,0 +1,3 @@
+prototype(Neoslive.Visio:AbstractElement) < prototype(Neoslive.Visio:Abstract) {
+    container = ${q(node).parent().is('[instanceof Neoslive.Visio:AbstractSection]') ? q(node).parent().get(0) : q(node).closest('[instanceof Neoslive.Visio:AbstractSection]').get(0)  }
+}
