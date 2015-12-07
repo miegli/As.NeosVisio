@@ -69,6 +69,25 @@
         reloadIfChanged: FALSE
         inspector:
           group: 'menu'
+    boxed:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Boxed layout'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'layout'
+          position: 950
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: TRUE
+            values:
+              '':
+                label: ''
+              '1':
+                label: 'Yes'
+              '0':
+                label: 'No'
     menu:
       type: string
       defaultValue: 'default'

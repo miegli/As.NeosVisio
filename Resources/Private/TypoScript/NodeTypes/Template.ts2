@@ -6,6 +6,9 @@ prototype(TYPO3.TypoScript:Template) {
 
     templatePath = ${'resource://Neoslive.Visio/Private/Templates/Page/Template' +  this.layout +'.html'}
 
+    boxed = ${q(node).property('boxed') != null && q(node).property('boxed') != '' ? q(node).property('boxed') : q(node).closest('[boxed!=""]').property('boxed')}
+
+
     title = ${q(node).property('title')}
 
 }
