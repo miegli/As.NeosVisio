@@ -109,10 +109,13 @@ function init_document() {
 	});
 
 	// Bootstrap Carousels
-	$('.carousel').carousel({
-		interval: 5000,
-		pause	: 'hover'
-	});
+
+	//$('.carousel').carousel({
+	//	interval: 5000,
+	//	pause	: 'hover',
+	//	autoplay: false
+	//});
+
 	function formBottomFixedWidth(){
 		// Bottom fixed form - take parent container width
 		if($(window).width() > 768){

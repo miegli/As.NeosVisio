@@ -50,8 +50,9 @@
                                 <f:else>
                                     <a href="{item.node.properties.link}">
                                         <h3 class="meganav-section-title">{item.node.properties.title}</h3>
-                                        <ts:render path="node" context="{node: item.node}"/>
                                     </a>
+                                        <ts:render path="node" context="{node: item.node}"/>
+
                                 </f:else>
 
                                 </f:if>

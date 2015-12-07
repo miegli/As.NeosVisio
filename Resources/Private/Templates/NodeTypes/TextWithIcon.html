@@ -13,10 +13,9 @@
                 <i class="fa {node.properties.icon}"></i>
             </div>
             <div class="block-content">
-                <h3 class="block-title">{neos:contentElement.editable(property: 'title')}</h3>
-                <p>
-                    {neos:contentElement.editable(property: 'text')}
-                </p>
+                <h3 class="block-title">{neos:contentElement.editable(property: 'title',tag: 'span')}</h3>
+
+                    {neos:contentElement.editable(property: 'text',tag:'div')}
             </div>
         </div>
 

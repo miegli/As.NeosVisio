@@ -128,7 +128,7 @@ class ImageViewHelper extends AbstractTagBasedViewHelper
         $thumbnailData = $this->assetService->getThumbnailUriAndSizeForAsset($image, $thumbnailConfiguration);
 
         $this->tag->addAttributes(array(
-            'alt' => '',
+            'alt' => $image->getResource()->getFilename(),
             'src' => $thumbnailData['src']
         ));
 

@@ -134,7 +134,7 @@
                         <!-- MAIN NAV -->
                         <div class="header" id="header">
                             <!-- NAVBAR -->
-                            <nav class="navbar navbar-main navbar-one-page navbar-shadow" role="navigation"
+                            <nav class="navbar navbar-main navbar-one-page navbar-shadow"
                                  id="slide-nav">
                                 <div class="container relative image-header" <f:if condition="{content.node.0.properties.image}"><f:then> style="background-image:url('{m:uri.image(asset: content.node.0.properties.image,allowCropping:false, height:480)}');"</f:then><f:else></f:else></f:if>>
                                     <div>
@@ -183,10 +183,11 @@
                         </div>
 
                         <!-- FULL PAGE - GLOBAL SEARCH -->
-                        <section id="sctGlobalSearch" class="global-search-full-page">
+                        <div id="sctGlobalSearch" class="global-search-full-page">
+
                             <div class="close-search click-trigger" data-trigger-button="#btnGlobalSearch"
                                  title="Close Search"></div>
-                            <form class="form-horizontal form-global-search float-wrapper" role="form">
+                            <form class="form-horizontal form-global-search float-wrapper" >
                                 <div class="form-group col-sm-9">
                                     <input type="text" class="search-input" placeholder="Type here ...">
                                 </div>
@@ -194,7 +195,7 @@
                                     <button type="submit" class="btn btn-6 btn-6b btn-base-4 btn-nobg">Search</button>
                                 </div>
                             </form>
-                        </section>
+                        </div>
 
 
                         <section id="leftNavigation" class="hidden-xs hidden-sm">

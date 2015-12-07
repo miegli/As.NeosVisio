@@ -1,0 +1,62 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace visio=Neoslive\Visio\ViewHelpers}
+{namespace m=TYPO3\Media\ViewHelpers}
+
+<!-- Slide -->
+<div class="{classCols} cols-xs-12">
+
+
+    <div class="block block-image v1">
+
+        <div {attributes -> f:format.raw()}>
+            <div class="block-image">
+
+                <div class="view view-first">
+                    <f:if condition="{node.properties.image}">
+                        <f:then>
+                            <img alt="{linktext}"
+                                 src="{m:uri.image(asset: node.properties.image,allowCropping:false, width:withImage)}">
+                        </f:then>
+                    </f:if>
+
+                    <div class="mask">
+                        <h2>{neos:contentElement.editable(property: 'title2', tag: 'span')}</h2>
+
+                        <p>{neos:contentElement.editable(property: 'teaser2', tag: 'span')}</p>
+
+                        <f:if condition="{neos:rendering.inBackend()}">
+                            <f:then>
+                                <visio:getButton identifier="{link}" asUrl="url" asCss="css" style="" backend="false">
+                                    <div class="btn btn-6 btn-6c btn-base-5">
+                                        {neos:contentElement.editable(property: 'linktext', tag: 'span')}
+                                    </div>
+                                </visio:getButton>
+                            </f:then>
+                            <f:else>
+
+                                <visio:getButton identifier="{link}" asUrl="url" asCss="css" style="" backend="false">
+                                    <a href="{url}" class="btn btn-6 btn-6c btn-base-5">{neos:contentElement.editable(property:
+                                        'linktext', tag: 'span')}</a>
+                                </visio:getButton>
+
+                            </f:else>
+                        </f:if>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="block-content">
+                <h3 class="block-title">{neos:contentElement.editable(property: 'title', tag: 'span')}</h3>
+
+                <p>
+                    {neos:contentElement.editable(property: 'teaser', tag: 'span')}
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

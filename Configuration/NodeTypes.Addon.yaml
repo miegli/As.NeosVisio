@@ -119,3 +119,183 @@
           'Neoslive.Visio:Button': TRUE
 
 
+
+##
+# Neoslive.Visio:Article
+#
+
+'Neoslive.Visio:Item':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  ui:
+    label: 'Item'
+    icon: 'icon-file-text-alt'
+    position: 100
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        addons:
+          label: 'Addon'
+          position: 1
+        image:
+          label: 'Image'
+          position: 1
+  properties:
+    title:
+      type: string
+      defaultValue: 'Enter title here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    teaser:
+      type: string
+      defaultValue: 'Enter teaser text here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    title2:
+      type: string
+      defaultValue: 'Enter title here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    teaser2:
+      type: string
+      defaultValue: 'Enter title here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    linktext:
+      type: string
+      defaultValue: 'Read more'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    link:
+      type: string
+      ui:
+        label: 'Link'
+        reloadPageIfChanged: TRUE
+        inspector:
+          group: 'image'
+          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+    image:
+      type: TYPO3\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'Image'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'TYPO3.Neos.NodeTypes:Text': TRUE
+          'Neoslive.Visio:Button': TRUE
+
+
+##
+# Neoslive.Visio:Newscontainer
+#
+
+'Neoslive.Visio:Newscontainer':
+  superTypes:
+    'Neoslive.Visio:AbstractAddon': TRUE
+    'TYPO3.Neos:Content': TRUE
+  constraints:
+    nodeTypes:
+      'Neoslive.Visio:Item': TRUE
+  ui:
+    label: 'News block'
+    icon: 'icon-file-text-alt'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        settings:
+          label: 'Settings'
+          position: 1
+  childNodes:
+    'col1':
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'Neoslive.Visio:AbstractSection': TRUE
+  properties:
+    layout:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Layout'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+          position: 1250
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: TRUE
+            values:
+              '':
+                label: ''
+              'carousel':
+                label: 'carousel'
+    cols:
+      type: integer
+      defaultValue: '3'
+      ui:
+        label: 'Number of cols'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+          position: 1250
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: FALSE
+            values:
+              '1':
+                label: '1'
+              '2':
+                label: '2'
+              '3':
+                label: '3'
+              '4':
+                label: '4'
+              '6':
+                label: '6'
+              '12':
+                label: '12'
+
+    title:
+      type: string
+      defaultValue: 'Enter title here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE

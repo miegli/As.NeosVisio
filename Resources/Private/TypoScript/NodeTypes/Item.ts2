@@ -1,0 +1,23 @@
+
+
+
+# Abstract render definition for a single content column in a multi column element
+prototype(Neoslive.Visio:Item)  < prototype(TYPO3.Neos:Content) {
+
+    title = ${q(node).property('title')}
+    subtitle = ${q(node).property('subtitle')}
+    title2 = ${q(node).property('title2')}
+    subtitle2 = ${q(node).property('subtitle2')}
+    teaser = ${q(node).property('teaser')}
+    teaser2 = ${q(node).property('teaser2')}
+    linktext = ${q(node).property('linktext')}
+
+    link.@process.1 = TYPO3.Neos:ConvertUris {
+        forceConversion = true
+    }
+    container = ${q(node).parent().is('[instanceof Neoslive.Visio:AbstractSection]') ? q(node).parent().get(0) : q(node).closest('[instanceof Neoslive.Visio:AbstractSection]').get(0)  }
+
+    classCols = ${'col-sm-' + Math.floor(12 / q(node).parent().property('cols'))}
+    withImage = ${Math.floor(1280/q(node).parent().property('cols'))}
+
+}

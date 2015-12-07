@@ -9,7 +9,7 @@
 
 
         <f:then>
-            <section class="{css} no-padding" id="{node.properties.anchor}">
+            <section class="{css} no-padding" {f:if(condition: '{node.properties.anchor} != \'\'', then: 'id="{node.properties.anchor}"', else: '')}  >
                 <div>
                     <div class="container">
                         <div class="{f:if(condition: '{node.properties.centered} == 1', then: 'block style-4 v2 text-center', else: '')} ">
@@ -21,7 +21,7 @@
             </section>
         </f:then>
         <f:else>
-            <section class="{css}" id="{node.properties.anchor}">
+            <section class="{css}" {f:if(condition: '{node.properties.anchor} != \'\'', then: 'id="{node.properties.anchor}"', else: '')}>
                 <div class="cta-wrapper">
                     <div class="container ">
 
