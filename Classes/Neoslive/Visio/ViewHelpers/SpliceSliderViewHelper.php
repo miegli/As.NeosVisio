@@ -19,7 +19,7 @@ use TYPO3\Eel\FlowQuery\FlowQuery;
 /**
  * ViewHelper to find the closest document node to a given node
  */
-class SpliceCarouselViewHelper extends AbstractViewHelper
+class SpliceSliderViewHelper extends AbstractViewHelper
 {
 
     /**
@@ -74,10 +74,13 @@ class SpliceCarouselViewHelper extends AbstractViewHelper
                     $html .= '<div class="item">';
                 }
                 $html .= "\n";
+                $html .= ' <div class="row">';
                 foreach ($v as $key => $c) {
                     $html .= $c;
                     $html .= "\n";
                 }
+                $html .= "\n";
+                $html .= ' </div>';
                 $html .= "\n";
                 $html .= '</div>';
             }

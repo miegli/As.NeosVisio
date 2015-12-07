@@ -1,3 +1,14 @@
 prototype(Neoslive.Visio:AbstractElement) < prototype(Neoslive.Visio:Abstract) {
     container = ${q(node).parent().is('[instanceof Neoslive.Visio:AbstractSection]') ? q(node).parent().get(0) : q(node).closest('[instanceof Neoslive.Visio:AbstractSection]').get(0)  }
 }
+
+prototype(Neoslive.Visio:AbstractItem)  {
+
+
+    classCols = ${  q(node).parent().property('cols') > 0  ?  'col-sm-' + Math.floor(12 / q(node).parent().property('cols')) : ''}
+    withImage = ${q(node).parent().property('cols') > 0  ? Math.floor(1280/q(node).parent().property('cols')) : 1280}
+
+
+
+}
+

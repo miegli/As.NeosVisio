@@ -219,32 +219,27 @@
 
 
 ##
-# Neoslive.Visio:Newscontainer
+# Neoslive.Visio:Slidercontainer
 #
 
-'Neoslive.Visio:Newscontainer':
+'Neoslive.Visio:Slidercontainer':
   superTypes:
     'Neoslive.Visio:AbstractAddon': TRUE
     'TYPO3.Neos:Content': TRUE
   constraints:
     nodeTypes:
       'Neoslive.Visio:Item': TRUE
+      'TYPO3.Neos.NodeTypes:Image': TRUE
   ui:
-    label: 'News block'
+    label: 'Slider'
     icon: 'icon-file-text-alt'
+    group: 'structure'
     inlineEditable: TRUE
     inspector:
       groups:
         settings:
           label: 'Settings'
           position: 1
-  childNodes:
-    'col1':
-      type: 'TYPO3.Neos:ContentCollection'
-      constraints:
-        nodeTypes:
-          '*': FALSE
-          'Neoslive.Visio:AbstractSection': TRUE
   properties:
     layout:
       type: string
@@ -263,6 +258,8 @@
                 label: ''
               'carousel':
                 label: 'carousel'
+              'slider':
+                label: 'slider'
     cols:
       type: integer
       defaultValue: '3'

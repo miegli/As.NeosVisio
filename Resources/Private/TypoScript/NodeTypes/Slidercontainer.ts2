@@ -1,0 +1,33 @@
+##
+# Adjust "MultiColumn" element to Twitter bootstrap CSS classes
+#
+
+prototype(Neoslive.Visio:Slidercontainer) < prototype(TYPO3.Neos:Content) {
+
+    templatePath = 'resource://Neoslive.Visio/Private/Templates/NodeTypes/Slidercontainer.html'
+
+     layout = ${q(node).property('layout')}
+
+
+#    columns = TYPO3.TypoScript:Collection {
+#        collection = ${q(node).children('[instanceof Neoslive.Visio:Item]')}
+#        itemRenderer = Neoslive.Visio:Item
+#        itemName = 'node'
+#    }
+
+
+    columns = TYPO3.TypoScript:Collection {
+
+        collection = ${q(node).children()}
+        itemRenderer = TYPO3.Neos:ContentCase
+        itemName = 'node'
+
+    }
+
+
+    countCols = ${q(node).property('cols')}
+    countChildren =  ${q(node).children().count()}
+    classCols = ${'col-sm-' + Math.floor(12 / q(node).property('cols'))}
+
+}
+

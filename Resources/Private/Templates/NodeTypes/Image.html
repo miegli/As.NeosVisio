@@ -1,3 +1,30 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 
-<f:render partial="Image" arguments="{_all}" />
+<!-- Slide -->
+<f:if condition="{classCols} != ''">
+    <f:then>
+
+        <f:if condition="{node.parent.properties.layout} == 'carousel'">
+            <f:then>
+                <div class="cols-xs-12">
+                    <div class="client-logo style-3">
+                        <f:render partial="Image" arguments="{_all}"/>
+                    </div>
+                </div>
+            </f:then>
+            <f:else>
+                <div class="{classCols} cols-xs-12">
+                    <div class="client-logo style-3">
+                        <f:render partial="Image" arguments="{_all}"/>
+                    </div>
+                </div>
+            </f:else>
+        </f:if>
+
+
+
+    </f:then>
+    <f:else>
+        <f:render partial="Image" arguments="{_all}"/>
+    </f:else>
+</f:if>
