@@ -3,6 +3,22 @@
 {namespace m=TYPO3\Media\ViewHelpers}
 
 <!-- Slide -->
+
+<f:if condition="{node.parent.nodetype.name} == 'Neoslive.Visio:Accordeoncontainer'">
+    <div class="panel">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion{node.parent.Identifier}" href="#collaspe{node.Identifier}">
+                    {neos:contentElement.editable(property: 'title',tag:'span')}
+                </a>
+            </h4>
+        </div>
+        <div id="collaspe{node.Identifier}" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+</f:if>
+
 <div class="{classCols} cols-xs-12">
 
 
@@ -60,3 +76,12 @@
     </div>
 
 </div>
+
+
+<f:if condition="{node.parent.nodetype.name} == 'Neoslive.Visio:Accordeoncontainer'">
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</f:if>

@@ -16,6 +16,12 @@
                 <h2 class="block-title">{neos:contentElement.editable(property: 'title', tag: 'span')}</h2>
             </f:case>
 
+            <f:case value="TYPO3.Neos.NodeTypes:TwoColumn">
+                <div class="section-title-wrapper style-2 v1">
+                    <h3 class="section-title left">{neos:contentElement.editable(property: 'title', tag: 'span')}</h3>
+                </div>
+            </f:case>
+
             <f:case value="Neoslive.Visio:Section">
 
                 <div class="section-title-wrapper style-2 v1">

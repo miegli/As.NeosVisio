@@ -24,3 +24,17 @@
               'Neoslive.Visio:AbstractSection': FALSE
               'Neoslive.Visio:Abstract': FALSE
               'TYPO3.Neos.NodeTypes:Headline': FALSE
+
+
+'TYPO3.Neos:Image':
+  properties:
+    title:
+      type: string
+      defaultValue: 'Enter headline here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE

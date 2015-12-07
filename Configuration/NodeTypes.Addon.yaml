@@ -232,7 +232,7 @@
       'TYPO3.Neos.NodeTypes:Image': TRUE
   ui:
     label: 'Slider'
-    icon: 'icon-file-text-alt'
+    icon: 'icon-exchange'
     group: 'structure'
     inlineEditable: TRUE
     inspector:
@@ -296,3 +296,29 @@
             '*': FALSE
           'link':
             'a': FALSE
+
+
+
+##
+# Neoslive.Visio:Accordeoncontainer
+#
+
+'Neoslive.Visio:Accordeoncontainer':
+  superTypes:
+    'Neoslive.Visio:AbstractAddon': TRUE
+    'TYPO3.Neos:Content': TRUE
+  constraints:
+    nodeTypes:
+      'Neoslive.Visio:Item': TRUE
+      'TYPO3.Neos.NodeTypes:Image': TRUE
+      'TYPO3.Neos.NodeTypes:Text': TRUE
+  ui:
+    label: 'Accordeon'
+    icon: 'icon-tasks'
+    group: 'structure'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        settings:
+          label: 'Settings'
+          position: 1

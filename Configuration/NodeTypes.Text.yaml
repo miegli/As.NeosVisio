@@ -7,11 +7,15 @@
           label: 'Einstellungen'
           position: 200
   properties:
-      text:
-        ui:
-          aloha:
-            'format':
-              'h4': TRUE
-
+    title:
+      type: string
+      defaultValue: 'Enter title here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
 
 
