@@ -1,0 +1,69 @@
+
+
+
+##
+# Neoslive.Visio:Headline
+#
+
+'Neoslive.Visio:BlogItem':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+    'TYPO3.Neos.NodeTypes:TextMixin': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  ui:
+    label: 'Blog Item'
+    icon: 'icon-book'
+    position: 100
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        image:
+          label: 'Image'
+          position: 1
+  properties:
+    title:
+      type: string
+      defaultValue: 'Enter title here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    author:
+      type: string
+      defaultValue: 'Enter author here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    date:
+      type: string
+      defaultValue: 'Enter date here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    comments:
+      type: integer
+      defaultValue: 0
+    shares:
+      type: integer
+      defaultValue: 0
+    image:
+      type: TYPO3\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'Image'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'
+

@@ -119,7 +119,7 @@ class ImageViewHelper extends AbstractTagBasedViewHelper
      * @param boolean $allowUpScaling Whether the resulting image size might exceed the size of the original image
      * @return string an <img...> html tag
      */
-    public function render(ImageInterface $image = null, $width = null, $maximumWidth = null, $height = null, $maximumHeight = null, $allowCropping = false, $allowUpScaling = false)
+    public function render(ImageInterface $image = null, $width = null, $maximumWidth = null, $height = null, $maximumHeight = null, $allowCropping = false, $allowUpScaling = false,$css= '')
     {
         if ($image === null && $this->hasArgument('asset')) {
             $image = $this->arguments['asset'];
@@ -129,7 +129,8 @@ class ImageViewHelper extends AbstractTagBasedViewHelper
 
         $this->tag->addAttributes(array(
             'alt' => $image->getResource()->getFilename(),
-            'src' => $thumbnailData['src']
+            'src' => $thumbnailData['src'],
+            'class' => $css
         ));
 
         return $this->tag->render();

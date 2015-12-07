@@ -1,0 +1,37 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<!-- Slide -->
+
+<div class="<f:if condition="{node.parent.properties.layout} !='carousel'"><f:then>{classCols}</f:then></f:if> cols-xs-12">
+
+
+    <div class="block article list style-1">
+
+        <div {attributes -> f:format.raw()}>
+
+            <div class="article-image">
+                <f:render partial="Image" arguments="{_all}"/>
+            </div>
+            <div class="block-body right">
+                    {neos:contentElement.editable(property: 'title',tag:'h3',class:'title')}
+
+                <span class="article-info">
+                     {neos:contentElement.editable(property: 'date',tag:'span')}
+                </span>
+                <p class="article-text">
+                {neos:contentElement.editable(property: 'text',tag:'span')}
+                </p>
+                <ul class="meta-info-cells v4 float-wrapper" style="margin-top: 20px;">
+                    <li><i class="fa fa-comments-o"></i>  {neos:contentElement.editable(property: 'comments',tag:'span')} <span class="hidden-xs hidden-sm">comments</span></li>
+                    <li><i class="fa fa-share-alt"></i>  {neos:contentElement.editable(property: 'shares',tag:'span')} <span class="hidden-xs hidden-sm">shares</span></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+

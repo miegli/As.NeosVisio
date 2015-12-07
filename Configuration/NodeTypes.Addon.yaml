@@ -131,7 +131,7 @@
     nodeTypes:
       '*': FALSE
   ui:
-    label: 'Item'
+    label: 'General Item'
     icon: 'icon-file-text-alt'
     position: 100
     inlineEditable: TRUE
@@ -230,6 +230,7 @@
     nodeTypes:
       'Neoslive.Visio:Item': TRUE
       'TYPO3.Neos.NodeTypes:Image': TRUE
+      'Neoslive.Visio:BlogItem': TRUE
   ui:
     label: 'Slider'
     icon: 'icon-exchange'

@@ -1,0 +1,7 @@
+prototype(Neoslive.Visio:Quote) < prototype(TYPO3.Neos.NodeTypes:Text)  {
+
+    templatePath = ${'resource://Neoslive.Visio/Private/Templates/NodeTypes/Quote.html'}
+    author = ${q(node).property('author')}
+    container = ${q(node).parent().is('[instanceof Neoslive.Visio:AbstractSection]') ? q(node).parent().get(0) : q(node).closest('[instanceof Neoslive.Visio:AbstractSection]').get(0)  }
+    text = ${q(node).property('text')}
+}

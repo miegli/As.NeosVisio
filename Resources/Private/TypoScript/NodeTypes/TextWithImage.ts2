@@ -1,0 +1,15 @@
+##
+# Set the default preset for the "Form" element
+#
+prototype(TYPO3.Neos.NodeTypes:TextWithImage) {
+    attributes.class = ${'border' + q(node).property('border')}
+    text = ${q(node).property('text')}
+    @override.containercheck =  ${q(node).parent().is('[instanceof Neoslive.Visio:AbstractSection]') ? q(node).parent().get(0) : q(node).closest('[instanceof Neoslive.Visio:AbstractSection]').get(0)}
+    container = ${q(node).parent().is('[instanceof Neoslive.Visio:AbstractSection]') ? q(node).parent().get(0) : q(node).closest('[instanceof Neoslive.Visio:AbstractSection]').get(0)}
+    templatePath = ${containercheck!=NULL ? 'resource://Neoslive.Visio/Private/Templates/NodeTypes/TextWithImage.html' : 'resource://TYPO3.Neos.NodeTypes/Private/Templates/NodeTypes/Text.html'}
+    classCols = ${q(node).parent().property('cols') > 0 ? 'col-sm-' + Math.floor(12 / q(node).parent().property('cols')) : ''}
+    css = 'img-responsive mb-15'
+}
+
+
+

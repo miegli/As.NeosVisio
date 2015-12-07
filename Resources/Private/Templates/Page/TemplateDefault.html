@@ -157,7 +157,14 @@
 
 
     <f:if condition="{neos:rendering.inBackend()}">
-        <f:then></f:then>
+        <f:then>
+
+            <!-- Owl carousel - Touch enabled carousel -->
+            <script src="{f:uri.resource(path: 'visio/assets/owl-carousel/js/owl.carousel.backend.js', package: 'Neoslive.Visio')}"></script>
+
+
+
+        </f:then>
         <f:else>
             <!-- Assets - Optional (keep what you need) -->
             <!-- Sidebar transitions -->
@@ -170,6 +177,10 @@
             <script src="{f:uri.resource(path: 'visio/js/respond.min.js', package: 'Neoslive.Visio')}"></script>
             <![endif]-->
 
+            <!-- Owl carousel - Touch enabled carousel -->
+            <script src="{f:uri.resource(path: 'visio/assets/owl-carousel/js/owl.carousel.min.js', package: 'Neoslive.Visio')}"></script>
+
+
         </f:else>
     </f:if>
 
@@ -179,8 +190,6 @@
     <script src="{f:uri.resource(path: 'visio/assets/milestone-counter/jquery.countTo.js', package: 'Neoslive.Visio')}"></script>
     <!-- Animated pie charts -->
     <script src="{f:uri.resource(path: 'visio/assets/easy-pie-chart/js/jquery.easypiechart.js', package: 'Neoslive.Visio')}"></script>
-    <!-- Owl carousel - Touch enabled carousel -->
-    <script src="{f:uri.resource(path: 'visio/assets/owl-carousel/js/owl.carousel.min.js', package: 'Neoslive.Visio')}"></script>
 
 
 

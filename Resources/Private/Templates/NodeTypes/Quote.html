@@ -1,0 +1,19 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+
+<f:switch expression="{container.nodetype.name}">
+
+
+    <f:defaultCase>
+        <div{attributes -> f:format.raw()}>
+
+        <blockquote class="blockquote-1">
+            {neos:contentElement.editable(property: 'text',tag:'p')}
+            <small>{neos:contentElement.editable(property: 'author',tag:'span')}</small>
+        </blockquote>
+
+        </div>
+    </f:defaultCase>
+
+</f:switch>
+

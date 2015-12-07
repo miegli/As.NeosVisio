@@ -1,5 +1,7 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 
+
+
 <f:switch expression="{container.nodetype.name}">
 
     <f:case value="Neoslive.Visio:Parallax">
@@ -17,9 +19,19 @@
             </f:case>
 
             <f:case value="TYPO3.Neos.NodeTypes:TwoColumn">
-                <div class="section-title-wrapper style-2 v1">
-                    <h3 class="section-title left">{neos:contentElement.editable(property: 'title', tag: 'span')}</h3>
-                </div>
+
+                <f:if condition="{node.parent.parent.parent.parent.properties.color} != '2'">
+                    <f:then>
+                        <div class="section-title-wrapper style-2 v1">
+                            <h3 class="section-title left">{neos:contentElement.editable(property: 'title', tag: 'span')}</h3>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <h1>{neos:contentElement.editable(property: 'title', tag: 'span')}</h1>
+                    </f:else>
+                </f:if>
+
+
             </f:case>
 
             <f:case value="Neoslive.Visio:Section">

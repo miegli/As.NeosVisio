@@ -105,13 +105,7 @@
   position: relative;
   min-height: 1px;
   float: left;
-  -webkit-backface-visibility: hidden;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+
 }
 .owl-carousel .owl-item img {
   display: block;

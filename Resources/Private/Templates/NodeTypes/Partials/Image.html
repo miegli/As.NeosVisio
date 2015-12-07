@@ -1,6 +1,8 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
 {namespace visio=Neoslive\Visio\ViewHelpers}
+
+
 <f:if condition="{node.parent.nodetype.name} == 'Neoslive.Visio:Accordeoncontainer'">
     <div class="panel">
         <div class="panel-heading">
@@ -29,13 +31,13 @@
                             <f:then>
                                 <visio:image asset="{image}" alt="{alternativeText}" title="{title}" width="{width}"
                                              maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
-                                             allowUpScaling="{allowUpScaling}"/>
+                                             allowUpScaling="{allowUpScaling}" css="{css}"/>
                             </f:then>
                             <f:else>
                                 <a href="{link}">
                                     <visio:image asset="{image}" alt="{alternativeText}" title="{title}" width="{width}"
                                                  maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
-                                                 allowUpScaling="{allowUpScaling}"/>
+                                                 allowUpScaling="{allowUpScaling}" css="{css}"/>
                                 </a>
                             </f:else>
                             </f:if>
@@ -44,7 +46,7 @@
                     <f:else>
                         <visio:image asset="{image}" alt="{alternativeText}" title="{title}" width="{width}"
                                      maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
-                                     allowUpScaling="{allowUpScaling}"/>
+                                     allowUpScaling="{allowUpScaling}" css="{css}"/>
                     </f:else>
                 </f:if>
 
@@ -53,7 +55,7 @@
             <f:else>
                 <f:if condition="{neos:rendering.inEditMode()}">
                     <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}" title="Dummy image"
-                         alt="Dummy image" class="neos-handle"/>
+                         alt="Dummy image" class="neos-handle {css}"/>
                 </f:if>
             </f:else>
         </f:if>
@@ -71,13 +73,13 @@
                             <f:then>
                                 <visio:image asset="{image}" alt="{alternativeText}" title="{title}" width="{width}"
                                              maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
-                                             allowUpScaling="{allowUpScaling}"/>
+                                             allowUpScaling="{allowUpScaling}" css="{css}" />
                             </f:then>
                             <f:else>
                                 <a href="{link}">
                                     <visio:image asset="{image}" alt="{alternativeText}" title="{title}" width="{width}"
                                                  maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
-                                                 allowUpScaling="{allowUpScaling}"/>
+                                                 allowUpScaling="{allowUpScaling}" css="{css}"/>
                                 </a>
                             </f:else>
                         </f:if>
@@ -85,14 +87,14 @@
                     <f:else>
                         <visio:image asset="{image}" alt="{alternativeText}" title="{title}" width="{width}"
                                      maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
-                                     allowUpScaling="{allowUpScaling}"/>
+                                     allowUpScaling="{allowUpScaling}" css="{css}"/>
                     </f:else>
                 </f:if>
             </f:then>
             <f:else>
                 <f:if condition="{neos:rendering.inEditMode()}">
                     <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}" title="Dummy image"
-                         alt="Dummy image" class="neos-handle"/>
+                         alt="Dummy image" class="neos-handle {css}"/>
                 </f:if>
             </f:else>
         </f:if>

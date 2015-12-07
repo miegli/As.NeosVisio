@@ -1,0 +1,20 @@
+##
+# Set the default preset for the "Form" element
+#
+##
+# Set the default preset for the "Form" element
+#
+prototype(Neoslive.Visio:BlogItem) < prototype(TYPO3.Neos.NodeTypes:Text) {
+    attributes.class = ${'border' + q(node).property('border')}
+    text = ${q(node).property('text')}
+    image = ${q(node).property('image')}
+    templatePath = 'resource://Neoslive.Visio/Private/Templates/NodeTypes/BlogItem.html'
+    @override.containercheck =  ${q(node).parent().is('[instanceof Neoslive.Visio:AbstractSection]') ? q(node).parent().get(0) : q(node).closest('[instanceof Neoslive.Visio:AbstractSection]').get(0)}
+    container = ${q(node).parent().is('[instanceof Neoslive.Visio:AbstractSection]') ? q(node).parent().get(0) : q(node).closest('[instanceof Neoslive.Visio:AbstractSection]').get(0)}
+    templatePath = ${containercheck!=NULL ? 'resource://Neoslive.Visio/Private/Templates/NodeTypes/BlogItem.html' : 'resource://TYPO3.Neos.NodeTypes/Private/Templates/NodeTypes/TextWithImage.html'}
+    classCols = ${q(node).parent().property('cols') > 0 ? 'col-sm-' + Math.floor(12 / q(node).parent().property('cols')) : ''}
+    css = 'img-responsive mb-15'
+    withImage = ${q(node).parent().property('cols') > 0  ? Math.floor(1280/q(node).parent().property('cols')) : 1280}
+
+}
+

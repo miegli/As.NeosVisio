@@ -377,3 +377,33 @@
   ui:
     label: 'Fullscreen Image'
     group: 'general'
+
+
+
+##
+# Neoslive.Visio:Headline
+#
+
+'Neoslive.Visio:Quote':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+    'TYPO3.Neos.NodeTypes:TextMixin': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  ui:
+    label: 'Quote'
+    icon: 'icon-quote-right'
+    position: 100
+    inlineEditable: TRUE
+  properties:
+    author:
+      type: string
+      defaultValue: 'Enter author here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
