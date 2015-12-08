@@ -1,0 +1,62 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace visio=Neoslive\Visio\ViewHelpers}
+
+<div class="row">
+    <div {attributes -> f:format.raw()}>
+
+
+        <f:switch expression="{layout}">
+
+
+            <f:defaultCase>
+
+                <f:render section="sortlist" arguments="{_all}"/>
+                <f:render section="default" arguments="{_all}"/>
+            </f:defaultCase>
+
+
+        </f:switch>
+
+
+    </div>
+    <f:render section="javascript" arguments="{_all}"/>
+</div>
+
+
+<f:section name="sortlist">
+    <!-- SORT LIST BAR -->
+    <div class="sort-list-bar sct-color-1 style-2">
+        <div class="container">
+            <div id="filters-container" class="cbp-l-filters-button">
+                <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">
+                    All
+                    <div class="cbp-filter-counter">12</div>
+                </div>
+                <ts:render path="tags"/>
+            </div>
+        </div>
+    </div>
+</f:section>
+
+
+<f:section name="default">
+
+
+    <!-- SORT LIST ITEMS -->
+    <section class="sort-list-wrapper sct-color-1">
+        <div class="cbp-container cbp-boxed">
+            <div id="grid-container" class="cbp-l-grid-fullWidth">
+
+                <ts:render path="columns"/>
+
+            </div>
+        </div>
+    </section>
+
+
+</f:section>
+
+<f:section name="javascript">
+    <visio:Portfolio section="javascript"></visio:Portfolio>
+</f:section>

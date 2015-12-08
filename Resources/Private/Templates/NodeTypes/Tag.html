@@ -1,0 +1,10 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<f:if condition="{node.parent.nodetype.name} == 'Neoslive.Visio:Portfoliocontainer'">
+
+    <div data-filter=".tag-{node.identifier}" class="cbp-filter-item">
+        {neos:contentElement.editable(property: 'title', tag: 'span')}
+        <div class="cbp-filter-counter">5</div>
+    </div>
+
+</f:if>

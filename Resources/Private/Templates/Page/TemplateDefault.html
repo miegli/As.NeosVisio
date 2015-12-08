@@ -54,6 +54,13 @@
         <link rel="stylesheet" href="{f:uri.resource(path: 'css/custom.css', package: 'Neoslive.Visio')}"
               type="text/css" media="screen">
 
+        <!-- Cube Portfolio -->
+
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'visio/assets/cubeportfolio/css/cubeportfolio.min.css', package: 'Neoslive.Visio')}"
+              type="text/css" media="screen">
+
+
         <!-- FAVICON -->
         <link href="{f:uri.resource(path: 'visio/images/favicon.png', package: 'Neoslive.Visio')}" rel="icon"
               type="image/png">
@@ -62,6 +69,11 @@
 
     <f:section name="headScripts">
         <!-- Put your scripts inclusions for the head here, they will be included in your website by TypoScript -->
+        <!-- Required JSs -->
+        <script src="{f:uri.resource(path: 'visio/js/jquery.js', package: 'Neoslive.Visio')}"></script>
+        <script src="{f:uri.resource(path: 'visio/js/jquery-ui.min.js', package: 'Neoslive.Visio')}"></script>
+        <!-- Cube Portfolio -->
+        <script src="{f:uri.resource(path: 'visio/assets/cubeportfolio/js/jquery.cubeportfolio.min.js', package: 'Neoslive.Visio')}"></script>
     </f:section>
 
 </head>
@@ -78,19 +90,20 @@
                 <div class="st-content">
                     <div class="st-content-inner">
                         <!-- HEADER -->
-                        <f:render partial="Header" arguments="{node:node,mode:navigationheader,FullNavigation:FullNavigation,logo:content.logo}" />
+                        <f:render partial="Header"
+                                  arguments="{node:node,mode:navigationheader,FullNavigation:FullNavigation,logo:content.logo}"/>
                     </div>
 
                     <!-- TITLE ROW -->
 
-                    <f:render partial="PageHeader" arguments="{node:node,title:node.properties.title,parts:parts,BreadcrumbNavigation:BreadcrumbNavigation,content:content}" />
-
+                    <f:render partial="PageHeader"
+                              arguments="{node:node,title:node.properties.title,parts:parts,BreadcrumbNavigation:BreadcrumbNavigation,content:content}"/>
 
 
                     <div class="content-wrapper-all">
 
                         <div class="neos-main-wrapper slice">
-                            <f:render partial="Content" arguments="{node:node,content:content.main}" />
+                            <f:render partial="Content" arguments="{node:node,content:content.main}"/>
                         </div>
 
                     </div>
@@ -124,9 +137,7 @@
 <f:section name="bodyScripts">
     <!-- SCRIPTS -->
 
-    <!-- Required JSs -->
-    <script src="{f:uri.resource(path: 'visio/js/jquery.js', package: 'Neoslive.Visio')}"></script>
-    <script src="{f:uri.resource(path: 'visio/js/jquery-ui.min.js', package: 'Neoslive.Visio')}"></script>
+
 
     <!-- Essential JSs -->
     <script src="{f:uri.resource(path: 'visio/assets/bootstrap/js/bootstrap.min.js', package: 'Neoslive.Visio')}"></script>
@@ -140,7 +151,6 @@
             <script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap-dropdownhover.js', package: 'Neoslive.Visio')}"></script>
         </f:else>
     </f:if>
-
 
 
     <script src="{f:uri.resource(path: 'visio/js/bootstrap-extensions/bootstrap.slide-menu.js', package: 'Neoslive.Visio')}"></script>
@@ -161,7 +171,6 @@
 
             <!-- Owl carousel - Touch enabled carousel -->
             <script src="{f:uri.resource(path: 'visio/assets/owl-carousel/js/owl.carousel.backend.js', package: 'Neoslive.Visio')}"></script>
-
 
 
         </f:then>
@@ -190,6 +199,7 @@
     <script src="{f:uri.resource(path: 'visio/assets/milestone-counter/jquery.countTo.js', package: 'Neoslive.Visio')}"></script>
     <!-- Animated pie charts -->
     <script src="{f:uri.resource(path: 'visio/assets/easy-pie-chart/js/jquery.easypiechart.js', package: 'Neoslive.Visio')}"></script>
+
 
 
 

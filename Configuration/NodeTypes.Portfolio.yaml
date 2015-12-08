@@ -1,0 +1,142 @@
+
+##
+# Neoslive.Visio:Portfoliocontainer
+#
+
+'Neoslive.Visio:Portfoliocontainer':
+  superTypes:
+    'Neoslive.Visio:AbstractAddon': TRUE
+    'TYPO3.Neos:Content': TRUE
+  constraints:
+    nodeTypes:
+      'Neoslive.Visio:Portfolio': TRUE
+      'Neoslive.Visio:Tag': TRUE
+  ui:
+    label: 'Portfolio'
+    icon: 'icon-camera'
+    group: 'structure'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        settings:
+          label: 'Settings'
+          position: 1
+  childNodes:
+    columns:
+      position: 'before cols'
+  properties:
+    layout:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Layout'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+          position: 1250
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: TRUE
+            values:
+              '':
+                label: ''
+    cols:
+      type: integer
+      position: 'after tags'
+      defaultValue: '3'
+      ui:
+        label: 'Number of cols'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+          position: 1250
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: FALSE
+            values:
+              '1':
+                label: '1'
+              '2':
+                label: '2'
+              '3':
+                label: '3'
+              '4':
+                label: '4'
+              '6':
+                label: '6'
+              '12':
+                label: '12'
+
+
+
+
+
+##
+# Neoslive.Visio:Portfolio
+#
+
+'Neoslive.Visio:Tag':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  ui:
+    label: 'Tag'
+    icon: 'icon-file-text-alt'
+    position: 100
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        settings:
+          label: 'Settings'
+          position: 1
+  properties:
+    title:
+      type: string
+      defaultValue: 'Enter tag name'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+
+
+##
+# Neoslive.Visio:Portfolio
+#
+
+'Neoslive.Visio:Portfolio':
+  superTypes:
+    'Neoslive.Visio:Item': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  ui:
+    label: 'Portfolio Item'
+    icon: 'icon-file-text-alt'
+    position: 100
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        addons:
+          label: 'Addon'
+          position: 1
+        image:
+          label: 'Image'
+          position: 1
+  properties:
+    tags:
+      type: references
+      defaultValue: ''
+      ui:
+        label: 'Enter Tags'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'image'
+          editor: 'Content/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            dataSourceIdentifier: 'portfolio-tags'
+            multiple: TRUE

@@ -21,6 +21,7 @@
           that.show($(this).children('a, button'))
         })
     })
+
     this.dropdowns.each(function(){
         $(this).on('mouseleave.bs.dropdownhover', function(e) {
           if (typeof document.addEventListener === 'function') {
@@ -32,7 +33,20 @@
         })
     })
 
+
+
   }
+
+
+  $(document).dblclick(function() {
+
+    // Close all dropdowns
+    $('.dropdown').each(function(){
+      $(this).removeClass('open');
+    });
+
+  });
+
 
   Dropdownhover.TRANSITION_DURATION = 300
   Dropdownhover.DELAY = 150

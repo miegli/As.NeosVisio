@@ -34,6 +34,13 @@
 }
 
 
+.body-boxed .bg-base.no-padding .container {
+    padding:0;
+    width:100%;
+}
+
+
+
 .bg-base-0 {
     background-color:transparent;
 }

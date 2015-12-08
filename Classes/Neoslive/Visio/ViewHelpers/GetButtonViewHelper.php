@@ -65,6 +65,7 @@ class GetButtonViewHelper extends AbstractViewHelper
         }
 
 
+        if ($backend) $url = "javascript:void(0);";
 
         switch ($style) {
 
