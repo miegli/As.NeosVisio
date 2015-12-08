@@ -231,6 +231,7 @@
       'Neoslive.Visio:Item': TRUE
       'TYPO3.Neos.NodeTypes:Image': TRUE
       'Neoslive.Visio:BlogItem': TRUE
+      'Neoslive.Visio:Portfolio': FALSE
   ui:
     label: 'Slider'
     icon: 'icon-exchange'

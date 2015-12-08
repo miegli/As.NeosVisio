@@ -357,6 +357,13 @@
                 label: 'Color 4'
               '5':
                 label: 'Color 5'
+    fullwidth:
+      type: boolean
+      ui:
+        label: 'Full width'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'settings'
     anchor:
       type: string
       ui:
@@ -364,6 +371,7 @@
         reloadIfChanged: FALSE
         inspector:
           group: 'settings'
+
 
 
 ##

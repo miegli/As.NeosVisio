@@ -7,6 +7,9 @@ prototype(Neoslive.Visio:Portfoliocontainer) < prototype(TYPO3.Neos:Content) {
     templatePath = 'resource://Neoslive.Visio/Private/Templates/NodeTypes/Portfoliocontainer.html'
 
      layout = ${q(node).property('layout')}
+     title = ${q(node).property('title')}
+     filtertext = ${q(node).property('filtertext')}
+     space = ${q(node).property('space')}
 
 
     columns = TYPO3.TypoScript:Collection {
@@ -23,6 +26,7 @@ prototype(Neoslive.Visio:Portfoliocontainer) < prototype(TYPO3.Neos:Content) {
         itemName = 'node'
 
     }
+
 
 
     countCols = ${q(node).property('cols')}

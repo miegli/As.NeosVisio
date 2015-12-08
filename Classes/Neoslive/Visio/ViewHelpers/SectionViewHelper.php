@@ -42,7 +42,7 @@ class SectionViewHelper extends AbstractViewHelper
     {
 
 
-       $css = " bg bb bg-base ";
+       $css = " bg  bg-base ";
 
 
         switch ($node->getProperty('color')) {
@@ -56,23 +56,23 @@ class SectionViewHelper extends AbstractViewHelper
                 break;
 
             case '3':
-                $css .= " bg-base-3  ";
+                $css .= " bg-base-3  bb ";
                 break;
 
 
             case '4':
-                $css .= " bg-base-4  ";
+                $css .= " bg-base-4  bb ";
                 break;
 
 
             case '5':
-                $css .= " bg-base-5  ";
+                $css .= " bg-base-5  bb ";
                 break;
 
 
 
             default:
-                $css .= " bg-base-0 ";
+                $css .= " bg-base-0 bb ";
                 break;
         }
 

@@ -2,9 +2,17 @@
 
 <f:if condition="{node.parent.nodetype.name} == 'Neoslive.Visio:Portfoliocontainer'">
 
-    <div data-filter=".tag-{node.identifier}" class="cbp-filter-item">
-        {neos:contentElement.editable(property: 'title', tag: 'span')}
-        <div class="cbp-filter-counter">5</div>
-    </div>
+    <f:if condition="{node.parent.parent.parent.properties.fullwidth}">
+        <f:then>
+            <button type="button" data-filter=".tag-{node.identifier}" class="cbp-filter-item" data-text="{title}">{neos:contentElement.editable(property: 'title', tag: 'span')}</button>
+        </f:then>
+        <f:else>
+            <div data-filter=".tag-{node.identifier}" class="cbp-filter-item">
+                {neos:contentElement.editable(property: 'title', tag: 'span')}
+                <div class="cbp-filter-counter">5</div>
+            </div>
+
+        </f:else>
+    </f:if>
 
 </f:if>

@@ -121,13 +121,16 @@ class ImageViewHelper extends AbstractTagBasedViewHelper
      */
     public function render(ImageInterface $image = null, $width = null, $maximumWidth = null, $height = null, $maximumHeight = null, $allowCropping = false, $allowUpScaling = false,$css= '')
     {
+
+
         if ($image === null && $this->hasArgument('asset')) {
             $image = $this->arguments['asset'];
         }
         $thumbnailConfiguration = new ThumbnailConfiguration($width, $maximumWidth, $height, $maximumHeight, $allowCropping, $allowUpScaling);
         $thumbnailData = $this->assetService->getThumbnailUriAndSizeForAsset($image, $thumbnailConfiguration);
 
-        $css .= ' img-responsive ';
+
+
 
         $this->tag->addAttributes(array(
             'alt' => $image->getResource()->getFilename(),

@@ -6,5 +6,8 @@ prototype(Neoslive.Visio:Portfolio)  < prototype(Neoslive.Visio:Item) {
 
     templatePath = ${'resource://Neoslive.Visio/Private/Templates/NodeTypes/Portfolio.html'}
     tags = ${q(node).property('tags')}
+
+    width = ${q(node).parent().property('width')}
+    height = ${q(node).parent().property('height')}
 }
 

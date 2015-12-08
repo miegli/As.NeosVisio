@@ -7,7 +7,6 @@ prototype(TYPO3.Neos.NodeTypes:Image) {
 
     width = ${q(node).parent().property('cols') > 0  ? Math.floor(1280/q(node).parent().property('cols')) : 1280}
 
-
     classCols = ${q(node).parent().property('cols') > 0 ? 'col-sm-' + Math.floor(12 / q(node).parent().property('cols')) : ''}
 
 }

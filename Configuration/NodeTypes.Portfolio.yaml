@@ -40,6 +40,39 @@
             values:
               '':
                 label: ''
+              'withtext':
+                label: 'With Text'
+              'option1':
+                label: 'Option 1'
+              'option2':
+                label: 'Option 2'
+    title:
+      type: string
+      defaultValue: 'Enter title here'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    space:
+      type: boolean
+      ui:
+        label: 'Show space'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'settings'
+    filtertext:
+      type: string
+      defaultValue: 'Sort items:'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
     cols:
       type: integer
       position: 'after tags'
@@ -66,7 +99,20 @@
                 label: '6'
               '12':
                 label: '12'
-
+    width:
+      type: integer
+      ui:
+        label: 'images width'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+    height:
+      type: integer
+      ui:
+        label: 'images height'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
 
 
 
@@ -83,7 +129,7 @@
       '*': FALSE
   ui:
     label: 'Tag'
-    icon: 'icon-file-text-alt'
+    icon: 'icon-tag'
     position: 100
     inlineEditable: TRUE
     inspector:
@@ -140,3 +186,24 @@
           editorOptions:
             dataSourceIdentifier: 'portfolio-tags'
             multiple: TRUE
+            allowEmpty: TRUE
+    linktext:
+      type: string
+      defaultValue: 'Read more'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE
+    linktext2:
+      type: string
+      defaultValue: 'View larger'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            '*': FALSE
+          'link':
+            'a': FALSE

@@ -3,55 +3,236 @@
 {namespace m=TYPO3\Media\ViewHelpers}
 
 <!-- Slide -->
+<f:switch expression="{node.parent.properties.layout}">
+
+    <f:case value="withtext">
+        <f:render section="withtext" arguments="{_all}"/>
+    </f:case>
+
+    <f:case value="option1">
+        <f:render section="option1" arguments="{_all}"/>
+    </f:case>
+
+    <f:case value="option2">
+        <f:render section="option2" arguments="{_all}"/>
+    </f:case>
+
+    <f:defaultCase>
+        <f:render section="default" arguments="{_all}"/>
+    </f:defaultCase>
 
 
-<div class='cbp-item <f:for each="{node.properties.tags}" as="tag"> tag-{tag.identifier} </f:for>'>
+</f:switch>
+
+
+<f:section name="withtext">
     <visio:getButton identifier="{link}" asUrl="url" asCss="css" style="" backend="{neos:rendering.inBackend()}">
+        <div class='cbp-item <f:for each="{node.properties.tags}" as="tag"> tag-{tag.identifier} </f:for>'>
+            <div class="cbp-caption">
+                <div class="cbp-caption-defaultWrap">
+                    <f:render section="image" arguments="{_all}"/>
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
 
-        <f:if condition="{neos:rendering.inBackend()}">
-            <f:then>
-                <span class="cbp-caption" data-title="{title}">
-            </f:then>
-          <f:else>
-              <a href="{url}" class="cbp-caption" data-title="{title}">
-          </f:else>
-        </f:if>
-        <div class="cbp-caption-defaultWrap">
+                            <f:if condition="{neos:rendering.inBackend()}">
+                                <f:then>
+                                    <span class="btn btn-base-5" data-title="{title}">{neos:contentElement.editable(property: 'linktext', tag: 'span')}</span>
+                                </f:then>
+                                <f:else>
+                                    <a href="{url}" class="btn btn-base-5" data-title="{title}">{neos:contentElement.editable(property:
+                                        'linktext', tag: 'span')}</a>
+                                </f:else>
+                            </f:if>
 
-            <f:if condition="{node.properties.image}">
+                            <f:if condition="{neos:rendering.inBackend()}">
+                                <f:then>
+                                    <span class="btn btn-base-5">{neos:contentElement.editable(property: 'linktext2', tag: 'span')}</span>
+                                </f:then>
+                                <f:else>
+                                    <a href="{m:uri.image(image: image, maximumWidth: 800)}" class="btn btn-base-5 cbp-lightbox"  data-title="<b>{title}</b><br>{teaser}">{neos:contentElement.editable(property: 'linktext2', tag: 'span')}</a>
+                                </f:else>
+                            </f:if>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <f:if condition="{neos:rendering.inBackend()}">
                 <f:then>
-                    <img alt="{linktext}"
-                         src="{m:uri.image(asset: node.properties.image,allowCropping:false, width:withImage)}">
+                    <span class="cbp-l-grid-masonry-projects-title" data-title="{title}">{neos:contentElement.editable(property: 'title', tag: 'span')}</span>
                 </f:then>
                 <f:else>
-                    <f:if condition="{neos:rendering.inEditMode()}">
-                        <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}"
-                             title="Dummy image"
-                             alt="Dummy image" class="neos-handle {css}"/>
-                    </f:if>
+                    <a href="{url}" class="cbp-l-grid-masonry-projects-title" data-title="{title}">{neos:contentElement.editable(property:
+                        'title', tag: 'span')}</a>
                 </f:else>
             </f:if>
 
 
+            <div class="cbp-l-grid-masonry-projects-desc">{neos:contentElement.editable(property: 'teaser', tag:
+                'span')}
+            </div>
         </div>
-        <div class="cbp-caption-activeWrap">
-            <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                    <div class="cbp-l-caption-title">{neos:contentElement.editable(property: 'title', tag: 'span')}
+    </visio:getButton>
+</f:section>
+
+
+<f:section name="option1">
+    <visio:getButton identifier="{link}" asUrl="url" asCss="css" style="" backend="{neos:rendering.inBackend()}">
+
+        <div class='cbp-item <f:for each="{node.properties.tags}" as="tag"> tag-{tag.identifier} </f:for>'>
+
+            <f:if condition="{neos:rendering.inBackend()}">
+                <f:then>
+                    <span  class="cbp-caption" data-title="{title}">
+                </f:then>
+                <f:else>
+                    <a href="{url}" class="cbp-caption" data-title="{title}">
+                </f:else>
+            </f:if>
+
+
+                <div class="cbp-caption-defaultWrap">
+                    <f:render section="image" arguments="{_all}"/>
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{neos:contentElement.editable(property: 'title2', tag:
+                                'span')}
+                            </div>
+                            <div class="cbp-l-caption-desc">{neos:contentElement.editable(property: 'teaser2', tag:
+                                'span')}
+                            </div>
+                        </div>
                     </div>
-                    <div class="cbp-l-caption-desc">{neos:contentElement.editable(property: 'teaser', tag: 'span')}
+                </div>
+
+            <f:if condition="{neos:rendering.inBackend()}">
+                <f:then>
+                    </span>
+                </f:then>
+                <f:else>
+                    </a>
+                </f:else>
+            </f:if>
+
+
+            <f:if condition="{neos:rendering.inBackend()}">
+                <f:then>
+                    <span class="cbp-l-grid-work-title cbp-singlePage">{neos:contentElement.editable(property:'title', tag: 'span')}</span>
+                </f:then>
+                <f:else>
+                    <a href="{url}" class="cbp-l-grid-work-title cbp-singlePage">{neos:contentElement.editable(property:'title', tag: 'span')}</a>
+                </f:else>
+            </f:if>
+
+
+            <div class="cbp-l-grid-work-desc">{neos:contentElement.editable(property: 'teaser', tag: 'span')}</div>
+        </div>
+
+    </visio:getButton>
+</f:section>
+
+
+<f:section name="option2">
+    <visio:getButton identifier="{link}" asUrl="url" asCss="css" style="" backend="{neos:rendering.inBackend()}">
+
+        <div class='cbp-item <f:for each="{node.properties.tags}" as="tag"> tag-{tag.identifier} </f:for>'>
+            <div class="cbp-caption">
+                <div class="cbp-caption-defaultWrap">
+                    <f:render section="image" arguments="{_all}"/>
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+
+                            <f:if condition="{neos:rendering.inBackend()}">
+                                <f:then>
+                                    <span class="btn btn-sm btn-base-1 cbp-singlePage">{neos:contentElement.editable(property: 'linktext', tag: 'span')}</span>
+                                </f:then>
+                                <f:else>
+                                    <a href="{url}" class="btn btn-sm btn-base-1 cbp-singlePage">{neos:contentElement.editable(property: 'linktext', tag: 'span')}</a>
+                                </f:else>
+                            </f:if>
+
+                            <f:if condition="{neos:rendering.inBackend()}">
+                                <f:then>
+                                    <span class="btn btn-sm btn-base-1">{neos:contentElement.editable(property: 'linktext2', tag: 'span')}</span>
+                                </f:then>
+                                <f:else>
+                                    <a href="{m:uri.image(image: image, maximumWidth: 800)}" class="btn btn-sm btn-base-1 cbp-lightbox"  data-title="<b>{title}</b><br>{teaser}">{neos:contentElement.editable(property: 'linktext2', tag: 'span')}</a>
+                                </f:else>
+                            </f:if>
+
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="cbp-l-grid-projects-title">{neos:contentElement.editable(property: 'title', tag: 'span')}</div>
+            <div class="cbp-l-grid-projects-desc">{neos:contentElement.editable(property: 'teaser', tag: 'span')}</div>
         </div>
 
-        <f:if condition="{neos:rendering.inBackend()}">
-            <f:then>
-                </span>
-            </f:then>
-            <f:else>
-                </a>
-            </f:else>
-        </f:if>
+
     </visio:getButton>
-</div>
+</f:section>
+
+
+<f:section name="default">
+    <div class='cbp-item <f:for each="{node.properties.tags}" as="tag"> tag-{tag.identifier} </f:for>'>
+        <visio:getButton identifier="{link}" asUrl="url" asCss="css" style="" backend="{neos:rendering.inBackend()}">
+
+            <f:if condition="{neos:rendering.inBackend()}">
+                <f:then>
+                <span class="cbp-caption" data-title="{title}">
+                </f:then>
+                <f:else>
+                    <a href="{url}" class="cbp-caption" data-title="{title}">
+                </f:else>
+            </f:if>
+            <div class="cbp-caption-defaultWrap">
+                <f:render section="image" arguments="{_all}"/>
+            </div>
+            <div class="cbp-caption-activeWrap">
+                <div class="cbp-l-caption-alignCenter">
+                    <div class="cbp-l-caption-body">
+                        <div class="cbp-l-caption-title">{neos:contentElement.editable(property: 'title', tag: 'span')}
+                        </div>
+                        <div class="cbp-l-caption-desc">{neos:contentElement.editable(property: 'teaser', tag: 'span')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <f:if condition="{neos:rendering.inBackend()}">
+                <f:then>
+                    </span>
+                </f:then>
+                <f:else>
+                    </a>
+                </f:else>
+            </f:if>
+        </visio:getButton>
+    </div>
+</f:section>
+
+
+<f:section name="image">
+    <f:if condition="{node.properties.image}">
+        <f:then>
+
+            <visio:image asset="{image}" alt="{alternativeText}" title="{title}" width="{width}"
+                         maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
+                         allowUpScaling="{allowUpScaling}" allowCropping="true" css=""/>
+
+        </f:then>
+        <f:else>
+            <f:if condition="{neos:rendering.inEditMode()}">
+                <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}"
+                     title="Dummy image"
+                     alt="Dummy image" class="neos-handle {css}"/>
+            </f:if>
+        </f:else>
+    </f:if>
+</f:section>

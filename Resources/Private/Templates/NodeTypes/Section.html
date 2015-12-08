@@ -5,35 +5,65 @@
 
 <visio:section node="{node}" asCss="css">
 
-    <f:if condition="{node.properties.nopadding}">
 
+    <f:if condition="{node.properties.fullwidth}">
 
-        <f:then>
-            <section class="{css} no-padding" {f:if(condition: '{node.properties.anchor} != \'\'', then: 'id="{node.properties.anchor}"', else: '')}  >
-                <div>
-                    <div class="container">
-                        <div class="{f:if(condition: '{node.properties.centered} == 1', then: 'block style-4 v2 text-center', else: '')} ">
-                            <ts:render path="col1"/>
-                        </div>
+<f:then>
+                <a {f:if(condition: '{node.properties.anchor} != \'\'', then: 'id="{node.properties.anchor}"', else: '')}></a>
+                    <div class="{f:if(condition: '{node.properties.centered} == 1', then: 'block style-4 v2 text-center', else: '')} ">
+                        <ts:render path="col1"/>
                     </div>
 
-                </div>
-            </section>
+
         </f:then>
+
+
+
         <f:else>
-            <section class="{css}" {f:if(condition: '{node.properties.anchor} != \'\'', then: 'id="{node.properties.anchor}"', else: '')}>
-                <div class="cta-wrapper">
-                    <div class="container ">
 
-                        <div class="{f:if(condition: '{node.properties.centered} == 1', then: 'block style-4 v2 text-center', else: '')} ">
-                            <ts:render path="col1"/>
+
+
+
+
+            <f:if condition="{node.properties.nopadding}">
+
+
+                <f:then>
+                    <section class="{css} no-padding" {f:if(condition: '{node.properties.anchor} != \'\'', then: 'id="{node.properties.anchor}"', else: '')}  >
+                    <div>
+                        <div class="container">
+                            <div class="{f:if(condition: '{node.properties.centered} == 1', then: 'block style-4 v2 text-center', else: '')} ">
+                                <ts:render path="col1"/>
+                            </div>
                         </div>
+
                     </div>
+                    </section>
+                </f:then>
+                <f:else>
+                    <section class="{css}" {f:if(condition: '{node.properties.anchor} != \'\'', then: 'id="{node.properties.anchor}"', else: '')}>
+                    <div class="cta-wrapper">
+                        <div class="container ">
 
-                </div>
-            </section>
+                            <div class="{f:if(condition: '{node.properties.centered} == 1', then: 'block style-4 v2 text-center', else: '')} ">
+                                <ts:render path="col1"/>
+                            </div>
+                        </div>
+
+                    </div>
+                    </section>
+                </f:else>
+
+            </f:if>
+
+
+
+
+
+
         </f:else>
-
     </f:if>
+
+
 </visio:section>
 

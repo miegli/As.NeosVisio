@@ -2,15 +2,20 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace visio=Neoslive\Visio\ViewHelpers}
 
+
+
 <div class="row">
     <div {attributes -> f:format.raw()}>
 
 
-        <f:switch expression="{layout}">
+        <f:switch expression="{node.parent.parent.properties.fullwidth}">
 
+            <f:case value="true">
+                <f:render section="sortlistfullwidth" arguments="{_all}"/>
+                <f:render section="fullwidth" arguments="{_all}"/>
+            </f:case>
 
             <f:defaultCase>
-
                 <f:render section="sortlist" arguments="{_all}"/>
                 <f:render section="default" arguments="{_all}"/>
             </f:defaultCase>
@@ -28,7 +33,7 @@
     <!-- SORT LIST BAR -->
     <div class="sort-list-bar sct-color-1 style-2">
         <div class="container">
-            <div id="filters-container" class="cbp-l-filters-button">
+            <div id="filters-container-{node.identifier}" class="cbp-l-filters-button">
                 <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">
                     All
                     <div class="cbp-filter-counter">12</div>
@@ -40,13 +45,44 @@
 </f:section>
 
 
+
+<f:section name="sortlistfullwidth">
+
+
+
+    <!-- SORT LIST BAR -->
+        <div class="sort-list-bar style-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-xs-6 sort-list-title">
+                    <h3>{neos:contentElement.editable(property: 'title', tag: 'span')}</h3>
+                </div>
+                <div class="col-md-8 col-xs-6 sort-list-buttons">
+                    <div id="filters-container-{node.identifier}">
+                        {neos:contentElement.editable(property: 'filtertext', tag: 'span')}
+                        <div data-filter="*" class="cbp-filter-item-active cbp-filter-item" data-text="All">
+                            All
+                        </div>
+                        <ts:render path="tags"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</f:section>
+
+
+
+
 <f:section name="default">
 
 
     <!-- SORT LIST ITEMS -->
     <section class="sort-list-wrapper sct-color-1">
         <div class="cbp-container cbp-boxed">
-            <div id="grid-container" class="cbp-l-grid-fullWidth">
+            <div id="grid-container-{node.identifier}" class="{f:if(condition:'{layout}==\'option1\'', then:'cbp-l-grid-work', else:'')} {f:if(condition:'{layout}==\'option2\'', then:'cbp-l-grid-projects', else:'')} cbp-l-grid-fullWidth">
 
                 <ts:render path="columns"/>
 
@@ -57,6 +93,31 @@
 
 </f:section>
 
+
+
+
+<f:section name="fullwidth">
+
+    <!-- SORT LIST ITEMS -->
+    <section class="sort-list-wrapper">
+
+            <div id="grid-container-{node.identifier}" class="{f:if(condition:'{layout}==\'option1\'', then:'cbp-l-grid-work', else:'')} {f:if(condition:'{layout}==\'option2\'', then:'cbp-l-grid-projects', else:'')} cbp-l-grid-fullWidth">
+
+                <ts:render path="columns"/>
+
+            </div>
+
+    </section>
+
+
+</f:section>
+
+
+
+
+
+
+
 <f:section name="javascript">
-    <visio:Portfolio section="javascript"></visio:Portfolio>
+    <visio:Portfolio section="javascript" colnums="{countCols}" nodeid="{node.identifier}" space="{space}" layout="{layout}"></visio:Portfolio>
 </f:section>
